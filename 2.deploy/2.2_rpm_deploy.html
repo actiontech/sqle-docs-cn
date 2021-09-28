@@ -278,7 +278,88 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h1 id="rpm-&#x90E8;&#x7F72;">RPM &#x90E8;&#x7F72;</h1>
+<h2 id="&#x73AF;&#x5883;&#x51C6;&#x5907;">&#x73AF;&#x5883;&#x51C6;&#x5907;</h2>
+<ul>
+<li>CentOS 7</li>
+<li>MySQL 5.7</li>
+</ul>
+<h2 id="&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;">&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;</h2>
+<p>&#x5728;&#x76EE;&#x6807;&#x670D;&#x52A1;&#x5668;&#x4E0B;&#x8F7D; SQLe &#x7684; RPM &#x5B89;&#x88C5;&#x5305;&#xFF1A;</p>
+<pre><code class="lang-sh">wget TODO
+</code></pre>
+<h2 id="&#x5B89;&#x88C5;-sqle-server">&#x5B89;&#x88C5; SQLe Server</h2>
+<p>&#x6267;&#x884C; RPM &#x7684;&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code class="lang-sh">rpm -ivh /path/to/sqle-ce-<span class="hljs-variable">${version}</span>.qa.el7.x86_64.rpm --prefix=/opt/sqle
+</code></pre>
+<p>&#x5B89;&#x88C5;&#x5B8C; SQLe Server &#x540E;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x4FEE;&#x6539;&#x76F8;&#x5E94;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
+<h2 id="&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8BF4;&#x660E;">&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8BF4;&#x660E;</h2>
+<p>&#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF0C;&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#xFF1A;</p>
+<pre><code class="lang-sh"><span class="hljs-built_in">cd</span> /opt/sqle/etc
+mv sqled.yml.template sqled.yml
+vim sqled.yml
+</code></pre>
+<p>&#x9ED8;&#x8BA4;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-sh">server:
+ sqle_config:
+  server_port: 10000
+  <span class="hljs-built_in">enable</span>_https: <span class="hljs-literal">false</span>
+  cert_file_path: <span class="hljs-string">&apos;./etc/cert.pem&apos;</span>
+  key_file_path: <span class="hljs-string">&apos;./etc/key.pem&apos;</span>
+  auto_migrate_table: <span class="hljs-literal">true</span>
+  debug_<span class="hljs-built_in">log</span>: <span class="hljs-literal">false</span>
+  <span class="hljs-built_in">log</span>_path: <span class="hljs-string">&apos;./logs&apos;</span>
+ db_config:
+  mysql_cnf:
+   mysql_host: <span class="hljs-string">&apos;127.0.0.1&apos;</span>
+   mysql_port: 3306
+   mysql_user: <span class="hljs-string">&apos;root&apos;</span>
+   mysql_password: <span class="hljs-string">&apos;123456&apos;</span>
+   mysql_schema: <span class="hljs-string">&apos;sqle&apos;</span>
+</code></pre>
+<p>&#x53EF;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x73AF;&#x5883;&#x81EA;&#x5B9A;&#x4E49;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x9879;&#x7684;&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>sqle_config&#xFF08;SQLe Server &#x7684;&#x8FD0;&#x884C;&#x914D;&#x7F6E;&#xFF09;</p>
+<ul>
+<li>server_port: sqle &#x670D;&#x52A1;&#x7684; http &#x7AEF;&#x53E3;&#xFF0C;&#x9ED8;&#x8BA4;10000</li>
+<li>enable_https&#xFF1A; &#x662F;&#x5426;&#x5F00;&#x542F;https&#xFF0C;&#x9ED8;&#x8BA4;&#x4E0D;&#x5F00;&#x542F;</li>
+<li>cert_file_path&#xFF1A; https &#x8BC1;&#x4E66;&#x8DEF;&#x5F84;</li>
+<li>key_file_path: https &#x79C1;&#x94A5;&#x8DEF;&#x5F84;</li>
+<li>auto_migrate_table: &#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x8868;&#x7ED3;&#x6784;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x6570;&#x636E;</li>
+<li>debug_log: &#x5F00;&#x542F;debug&#x6A21;&#x5F0F;&#xFF0C;&#x6253;&#x5370;&#x66F4;&#x591A;&#x65E5;&#x5FD7;&#xFF0C;&#x4F1A;&#x6253;&#x5370;&#x4E1A;&#x52A1;SQL&#xFF0C;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x53EF;&#x5F00;&#x542F;</li>
+<li>log_path&#xFF1A; &#x65E5;&#x5FD7;&#x76EE;&#x5F55;</li>
+</ul>
+<p>db_config.mysql_cnf&#xFF08;SQLe Server &#x5B58;&#x50A8;&#x6570;&#x636E;&#x7684;&#x6570;&#x636E;&#x5E93;&#x8FD0;&#x884C;&#x914D;&#x7F6E;&#xFF09;</p>
+<ul>
+<li>mysql_host: &#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x5730;&#x5740;</li>
+<li>mysql_port: &#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x7AEF;&#x53E3;</li>
+<li>mysql_user: &#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;</li>
+<li>mysql_password: &#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x5BC6;&#x7801;</li>
+<li>mysql_schema: &#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93; schema</li>
+</ul>
+<h2 id="&#x521B;&#x5EFA;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x5E93;">&#x521B;&#x5EFA;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x5E93;</h2>
+<pre><code class="lang-sh">CREATE DATABASE IF NOT EXISTS sqle default character <span class="hljs-built_in">set</span> utf8mb4 collate utf8mb4_unicode_ci
+</code></pre>
+<p>&#x5C06; sqle &#x586B;&#x5165;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684; server.db_config.mysql_cnf.mysql_schema &#x4E2D;&#x3002;</p>
+<h2 id="&#x542F;&#x52A8;-sqle-server">&#x542F;&#x52A8; SQLe Server</h2>
+<p>SQLe Server &#x8FDB;&#x7A0B;&#x901A;&#x8FC7; Systemd &#x7BA1;&#x7406;&#x3002;&#x5728;&#x6210;&#x529F;&#x5B89;&#x88C5; RPM &#x540E;&#xFF0C;&#x6267;&#x884C;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code class="lang-sh">systemctl start sqled
+</code></pre>
+<p>&#x68C0;&#x67E5;&#x662F;&#x5426;&#x542F;&#x52A8;&#x6210;&#x529F;&#xFF1A;</p>
+<ul>
+<li>&#x68C0;&#x67E5;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55; /opt/sqle &#x4E0B;&#x662F;&#x5426;&#x751F;&#x6210; pid &#x6587;&#x4EF6;</li>
+<li>&#x68C0;&#x67E5;&#x8FDB;&#x7A0B;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#x662F;&#x5426;&#x6B63;&#x5E38;&#xFF08;&#x6267;&#x884C; systemctl status sqled.service&#xFF09;</li>
+</ul>
+<h2 id="&#x8BBF;&#x95EE;-sqle">&#x8BBF;&#x95EE; SQLe</h2>
+<p>&#x5728;&#x68C0;&#x67E5;&#x8FDB;&#x7A0B;&#x542F;&#x52A8;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x5373;&#x53EF;&#x901A;&#x8FC7; SQLe UI &#x8BBF;&#x95EE;&#xFF1A;</p>
+<h3 id="&#x5165;&#x53E3;">&#x5165;&#x53E3;</h3>
+<p><a href="http://127.0.0.1:10000" target="_blank">http://127.0.0.1:10000</a></p>
+<p>ps&#xFF1A;IP &#x548C; Port &#x8BF7;&#x6839;&#x636E;&#x524D;&#x9762;&#x7684;&#x914D;&#x7F6E;&#x81EA;&#x884C;&#x66FF;&#x6362;</p>
+<h3 id="&#x9ED8;&#x8BA4;&#x8D26;&#x6237;">&#x9ED8;&#x8BA4;&#x8D26;&#x6237;</h3>
+<ul>
+<li>&#x7528;&#x6237;&#x540D;&#xFF1A;admin</li>
+<li>&#x5BC6;&#x7801;&#xFF1A;admin</li>
+</ul>
+
                                 
                                 </section>
                             
@@ -321,7 +402,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"RPM安装","level":"1.4.2","depth":2,"next":{"title":"功能模块","level":"1.5","depth":1,"path":"3.modules/overview.md","ref":"3.modules/overview.md","articles":[{"title":"审核计划","level":"1.5.1","depth":2,"path":"3.modules/3.1_auditplan/overview.md","ref":"3.modules/3.1_auditplan/overview.md","articles":[{"title":"审核计划管理","level":"1.5.1.1","depth":3,"path":"3.modules/3.1_auditplan/auditplan_management.md","ref":"3.modules/3.1_auditplan/auditplan_management.md","articles":[]},{"title":"Scanner管理","level":"1.5.1.2","depth":3,"path":"3.modules/3.1_auditplan/scanner_management.md","ref":"3.modules/3.1_auditplan/scanner_management.md","articles":[]}]}]},"previous":{"title":"源码安装","level":"1.4.1","depth":2,"path":"2.deploy/2.1_source_deploy.md","ref":"2.deploy/2.1_source_deploy.md","articles":[]},"dir":"neutral"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLe manual","gitbook":"*"},"file":{"path":"2.deploy/2.2_rpm_deploy.md","mtime":"2021-09-28T06:39:28.180Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-28T06:40:31.331Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"RPM安装","level":"1.4.2","depth":2,"next":{"title":"功能模块","level":"1.5","depth":1,"path":"3.modules/overview.md","ref":"3.modules/overview.md","articles":[{"title":"审核计划","level":"1.5.1","depth":2,"path":"3.modules/3.1_auditplan/overview.md","ref":"3.modules/3.1_auditplan/overview.md","articles":[{"title":"审核计划管理","level":"1.5.1.1","depth":3,"path":"3.modules/3.1_auditplan/auditplan_management.md","ref":"3.modules/3.1_auditplan/auditplan_management.md","articles":[]},{"title":"Scanner管理","level":"1.5.1.2","depth":3,"path":"3.modules/3.1_auditplan/scanner_management.md","ref":"3.modules/3.1_auditplan/scanner_management.md","articles":[]}]}]},"previous":{"title":"源码安装","level":"1.4.1","depth":2,"path":"2.deploy/2.1_source_deploy.md","ref":"2.deploy/2.1_source_deploy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLe manual","gitbook":"*"},"file":{"path":"2.deploy/2.2_rpm_deploy.md","mtime":"2021-09-28T08:11:21.359Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-28T08:12:08.123Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
