@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Docker 部署 · SQLe manual</title>
+        <title>Docker 部署 · SQLE manual</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -103,7 +103,7 @@
                 <a href="../0.overview/0_overview.html">
             
                     
-                    关于 SQLe
+                    关于 SQLE
             
                 </a>
             
@@ -326,7 +326,7 @@ actiontech/sqle-ce:latest
 <li>MYSQL_PORT: &#x6570;&#x636E;&#x5E93;&#x7AEF;&#x53E3;&#xFF1B;</li>
 <li>MYSQL_USER: &#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#xFF1B;</li>
 <li>MYSQL_PASSWORD: &#x6570;&#x636E;&#x5E93;&#x5BC6;&#x7801;&#xFF1B;</li>
-<li>MYSQL_SCHEMA: SQLe &#x670D;&#x52A1;&#x4F7F;&#x7528;&#x7684;&#x6307;&#x5B9A;&#x7684; schema&#xFF1B;</li>
+<li>MYSQL_SCHEMA: SQLE &#x670D;&#x52A1;&#x4F7F;&#x7528;&#x7684;&#x6307;&#x5B9A;&#x7684; schema&#xFF1B;</li>
 <li>DEBUG: &#x8F93;&#x51FA; debug &#x65E5;&#x5FD7;&#xFF1B;</li>
 <li>AUTO_MIGRATE_TABLE: &#x662F;&#x5426;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x8868;&#x683C;&#x548C;&#x521D;&#x59CB;&#x5316;&#x6570;&#x636E;&#x3002;</li>
 </ol>
@@ -336,11 +336,11 @@ actiontech/sqle-ce:latest
 <li>&#x5982;&#x679C; sqle &#x5BB9;&#x5668;&#x542F;&#x52A8;&#x5931;&#x8D25;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>docker logs sqle-server</code> &#x67E5;&#x770B;&#x542F;&#x7528;&#x65E5;&#x5FD7;&#xFF0C;&#x5176;&#x4E2D; <code>sqle-server</code>&#x662F;&#x5BB9;&#x5668;&#x540D;&#x79F0;&#x3002;</li>
 </ol>
 <h2 id="docker-compose-&#x90E8;&#x7F72;">Docker Compose &#x90E8;&#x7F72;</h2>
-<p>&#x4F7F;&#x7528; docker-compose &#x90E8;&#x7F72;&#x4E0D;&#x9700;&#x8981;&#x51C6;&#x5907;&#x63D0;&#x524D;&#x51C6;&#x5907; MySQL &#x73AF;&#x5883;&#xFF0C;&#x53EF;&#x4EE5;&#x4E00;&#x952E;&#x751F;&#x6210; SQLe &#x73AF;&#x5883;</p>
+<p>&#x4F7F;&#x7528; docker-compose &#x90E8;&#x7F72;&#x4E0D;&#x9700;&#x8981;&#x51C6;&#x5907;&#x63D0;&#x524D;&#x51C6;&#x5907; MySQL &#x73AF;&#x5883;&#xFF0C;&#x53EF;&#x4EE5;&#x4E00;&#x952E;&#x751F;&#x6210; SQLE &#x73AF;&#x5883;</p>
 <h3 id="&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
 <p>&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF1A;<a href="https://github.com/actiontech/sqle/blob/main/docker-images/sqle/docker-compose.yaml" target="_blank">docker-compose.yaml</a></p>
 <h3 id="&#x4F7F;&#x7528;&#x8BF4;&#x660E;">&#x4F7F;&#x7528;&#x8BF4;&#x660E;</h3>
-<p>&#x5C06; docker-compose.yaml &#x6587;&#x4EF6;&#x4E0B;&#x8F7D;&#x5230;&#x672C;&#x5730;&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x8FDB;&#x5165;&#x76EE;&#x5F55;&#x5185;&#xFF0C;&#x901A;&#x8FC7;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>SQLE_IMAGE</code>&#x6307;&#x5B9A;&#x4E0D;&#x540C;&#x7248;&#x672C;&#x7684; SQLe &#x955C;&#x50CF;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F; latest&#x3002;</p>
+<p>&#x5C06; docker-compose.yaml &#x6587;&#x4EF6;&#x4E0B;&#x8F7D;&#x5230;&#x672C;&#x5730;&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x8FDB;&#x5165;&#x76EE;&#x5F55;&#x5185;&#xFF0C;&#x901A;&#x8FC7;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>SQLE_IMAGE</code>&#x6307;&#x5B9A;&#x4E0D;&#x540C;&#x7248;&#x672C;&#x7684; SQLE &#x955C;&#x50CF;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F; latest&#x3002;</p>
 <pre><code class="lang-bash">SQLE_IMAGE=actiontech/sqle-ce:latest docker-compose up <span class="hljs-_">-d</span>
 </code></pre>
 <p>&#x542F;&#x52A8;&#x6210;&#x529F;&#x540E;&#x5373;&#x53EF;<a href="2.4_after_deploy.html">&#x5F00;&#x59CB;&#x4F7F;&#x7528;</a>&#x3002;</p>
@@ -387,7 +387,7 @@ actiontech/sqle-ce:latest
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Docker 部署","level":"1.4.3","depth":2,"next":{"title":"开始使用","level":"1.4.4","depth":2,"path":"2.deploy/2.4_after_deploy.md","ref":"2.deploy/2.4_after_deploy.md","articles":[]},"previous":{"title":"RPM 部署","level":"1.4.2","depth":2,"path":"2.deploy/2.2_rpm_deploy.md","ref":"2.deploy/2.2_rpm_deploy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLe manual","gitbook":"*"},"file":{"path":"2.deploy/2.3_docker_deploy.md","mtime":"2021-09-29T07:33:05.462Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-29T07:33:46.590Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Docker 部署","level":"1.4.3","depth":2,"next":{"title":"开始使用","level":"1.4.4","depth":2,"path":"2.deploy/2.4_after_deploy.md","ref":"2.deploy/2.4_after_deploy.md","articles":[]},"previous":{"title":"RPM 部署","level":"1.4.2","depth":2,"path":"2.deploy/2.2_rpm_deploy.md","ref":"2.deploy/2.2_rpm_deploy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"2.deploy/2.3_docker_deploy.md","mtime":"2021-09-29T08:45:53.536Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-29T08:46:41.095Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

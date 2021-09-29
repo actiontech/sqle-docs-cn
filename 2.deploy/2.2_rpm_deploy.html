@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>RPM 部署 · SQLe manual</title>
+        <title>RPM 部署 · SQLE manual</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -103,7 +103,7 @@
                 <a href="../0.overview/0_overview.html">
             
                     
-                    关于 SQLe
+                    关于 SQLE
             
                 </a>
             
@@ -311,12 +311,12 @@
 <li>MySQL 5.7</li>
 </ul>
 <h2 id="&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;">&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;</h2>
-<p>&#x4E0B;&#x8F7D; SQLe &#x7684; RPM &#x5B89;&#x88C5;&#x5305;&#xFF0C;&#x4E0B;&#x8F7D;&#x8FDE;&#x63A5;&#x70B9;&#x51FB;<a href="https://github.com/actiontech/sqle/releases" target="_blank">&#x8FD9;&#x91CC;</a>&#x3002;</p>
-<h2 id="&#x5B89;&#x88C5;-sqle-server">&#x5B89;&#x88C5; SQLe Server</h2>
+<p>&#x4E0B;&#x8F7D; SQLE &#x7684; RPM &#x5B89;&#x88C5;&#x5305;&#xFF0C;&#x4E0B;&#x8F7D;&#x8FDE;&#x63A5;&#x70B9;&#x51FB;<a href="https://github.com/actiontech/sqle/releases" target="_blank">&#x8FD9;&#x91CC;</a>&#x3002;</p>
+<h2 id="&#x5B89;&#x88C5;-sqle-server">&#x5B89;&#x88C5; SQLE Server</h2>
 <p>&#x6267;&#x884C; RPM &#x7684;&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#xFF1A;</p>
 <pre><code class="lang-sh">rpm -ivh /path/to/sqle-ce-<span class="hljs-variable">${version}</span>.qa.el7.x86_64.rpm --prefix=/opt/sqle
 </code></pre>
-<p>&#x5B89;&#x88C5;&#x5B8C; SQLe Server &#x540E;&#xFF0C;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6A21;&#x677F;&#x540D;&#x3002;</p>
+<p>&#x5B89;&#x88C5;&#x5B8C; SQLE Server &#x540E;&#xFF0C;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6A21;&#x677F;&#x540D;&#x3002;</p>
 <pre><code class="lang-sh"><span class="hljs-built_in">cd</span> /opt/sqle/etc
 mv sqled.yml.template sqled.yml
 </code></pre>
@@ -325,8 +325,8 @@ mv sqled.yml.template sqled.yml
 <pre><code class="lang-sh">CREATE DATABASE IF NOT EXISTS sqle default character <span class="hljs-built_in">set</span> utf8mb4 collate utf8mb4_unicode_ci
 </code></pre>
 <p>&#x5C06; sqle &#x586B;&#x5165;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684; server.db_config.mysql_cnf.mysql_schema &#x4E2D;&#x3002;</p>
-<h2 id="&#x542F;&#x52A8;-sqle-server">&#x542F;&#x52A8; SQLe Server</h2>
-<p>SQLe Server &#x8FDB;&#x7A0B;&#x901A;&#x8FC7; Systemd &#x7BA1;&#x7406;&#x3002;&#x5728;&#x6210;&#x529F;&#x5B89;&#x88C5; RPM &#x540E;&#xFF0C;&#x6267;&#x884C;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#xFF1A;</p>
+<h2 id="&#x542F;&#x52A8;-sqle-server">&#x542F;&#x52A8; SQLE Server</h2>
+<p>SQLE Server &#x8FDB;&#x7A0B;&#x901A;&#x8FC7; Systemd &#x7BA1;&#x7406;&#x3002;&#x5728;&#x6210;&#x529F;&#x5B89;&#x88C5; RPM &#x540E;&#xFF0C;&#x6267;&#x884C;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#xFF1A;</p>
 <pre><code class="lang-sh">systemctl start sqled
 </code></pre>
 <p>&#x68C0;&#x67E5;&#x662F;&#x5426;&#x542F;&#x52A8;&#x6210;&#x529F;&#xFF1A;</p>
@@ -378,7 +378,7 @@ mv sqled.yml.template sqled.yml
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"RPM 部署","level":"1.4.2","depth":2,"next":{"title":"Docker 部署","level":"1.4.3","depth":2,"path":"2.deploy/2.3_docker_deploy.md","ref":"2.deploy/2.3_docker_deploy.md","articles":[]},"previous":{"title":"源码安装","level":"1.4.1","depth":2,"path":"2.deploy/2.1_source_deploy.md","ref":"2.deploy/2.1_source_deploy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLe manual","gitbook":"*"},"file":{"path":"2.deploy/2.2_rpm_deploy.md","mtime":"2021-09-29T07:33:05.462Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-29T07:33:46.590Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"RPM 部署","level":"1.4.2","depth":2,"next":{"title":"Docker 部署","level":"1.4.3","depth":2,"path":"2.deploy/2.3_docker_deploy.md","ref":"2.deploy/2.3_docker_deploy.md","articles":[]},"previous":{"title":"源码安装","level":"1.4.1","depth":2,"path":"2.deploy/2.1_source_deploy.md","ref":"2.deploy/2.1_source_deploy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"2.deploy/2.2_rpm_deploy.md","mtime":"2021-09-29T08:45:53.536Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-29T08:46:41.095Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
