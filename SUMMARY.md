@@ -1,6 +1,6 @@
 # Summary
 
-* [关于 SQLe](0.overview/0_overview.md)
+* [关于 SQLE](0.overview/0_overview.md)
 * 适用场景
 * [安装部署](2.deploy/overview.md)
     * [源码安装](2.deploy/2.1_source_deploy.md)

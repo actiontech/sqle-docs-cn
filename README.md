@@ -1,5 +1,5 @@
-# SQLe 中文技术参考手册 
-![logo](./SQLe_logo.png)
+# SQLE 中文技术参考手册 
+![logo](./SQLE_logo.png)
 ## 目录
 参考 [gitbook](https://actiontech.github.io/sqle-docs-cn) 左侧目录区 或 [SUMMARY.md](https://github.com/actiontech/sqle-docs-cn/blob/main/SUMMARY.md) 
 ## 官方技术支持
@@ -14,7 +14,7 @@
   ![QR_code](./QR_code.png)
 
 ## 联系我们
-如果想获得 SQLe 的商业支持, 您可以联系我们:
+如果想获得 SQLE 的商业支持, 您可以联系我们:
 * 全国支持: 400-820-6580
 * 华北地区: 86-13718877200, 王先生
 * 华南地区: 86-18503063188, 曹先生

@@ -2,12 +2,12 @@
 
 **Scanner** 是**审核计划管理**中负责解析并上传 SQL 的组件。
 
-不同场景下的 **Scanner** 会有不同的解析行为，但它们最终都需要通过统一的 API 接口将 SQL 上传到 SQLe。
+不同场景下的 **Scanner** 会有不同的解析行为，但它们最终都需要通过统一的 API 接口将 SQL 上传到 SQLE。
 
 ## MyBatis Scanner
 
 ### 概述
-**MyBatis Scanner** 通过指定代码目录，扫描并解析目录中的 MyBatis XML 文件得到 SQL 语句。**MyBatis Scanner** 将解析出的 SQL 上传至 SQLe Server 后，触发审核并得到审核结果。如果审核结果中包含 Error 级别的错误（指触发了 Error 级别的[审核规则](TODO)），则将退出码（Exit Code）置为非 0。
+**MyBatis Scanner** 通过指定代码目录，扫描并解析目录中的 MyBatis XML 文件得到 SQL 语句。**MyBatis Scanner** 将解析出的 SQL 上传至 SQLE Server 后，触发审核并得到审核结果。如果审核结果中包含 Error 级别的错误（指触发了 Error 级别的[审核规则](TODO)），则将退出码（Exit Code）置为非 0。
 
 ### 场景
 常见的使用场景是将 **MyBatis Scanner** 与 CI/CD 集成。通过持续的审核代码仓库中的 SQL 以及变更，可以提早发现问题。
@@ -15,7 +15,7 @@
 ### 使用
 由于 Scanner 是**审核计划管理**下的功能组件，所以在使用前需要创建审核计划，具体操作步骤见[审核计划](./auditplan.md)。
 
-Scanner 打包在 SQLe RPM 中。在部署完 SQLe Server后（部署方式见[快速开始](TODO)）, Scanner 的二进制放在 `${SQLe的工作目录}/bin` 目录下。如下：
+Scanner 打包在 SQLE RPM 中。在部署完 SQLE Server后（部署方式见[快速开始](TODO)）, Scanner 的二进制放在 `${SQLE的工作目录}/bin` 目录下。如下：
 
 ```sh
 [root@sqle-server bin]# pwd
@@ -53,8 +53,8 @@ Use "SQLE [command] --help" for more information about a command.
 ```
 
 可以看到 scannerd 二进制支持两种不同类型的 Scanner，分别是 mybatis 和 slowquery。由于都需要上传 SQL 到 SQle Server，所以它们有一些公共参数：
-* host：SQLe Server 所在的主机 IP 地址（默认是当前主机）
-* port：SQLe Server 提供 HTTP 服务的端口（默认是 10000）
+* host：SQLE Server 所在的主机 IP 地址（默认是当前主机）
+* port：SQLE Server 提供 HTTP 服务的端口（默认是 10000）
 * name：审核计划名（表示 Scanner 将 SQL 上传至哪个审核计划的 **SQL 池**）
 * token：审核计划上传凭证（具体值可到审核计划列表页中**访问凭证**列中获取）
 
@@ -84,7 +84,7 @@ Global Flags:
 
 ### 概述
 
-**SlowQuery Scanner** 通过指定慢日志文件，扫描并解析文件中的慢 SQL 语句。**SlowQuery Scanner** 将解析出的 SQL 上传至 SQLe Server 通过。通过审核计划中配置的 Cron 定时触发审核。
+**SlowQuery Scanner** 通过指定慢日志文件，扫描并解析文件中的慢 SQL 语句。**SlowQuery Scanner** 将解析出的 SQL 上传至 SQLE Server 通过。通过审核计划中配置的 Cron 定时触发审核。
 
 ### 场景
 常见的使用场景是 DBA 发现运维中的数据库产生了慢日志，想知道慢日志中是否有不符合数据库使用规范的 SQL。这时，就可以使用 **SlowQuery Scanner** 扫描并审核指定的慢日志。
