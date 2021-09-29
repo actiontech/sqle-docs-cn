@@ -84,7 +84,7 @@ Global Flags:
 
 ### 概述
 
-**SlowQuery Scanner** 通过指定慢日志文件，扫描并解析文件中的慢 SQL 语句。**SlowQuery Scanner** 将解析出的 SQL 上传至 SQLE Server 通过。通过审核计划中配置的 Cron 定时触发审核。
+**SlowQuery Scanner** 通过指定慢日志文件，扫描并解析文件中的慢 SQL 语句，并定时将解析出的 SQL 上传至 SQLe Server。在 SQLe Server 侧，通过审核计划中配置的 Cron 定时（或人工）触发审核。
 
 ### 场景
 常见的使用场景是 DBA 发现运维中的数据库产生了慢日志，想知道慢日志中是否有不符合数据库使用规范的 SQL。这时，就可以使用 **SlowQuery Scanner** 扫描并审核指定的慢日志。
