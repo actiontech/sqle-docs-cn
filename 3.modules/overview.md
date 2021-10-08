@@ -1,5 +1,5 @@
 # 功能模块
-* 用户管理
+* [权限管理](3.1_permission/overview.md)
 * [数据源管理](3.2_instance/instance_management.md)
 * 模板管理
 * SQL白名单
