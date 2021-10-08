@@ -11,3 +11,7 @@
     * [审核计划](3.modules/3.1_auditplan/overview.md)
         * [审核计划管理](3.modules/3.1_auditplan/auditplan_management.md)
         * [Scanner 管理](3.modules/3.1_auditplan/scanner_management.md)
+    * [数据源管理](3.modules/3.2_instance/instance_management.md)
+    * [审核工单](3.modules/3.3_auditworkflow/overview.md)
+        * [审核工单管理](3.modules/3.3_auditworkflow/auditworkflow_management.md)
+        * [工作流管理](3.modules/3.3_auditworkflow/workflow_management.md)
