@@ -1,14 +1,15 @@
 # Summary
 
 * [关于 SQLE](0.overview/0_overview.md)
-* 适用场景
 * [安装部署](2.deploy/overview.md)
     * [源码安装](2.deploy/2.1_source_deploy.md)
     * [RPM 部署](2.deploy/2.2_rpm_deploy.md)
     * [Docker 部署](2.deploy/2.3_docker_deploy.md)
     * [开始使用](2.deploy/2.4_after_deploy.md)
 * [功能模块](3.modules/overview.md)
-    * [用户管理](3.modules/3.1_user/user_management.md)
+    * [权限管理](3.modules/3.1_permission/overview.md)
+        * [角色管理](3.modules/3.1_permission/role_management.md)
+        * [用户管理](3.modules/3.1_permission/user_management.md)
     * [数据源管理](3.modules/3.2_instance/instance_management.md)
     * [模板管理](3.modules/3.3_template/overview.md)
         * [规则模板管理](3.modules/3.3_template/rule_template_management.md)
