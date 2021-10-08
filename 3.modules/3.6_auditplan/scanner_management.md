@@ -1,4 +1,5 @@
 # Scanner管理
+[toc]
 
 **Scanner** 是**审核计划管理**中负责解析并上传 SQL 的组件。
 
@@ -15,7 +16,7 @@
 ### 使用
 由于 Scanner 是**审核计划管理**下的功能组件，所以在使用前需要创建审核计划，具体操作步骤见[审核计划](./auditplan.md)。
 
-Scanner 打包在 SQLE RPM 中。在部署完 SQLE Server后（部署方式见[快速开始](TODO)）, Scanner 的二进制放在 `${SQLE的工作目录}/bin` 目录下。如下：
+Scanner 打包在 SQLE RPM 中。在部署完 SQLE Server后（部署方式见[安装部署](TODO)）, Scanner 的二进制放在 `${SQLE的工作目录}/bin` 目录下。如下：
 
 ```sh
 [root@sqle-server bin]# pwd
