@@ -5,7 +5,7 @@
 * [Scanner管理](scanner_management.md)
 
 ## 背景
-在[审核工单管理](TODO)中我们介绍了如何通过 SQLE 进行 SQL 审核并上线的流程。在这流程中，通常是审核一些 DDL，如建库（create database）、建表（create table）和改表（alter table）等语句。
+在[审核工单](../3.3_auditworkflow/overview.md)中我们介绍了如何通过 SQLE 进行 SQL 审核并上线的流程。在这流程中，通常是审核一些 DDL，如建库（create database）、建表（create table）和改表（alter table）等语句。
 审核工单管理，主要解决 SQL 上线的规范化流程化的问题，它能够帮助 DBA 自动化处理整个 SQL 上线过程中一些重复繁琐的工作。
 
 **审核工单管理**也有它的局限性。
