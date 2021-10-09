@@ -8,7 +8,7 @@
 ## MyBatis Scanner
 
 ### 概述
-**MyBatis Scanner** 通过指定代码目录，扫描并解析目录中的 MyBatis XML 文件得到 SQL 语句。**MyBatis Scanner** 将解析出的 SQL 上传至 SQLE Server 后，触发审核并得到审核结果。如果审核结果中包含 Error 级别的错误（指触发了 Error 级别的[审核规则](TODO)），则将退出码（Exit Code）置为非 0。
+**MyBatis Scanner** 通过指定代码目录，扫描并解析目录中的 MyBatis XML 文件得到 SQL 语句。**MyBatis Scanner** 将解析出的 SQL 上传至 SQLE Server 后，触发审核并得到审核结果。如果审核结果中包含 Error 级别的错误（指触发了 Error 级别的[审核规则](../3.3_template/rule_template_management.md)），则将退出码（Exit Code）置为非 0。
 
 ### 场景
 常见的使用场景是将 **MyBatis Scanner** 与 CI/CD 集成。通过持续的审核代码仓库中的 SQL 以及变更，可以提早发现问题。
@@ -16,7 +16,7 @@
 ### 使用
 由于 Scanner 是**审核计划管理**下的功能组件，所以在使用前需要创建审核计划，具体操作步骤见[审核计划](./auditplan.md)。
 
-Scanner 打包在 SQLE RPM 中。在部署完 SQLE Server后（部署方式见[安装部署](TODO)）, Scanner 的二进制放在 `${SQLE的工作目录}/bin` 目录下。如下：
+Scanner 打包在 SQLE RPM 中。在部署完 SQLE Server后（部署方式见[安装部署](../../2.deploy/overview.md)）, Scanner 的二进制放在 `${SQLE的工作目录}/bin` 目录下。如下：
 
 ```sh
 [root@sqle-server bin]# pwd
