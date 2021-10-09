@@ -20,4 +20,4 @@
 
 在**审核计划**的详情页面，我们可以看到它的 SQL 池列表和对应产生的审核报告列表。
 
-上图中展示的 SQL 池列表中的 SQL 是通过 [MyBatis Scanner](TODO) 扫描代码仓库中文件得到的。**MyBatis Scanner** 会解析 XML 格式文件，将文件中解析出的 SQL 上传至相应的**审核计划**。
+上图中展示的 SQL 池列表中的 SQL 是通过 [MyBatis Scanner](./scanner_management.md) 扫描代码仓库中文件得到的。**MyBatis Scanner** 会解析 XML 格式文件，将文件中解析出的 SQL 上传至相应的**审核计划**。
