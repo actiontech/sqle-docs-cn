@@ -21,3 +21,4 @@
         * [审核计划管理](3.modules/3.6_auditplan/auditplan_management.md)
         * [Scanner 管理](3.modules/3.6_auditplan/scanner_management.md)
     * [审核插件](3.modules/3.7_auditplugin/overview.md)
+        * [审核插件管理](3.modules/3.7_auditplugin/auditplugin_management.md)
