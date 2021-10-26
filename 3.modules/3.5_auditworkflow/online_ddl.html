@@ -492,14 +492,70 @@
 <h3 id="&#x914D;&#x7F6E;&#x89C4;&#x5219;">&#x914D;&#x7F6E;&#x89C4;&#x5219;</h3>
 <p>Online DDL &#x5BF9;&#x5E94;&#x7684;&#x89C4;&#x5219;&#x5728;<strong>&#x89C4;&#x5219;&#x5217;&#x8868;</strong> -&gt; <strong>&#x5168;&#x5C40;&#x914D;&#x7F6E;</strong>&#x4E2D;&#x3002;&#x5BF9;&#x5E94;&#x7684;&#x89C4;&#x5219;&#x540D;&#x4E3A;&#x300E;<strong>&#x6539;&#x8868;&#x65F6;&#xFF0C;&#x8868;&#x7A7A;&#x95F4;&#x8D85;&#x8FC7;&#x6307;&#x5B9A;&#x5927;&#x5C0F;(MB)&#x65F6;&#x4F7F;&#x7528;gh-ost&#x4E0A;&#x7EBF;</strong>&#x300F;&#x3002;&#x901A;&#x8FC7;&#x89C4;&#x5219;&#x7684; value &#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x8C03;&#x6574;&#x89E6;&#x53D1; Online DDL &#x7684;&#x9608;&#x503C;&#xFF08;&#x8C03;&#x6574;&#x65B9;&#x5F0F;&#x89C1;<a href="../3.3_template/rule_template_management.html">&#x89C4;&#x5219;&#x6A21;&#x677F;&#x7BA1;&#x7406;</a>&#xFF09;&#x3002;</p>
 <h3 id="&#x914D;&#x7F6E;-gh-ost-&#x53C2;&#x6570;">&#x914D;&#x7F6E; gh-ost &#x53C2;&#x6570;</h3>
-<p>SQLE &#x6839;&#x636E; gh-ost &#x7684;&#x5B98;&#x65B9;&#x63A8;&#x8350;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E86;&#x9ED8;&#x8BA4;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x53C2;&#x6570;&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;&#x5728; <code>${working directory of SQL}/etc/gh-ost.ini</code>&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x9700;&#x6C42;&#x81EA;&#x5B9A;&#x4E49;&#x4FEE;&#x6539;&#x8BE5;&#x6587;&#x4EF6;&#x3002;</p>
-<p>gh-ost <a href="https://github.com/github/gh-ost/blob/master/doc/cheatsheet.md#cheatsheet" target="_blank">&#x8FC1;&#x79FB;&#x6A21;&#x5F0F;</a>&#x6709;&#x4E09;&#x79CD;&#xFF1A;</p>
+<p>SQLE &#x6839;&#x636E; gh-ost &#x7684;&#x5B98;&#x65B9;&#x63A8;&#x8350;&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&#x5982;&#x4E0B;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#xFF08;&#x76F8;&#x5E94;&#x914D;&#x7F6E;&#x8BF4;&#x660E;&#x89C1;<a href="https://github.com/github/gh-ost/blob/master/doc/command-line-flags.md" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a>&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-sh">mysql_timeout=0.0
+assume_master_host=<span class="hljs-string">&quot;&quot;</span>
+master_user=<span class="hljs-string">&quot;&quot;</span>
+master_password=<span class="hljs-string">&quot;&quot;</span>
+exact_rowcount=<span class="hljs-literal">false</span>
+concurrent_rowcount=<span class="hljs-literal">true</span>
+allow_on_master=<span class="hljs-literal">false</span>
+allow_master_master=<span class="hljs-literal">false</span>
+allow_nullable_unique_key=<span class="hljs-literal">false</span>
+approve_renamed_columns=<span class="hljs-literal">false</span>
+skip_renamed_columns=<span class="hljs-literal">false</span>
+tungsten=<span class="hljs-literal">false</span>
+discard_foreign_keys=<span class="hljs-literal">false</span>
+skip_foreign_key_checks=<span class="hljs-literal">false</span>
+;skip_strict_mode=<span class="hljs-literal">false</span> //fixme
+aliyun_rds=<span class="hljs-literal">false</span>
+gcp=<span class="hljs-literal">false</span>
+azure=<span class="hljs-literal">false</span>
+<span class="hljs-built_in">test</span>_on_replica=<span class="hljs-literal">false</span>
+<span class="hljs-built_in">test</span>_on_replica_skip_replica_stop=<span class="hljs-literal">false</span>
+migrate_on_replica=<span class="hljs-literal">false</span>
+ok_to_drop_table=<span class="hljs-literal">false</span>
+initially_drop_old_table=<span class="hljs-literal">false</span>
+initially_drop_ghost_table=<span class="hljs-literal">false</span>
+timestamp_old_table=<span class="hljs-literal">false</span>
+cut_over=<span class="hljs-string">&quot;&quot;</span>
+force_named_cut_over=<span class="hljs-literal">false</span>
+force_named_panic=<span class="hljs-literal">false</span>
+switch_to_rbr=<span class="hljs-literal">false</span>
+assume_rbr=<span class="hljs-literal">false</span>
+cut_over_exponential_backoff=<span class="hljs-literal">false</span>
+exponential_backoff_max_interval=64
+chunk_size=1000
+dml_batch_size=10
+default_retries=120
+cut_over_lock_timeout_seconds=3
+nice_ratio=0
+max_lag_millis=1500
+throttle_control_replicas=<span class="hljs-string">&quot;&quot;</span>
+throttle_query=<span class="hljs-string">&quot;&quot;</span>
+throttle_http=<span class="hljs-string">&quot;&quot;</span>
+ignore_http_errors=<span class="hljs-literal">false</span>
+heartbeat_interval_millis=100
+throttle_flag_file=<span class="hljs-string">&quot;&quot;</span>
+throttle_additional_flag_file=<span class="hljs-string">&quot;/tmp/gh-ost.throttle&quot;</span>
+postpone_cut_over_flag_file=<span class="hljs-string">&quot;&quot;</span>
+panic_flag_file=<span class="hljs-string">&quot;&quot;</span>
+initially_drop_socket_file=<span class="hljs-literal">false</span>
+serve_socket_file=<span class="hljs-string">&quot;/tmp/gh-ost.<span class="hljs-variable">${&#x5E93;&#x540D;}</span>.<span class="hljs-variable">${&#x8868;&#x660E;}</span>.sock&quot;</span>
+serve_tcp_port=0
+replica_server_id=<span class="hljs-variable">${&#x968F;&#x673A;&#x6570;&#x65B9;&#x5F0F;&#x91CD;&#x590D;}</span>
+max_load=<span class="hljs-string">&quot;Threads_running=80,Threads_connected=1000&quot;</span>
+critical_load=<span class="hljs-string">&quot;Threads_running=80,Threads_connected=1000&quot;</span>
+critical_load_interval_millis=0
+critical_load_hibernate_seconds=0
+force_table_names=<span class="hljs-string">&quot;&quot;</span>
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x9700;&#x6C42;&#x81EA;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x3002;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;&#x5728; <code>/opt/sqle/etc/gh-ost.ini</code>&#x3002;&#x6CE8;&#x610F;&#x5355;&#x8BCD;&#x95F4;&#x4F7F;&#x7528;&#x4E0B;&#x5212;&#x7EBF;&#x5206;&#x5272;&#x3002;</p>
+<h3 id="&#x5176;&#x4ED6;&#x914D;&#x7F6E;">&#x5176;&#x4ED6;&#x914D;&#x7F6E;</h3>
 <ol>
-<li>connect to replica(&#x5B98;&#x65B9;&#x63A8;&#x8350;&#x65B9;&#x5F0F;)</li>
-<li>connect to master</li>
-<li>migrate/test on replica</li>
+<li>&#x5F00;&#x542F;&#x6570;&#x636E;&#x6E90; binlog&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E; binlog &#x683C;&#x5F0F;&#x4E3A; ROW</li>
+<li>&#x5982;&#x679C;&#x6570;&#x636E;&#x6E90;&#x4E3A;&#x5355;&#x5B9E;&#x4F8B;&#x6216;&#x8005;&#x4ECE;&#x5B9E;&#x4F8B;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x91CC;&#x6307;&#x5B9A;<strong>allow_on_master=true</strong></li>
 </ol>
-<p>SQLE &#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x6570;&#x636E;&#x6E90;&#x662F;&#x5355;&#x5B9E;&#x4F8B;&#x6216;&#x8005;&#x4ECE;&#x5B9E;&#x4F8B;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x91CC;&#x6307;&#x5B9A;<strong>allow_on_master=true</strong>&#x3002;</p>
 <h2 id="&#x8BCA;&#x65AD;">&#x8BCA;&#x65AD;</h2>
 <p>&#x5982;&#x679C;&#x4E00;&#x6761; SQL &#x6B63;&#x5728;&#x901A;&#x8FC7; Online DDL &#x4E0A;&#x7EBF;&#xFF0C;&#x901A;&#x5E38;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#x8BCA;&#x65AD;&#x4E0A;&#x7EBF;&#x8FC7;&#x7A0B;&#x3002;</p>
 <h3 id="sqle-&#x65E5;&#x5FD7;">SQLE &#x65E5;&#x5FD7;</h3>
@@ -561,7 +617,7 @@ time=&quot;2021-10-26T11:01:27+08:00&quot; level=info msg=&quot;dry-run OK!&quot
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Online DDL","level":"1.4.5.2","depth":3,"next":{"title":"审核计划","level":"1.4.6","depth":2,"path":"3.modules/3.6_auditplan/overview.md","ref":"3.modules/3.6_auditplan/overview.md","articles":[{"title":"审核计划管理","level":"1.4.6.1","depth":3,"path":"3.modules/3.6_auditplan/auditplan_management.md","ref":"3.modules/3.6_auditplan/auditplan_management.md","articles":[]},{"title":"Scanner 管理","level":"1.4.6.2","depth":3,"path":"3.modules/3.6_auditplan/scanner_management.md","ref":"3.modules/3.6_auditplan/scanner_management.md","articles":[]}]},"previous":{"title":"审核工单管理","level":"1.4.5.1","depth":3,"path":"3.modules/3.5_auditworkflow/auditworkflow_management.md","ref":"3.modules/3.5_auditworkflow/auditworkflow_management.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/3.5_auditworkflow/online_ddl.md","mtime":"2021-10-26T06:21:49.447Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-26T06:22:28.639Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Online DDL","level":"1.4.5.2","depth":3,"next":{"title":"审核计划","level":"1.4.6","depth":2,"path":"3.modules/3.6_auditplan/overview.md","ref":"3.modules/3.6_auditplan/overview.md","articles":[{"title":"审核计划管理","level":"1.4.6.1","depth":3,"path":"3.modules/3.6_auditplan/auditplan_management.md","ref":"3.modules/3.6_auditplan/auditplan_management.md","articles":[]},{"title":"Scanner 管理","level":"1.4.6.2","depth":3,"path":"3.modules/3.6_auditplan/scanner_management.md","ref":"3.modules/3.6_auditplan/scanner_management.md","articles":[]}]},"previous":{"title":"审核工单管理","level":"1.4.5.1","depth":3,"path":"3.modules/3.5_auditworkflow/auditworkflow_management.md","ref":"3.modules/3.5_auditworkflow/auditworkflow_management.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/3.5_auditworkflow/online_ddl.md","mtime":"2021-10-26T10:39:55.870Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-26T10:40:38.761Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
