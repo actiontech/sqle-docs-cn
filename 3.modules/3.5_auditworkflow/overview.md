@@ -2,6 +2,7 @@
 
 ## 目录
 * [审核工单管理](./auditworkflow_management.md)
+* [Online DDL](./online_ddl.md)
 
 ## 背景
 很多公司通常设有 DBA（Database administrator） 这个职位，他们负责在系统上运行数据库，执行备份，执行安全策略等日常数据库运维的工作。在这之外，一项重要的工作是规范研发人员在应用程序中使用的 SQL 语句。
