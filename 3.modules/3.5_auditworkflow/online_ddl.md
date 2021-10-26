@@ -20,7 +20,7 @@ gh-ost [迁移模式](https://github.com/github/gh-ost/blob/master/doc/cheatshee
 2. connect to master
 3. migrate/test on replica
 
-SQLE 默认使用第一种方式。这种情况下，如果数据源是单实例或者从实力，需要在配置文件里指定**allow_on_master=true**。
+SQLE 默认使用第一种方式。这种情况下，如果数据源是单实例或者从实例，需要在配置文件里指定**allow_on_master=true**。
 
 ## 诊断
 
