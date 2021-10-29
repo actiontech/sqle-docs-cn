@@ -64,9 +64,9 @@ throttle_additional_flag_file="/tmp/gh-ost.throttle"
 postpone_cut_over_flag_file=""
 panic_flag_file=""
 initially_drop_socket_file=false
-serve_socket_file="/tmp/gh-ost.${库名}.${表明}.sock"
+serve_socket_file="/tmp/gh-ost.${库名}.${表名}.sock"
 serve_tcp_port=0
-replica_server_id=${随机数方式重复}
+replica_server_id=${内部生成随机数防止重复}
 max_load="Threads_running=80,Threads_connected=1000"
 critical_load="Threads_running=80,Threads_connected=1000"
 critical_load_interval_millis=0
