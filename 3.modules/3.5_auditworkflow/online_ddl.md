@@ -79,6 +79,12 @@ force_table_names=""
 ### 其他配置
 1. 开启数据源 binlog，并设置 binlog 格式为 ROW
 2. 如果数据源为单实例或者从实例，需要在配置文件里指定**allow_on_master=true**
+3. 数据源的用户权限至少需要：
+    1. ALTER, CREATE, DELETE, DROP, INDEX, INSERT, LOCK TABLES, SELECT, TRIGGER, UPDATE ${迁移表所在的数据库}.*
+    2. SUPER, REPLICATION SLAVE on \*.\* 或者 REPLICATION CLIENT, REPLICATION SLAVE on \*.\*
+
+### 限制
+当然 gh-ost 也有一些使用限制，请参考[官方文档](https://github.com/github/gh-ost/blob/master/doc/requirements-and-limitations.md#limitations)。
 
 ## 诊断
 
