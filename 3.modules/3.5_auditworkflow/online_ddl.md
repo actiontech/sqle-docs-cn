@@ -64,9 +64,9 @@ throttle_additional_flag_file="/tmp/gh-ost.throttle"
 postpone_cut_over_flag_file=""
 panic_flag_file=""
 initially_drop_socket_file=false
-serve_socket_file="/tmp/gh-ost.${库名}.${表明}.sock"
+serve_socket_file="/tmp/gh-ost.${库名}.${表名}.sock"
 serve_tcp_port=0
-replica_server_id=${随机数方式重复}
+replica_server_id=${内部生成随机数防止重复}
 max_load="Threads_running=80,Threads_connected=1000"
 critical_load="Threads_running=80,Threads_connected=1000"
 critical_load_interval_millis=0
@@ -79,6 +79,12 @@ force_table_names=""
 ### 其他配置
 1. 开启数据源 binlog，并设置 binlog 格式为 ROW
 2. 如果数据源为单实例或者从实例，需要在配置文件里指定**allow_on_master=true**
+3. 数据源的用户权限至少需要：
+    1. ALTER, CREATE, DELETE, DROP, INDEX, INSERT, LOCK TABLES, SELECT, TRIGGER, UPDATE ${迁移表所在的数据库}.*
+    2. SUPER, REPLICATION SLAVE on \*.\* 或者 REPLICATION CLIENT, REPLICATION SLAVE on \*.\*
+
+### 限制
+当然 gh-ost 也有一些使用限制，请参考[官方文档](https://github.com/github/gh-ost/blob/master/doc/requirements-and-limitations.md#limitations)。
 
 ## 诊断
 
