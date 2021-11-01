@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>程序启动后打开页面白屏 · SQLE manual</title>
+        <title>回滚语句常见问题 · SQLE manual</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -456,7 +456,7 @@
                 <a href="5.1_deploy.html">
             
                     
-                    安装启用失败的问题汇总
+                    安装启用常见问题
             
                 </a>
             
@@ -464,12 +464,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.2" data-path="5.2_ui_not_found.html">
+        <li class="chapter active" data-level="1.5.2" data-path="5.2_rollback_sql.html">
             
-                <a href="5.2_ui_not_found.html">
+                <a href="5.2_rollback_sql.html">
             
                     
-                    程序启动后打开页面白屏
+                    回滚语句常见问题
             
                 </a>
             
@@ -512,7 +512,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >程序启动后打开页面白屏</a>
+        <a href=".." >回滚语句常见问题</a>
     </h1>
 </div>
 
@@ -527,14 +527,12 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x4E00;&#x3001;&#x5E38;&#x89C1;&#x539F;&#x56E0;">&#x4E00;&#x3001;&#x5E38;&#x89C1;&#x539F;&#x56E0;</h2>
-<h3 id="1-&#x672A;&#x4F7F;&#x7528;-systemd-&#x542F;&#x52A8;&#x7A0B;&#x5E8F;">1. &#x672A;&#x4F7F;&#x7528; systemd &#x542F;&#x52A8;&#x7A0B;&#x5E8F;</h3>
-<p>&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x884C;&#x76F4;&#x63A5;&#x542F;&#x52A8; SQLE&#xFF0C; &#x9700;&#x8981;&#x5728; SQLE &#x4E3B;&#x76EE;&#x5F55;&#x4E0B;&#x542F;&#x52A8;&#xFF0C;&#x4E0D;&#x7136;&#x627E;&#x4E0D;&#x5230;&#x524D;&#x7AEF;&#x6587;&#x4EF6;&#xFF0C;<strong>&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;systemd</strong>&#xFF0C;&#x5982;&#x679C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x884C;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#xFF1A;</p>
-<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> /opt/sqle <span class="hljs-comment"># &#x5047;&#x8BBE;&#x5B89;&#x88C5;&#x5728;/opt&#x76EE;&#x5F55;&#x4E0B;</span>
-./bin/sqled --config /opt/sqle/etc/sqled.yml --pidfile=/opt/sqle/sqled.pid
-</code></pre>
-<h3 id="2-&#x7F3A;&#x5C11;&#x524D;&#x7AEF;&#x6587;&#x4EF6;">2. &#x7F3A;&#x5C11;&#x524D;&#x7AEF;&#x6587;&#x4EF6;</h3>
-<p>&#x786E;&#x8BA4; sqle/ui &#x76EE;&#x5F55;&#x662F;&#x5426;&#x5B58;&#x5728;&#x6216;&#x662F;&#x5426;&#x6709;&#x5185;&#x5BB9;&#x3002;&#x5982;&#x679C;&#x635F;&#x574F;&#xFF0C;&#x5EFA;&#x8BAE;&#x91CD;&#x65B0;&#x5B89;&#x88C5;</p>
+                                <p>&#xFEFF;# &#x56DE;&#x6EDA;&#x8BED;&#x53E5;&#x5E38;&#x89C1;&#x95EE;&#x9898;</p>
+<h3 id="1-dml-&#x8BED;&#x53E5;&#x6CA1;&#x6709;&#x56DE;&#x6EDA;&#x8BED;&#x53E5;&#x751F;&#x6210;">1. DML &#x8BED;&#x53E5;&#x6CA1;&#x6709;&#x56DE;&#x6EDA;&#x8BED;&#x53E5;&#x751F;&#x6210;</h3>
+<p>&#x7531;&#x4E8E;&#x4E00;&#x6761; DML &#x53EF;&#x80FD;&#x5F71;&#x54CD;&#x7684;&#x884C;&#x6570;&#x662F;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x9650;&#x5236;&#x56DE;&#x6EDA;&#x8BED;&#x53E5;&#x7684;&#x751F;&#x6210;&#x3002;&#x5373;&#x5F71;&#x54CD;&#x884C;&#x6570;&#x8D85;&#x8FC7;&#x9608;&#x503C;&#x5219;&#x4E0D;&#x751F;&#x6210;&#x56DE;&#x6EDA;&#x8BED;&#x53E5;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x89C4;&#x5219;&#x540D;&#x4E3A;&#x300C;&#x5728; DML &#x8BED;&#x53E5;&#x4E2D;&#x9884;&#x8BA1;&#x5F71;&#x54CD;&#x884C;&#x6570;&#x8D85;&#x8FC7;&#x6307;&#x5B9A;&#x503C;&#x5219;&#x4E0D;&#x56DE;&#x6EDA;&#x300D;&#x3002;</p>
+<h4 id="&#x539F;&#x56E0;1&#xFF1A;&#x672A;&#x914D;&#x7F6E;&#x76F8;&#x5173;&#x89C4;&#x5219;">&#x539F;&#x56E0;1&#xFF1A;&#x672A;&#x914D;&#x7F6E;&#x76F8;&#x5173;&#x89C4;&#x5219;</h4>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x914D;&#x7F6E;&#x4E0A;&#x9762;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E0D;&#x4F1A;&#x8D70;&#x751F;&#x6210;&#x56DE;&#x6EDA;&#x8BED;&#x53E5;&#x7684;&#x6D41;&#x7A0B;&#xFF08;&#x5373;&#x4F7F;&#x5F71;&#x54CD;&#x884C;&#x6570;&#x5F88;&#x5C11;&#xFF09;&#x3002;</p>
+<h4 id="&#x539F;&#x56E0;2&#xFF1A;&#x5F71;&#x54CD;&#x884C;&#x6570;&#x8D85;&#x8FC7;&#x4E86;&#x89C4;&#x5219;&#x9608;&#x503C;">&#x539F;&#x56E0;2&#xFF1A;&#x5F71;&#x54CD;&#x884C;&#x6570;&#x8D85;&#x8FC7;&#x4E86;&#x89C4;&#x5219;&#x9608;&#x503C;</h4>
 
                                 
                                 </section>
@@ -562,7 +560,7 @@
 
             
                 
-                <a href="5.1_deploy.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 安装启用失败的问题汇总">
+                <a href="5.1_deploy.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 安装启用常见问题">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -574,7 +572,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"程序启动后打开页面白屏","level":"1.5.2","depth":2,"previous":{"title":"安装启用失败的问题汇总","level":"1.5.1","depth":2,"path":"5.faq/5.1_deploy.md","ref":"5.faq/5.1_deploy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"5.faq/5.2_ui_not_found.md","mtime":"2021-10-30T07:50:34.677Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-30T07:51:24.778Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"回滚语句常见问题","level":"1.5.2","depth":2,"previous":{"title":"安装启用常见问题","level":"1.5.1","depth":2,"path":"5.faq/5.1_deploy.md","ref":"5.faq/5.1_deploy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"5.faq/5.2_rollback_sql.md","mtime":"2021-11-01T07:41:47.668Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-01T07:42:37.033Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
