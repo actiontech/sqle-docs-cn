@@ -24,5 +24,5 @@
     * [审核插件](3.modules/3.7_auditplugin/overview.md)
         * [审核插件管理](3.modules/3.7_auditplugin/auditplugin_management.md)
 * [FAQ](5.faq/overview.md)
-    * [安装启用失败的问题汇总](5.faq/5.1_deploy.md)
-    * [程序启动后打开页面白屏](5.faq/5.2_ui_not_found.md)
+    * [安装启用常见问题](5.faq/5.1_deploy.md)
+    * [回滚语句常见问题](5.faq/5.2_rollback_sql.md)
