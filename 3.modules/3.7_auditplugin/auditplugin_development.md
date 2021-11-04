@@ -5,7 +5,7 @@
 总的来说，实现一个审核插件只需 3 步：
 
 ## 第 1 步：实现 Registerer 接口
-```
+```go
 type Registerer interface {
     // 插件名。最终会展示在 SQLE 页面的数据源类型的下拉框中。
 	Name() string
@@ -16,7 +16,7 @@ type Registerer interface {
 ```
 
 ## 第 2 步：实现 Driver 接口及其构造函数
-```
+```go
 type Driver interface {
     // 关闭审核插件使用的相关资源。通常是完成一次审核后，关闭数据库连接等资源。
 	Close(ctx context.Context)
@@ -39,7 +39,7 @@ type Driver interface {
 
 实现一个 Driver 实例的构造函数，函数签名为 `func(*driver.Config) driver.Driver`。`driver.Config` 是 SQLE 在准备调用插件前传给插件的一些必要参数：
 
-```
+```go
 type Config struct {
     // 是否是静态审核。
 	IsOfflineAudit bool
