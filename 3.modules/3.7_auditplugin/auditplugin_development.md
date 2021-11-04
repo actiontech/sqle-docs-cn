@@ -1,6 +1,6 @@
 # 审核插件开发
 
-本篇以 PostgreSQL 审核插件为例，介绍如何从头开发 SQLE 的审核插件（ps：PG 插件是我们开源的一个 SQLE 插件范例，感兴趣的可以上 GitHub [sqle-pg-plugin](https://github.com/actiontech/sqle-pg-plugin) 查看。）。
+本篇以 PostgreSQL 审核插件为例，介绍如何从头开发 SQLE 的审核插件（ps：PG 插件是我们开源的一个 SQLE 插件范例，感兴趣的可以上 GitHub [sqle-pg-plugin](https://github.com/actiontech/sqle-pg-plugin) 查看）。
 
 总的来说，实现一个审核插件只需 3 步：
 

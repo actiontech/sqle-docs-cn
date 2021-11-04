@@ -1,6 +1,6 @@
-# 审核插件管理
+# 审核插件使用
 
-## 配置插件
+## 一、配置插件
 创建插件二进制目录，通常创建在 SQLE 的工作目录下：
 ```
 bash-4.2$ ls -l
@@ -30,9 +30,20 @@ server:
       mysql_password: 'mysqlpass'
       mysql_schema: 'sqle'
 ```
-
-## 重启 SQLE Server
-重启 SQLE Server 以加载审核插件。成功加载插件后，日志中会打印当前加载的审核插件：
+## 二、集成插件
+将插件的二进制文件放在`一、配置插件`中创建的目录 `plugins/`内，其中插件的可以由第三方提供或者自行编译，参考：[sqle-pg-plugin](https://github.com/actiontech/sqle-pg-plugin)
+## 三、重启 SQLE Server
+### rpm 安装
+```bash
+systemctl restart sqled
+```
+### docker
+```bash
+docker restart sqle-server
+```
+## 四、确认插件生效
+### 通过日志
+重启后，若成功加载插件，日志中会打印当前加载的审核插件：
 
 ```
 time="2021-10-12T14:06:42+08:00" level=info msg="starting sqled server"
@@ -40,9 +51,11 @@ time="2021-10-12T14:06:42+08:00" level=info msg="plugin inited" plugin_name=Post
 ...
 time="2021-10-12T14:06:43+08:00" level=info msg="starting http server on :10000"
 ```
+### 通过页面
+* 查看 SQLE 规则页面，PostgreSQL 插件支持的审核规则已经加载到 SQLE Server：
 
-查看 SQLE 规则页面，PostgreSQL 插件支持的审核规则已经加载到 SQLE Server：
 ![audit rule for pg](./pictures/audit_rule_for_pg.png)
 
-添加数据源，显示已经可以添加 PostgreSQL 类型的数据源。
+* 添加数据源，显示已经可以添加 PostgreSQL 类型的数据源。
+
 ![create instance with pg](./pictures/create_instance_with_pg.png)
