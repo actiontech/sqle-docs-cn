@@ -1,7 +1,7 @@
 # 审核插件
 
 ## 目录
-* [审核插件管理](./auditplugin_management.md)
+* [审核插件使用](./auditplugin_management.md)
 * [审核插件开发](./auditplugin_development.md)
 
 ## 背景
