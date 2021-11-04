@@ -1,4 +1,4 @@
-# 审核插件
+# 数据库审核插件
 
 ## 目录
 * [数据库审核插件使用](./auditplugin_management.md)
