@@ -7,4 +7,4 @@
 * [白名单管理](3.4_whitelist/whitelist_management.md)
 * [审核工单](3.5_auditworkflow/overview.md)
 * [审核计划](3.6_auditplan/overview.md)
-* [审核插件](3.7_auditplan/overview.md)
+* [数据库审核插件](3.7_auditplan/overview.md)

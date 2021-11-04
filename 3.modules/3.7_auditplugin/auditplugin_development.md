@@ -1,13 +1,82 @@
 # 数据库审核插件开发
-## 一、需要具备的能力
-1. 简单 golang 语言
-2. 对 SQL 审核规则有自己的理解
-
+## 一、本篇文章的目标
+1. 你可以创建一个插件；
+2. 你可以编写数据库审核规则。
 ## 二、开始
-### 1. 引入
 本篇以 PostgreSQL 审核插件为例，介绍如何从头开发 SQLE 的审核插件（ps：PG 插件是我们开源的一个 SQLE 插件范例，感兴趣的可以上 GitHub [sqle-pg-plugin](https://github.com/actiontech/sqle-pg-plugin) 查看）。
+### 1. 引入
+```bash
+go get github.com/actiontech/sqle@v1.2111.0-pre1 # 此版本为该文档编辑时的最新版本
+```
+``` go
+import (
+	"github.com/actiontech/sqle/sqle/driver"
+	"github.com/actiontech/sqle/sqle/model"
+)
+```
+1. `github.com/actiontech/sqle/sqle/driver` 导入插件的接口，初始化函数，参考附录；
+2. `github.com/actiontech/sqle/sqle/model` 导入审核规则的定义。
+### 2. 定义插件的注册信息
+定义一个结构体`registererImpl`实现 `driver.Registerer` 接口，接口说明参考附录。
+```go
+type registererImpl struct{}
 
-总的来说，实现一个审核插件只需 3 步：
+func (s *registererImpl) Name() string {
+    return "PostgreSQL"
+}
+
+const (
+    RuleTypeDMLConvention = "DML规范"
+)
+
+func (s *registererImpl) Rules() []*model.Rule {
+    return []*model.Rule{
+        &model.Rule{
+            Name:      "pg_rule_1",
+            Desc:      "不建议使用select *",
+            Level:     model.RuleLevelNotice,
+            Typ:       RuleTypeDMLConvention,
+            IsDefault: true,
+        },
+    }
+}
+```
+1. 定义该插件名称`PostgreSQL`；
+2. 定义一个审核规则 `不建议使用select *`, 可以定义多个规则，通过`Rules` 函数返回即可。
+### 3. 实现审核驱动
+定义一个结构体`driverImpl`实现 `driver.Driver` 接口，接口说明参考附录。
+```go
+type driverImpl struct {
+	cfg         *driver.Config 
+	// 省略其他字段 
+}
+
+func NewDriver(cfg *driver.Config) driver.Driver {
+	return &driverImpl{
+		cfg:    cfg, 
+		// 省略其他字段
+	}
+}
+
+func (i *driverImpl) Audit(ctx context.Context, sql string) (*driver.AuditResult, error) {
+    result := driver.NewInspectResults()
+    for _, rule := range i.cfg.Rules {
+        switch rule.Name {
+            case "pg_rule_1": // "不建议使用select *"
+            // 假设这里做了 select * 的检查
+            result.Add(rule.Level, "不建议使用select *")
+        }
+    }
+    return result, nil
+}
+```
+1. 定义`driverImpl`结构体实现 `Driver` 接口，上述实例中仅展示`Driver`的`Audit`的接口，用来介绍如何实现一个基于规则的审核
+### 4. 注册插件
+```go
+func main() {
+	driver.ServePlugin(&registererImpl{}, NewDriver)
+}
+```
 ## 附录
 ### 1. 注册接口说明
 该接口定义了该插件的名称和实现的规则，SQLE启动的时候会调用该接口获取插件名称和该插件支持的规则列表。
@@ -43,26 +112,25 @@ type Driver interface {
 7. `Audit`: 根据指定的SQL语句生成审核建议；
 8. `GenRollbackSQL`: 生成 SQL 的回滚语句。
 
-### 3. 初始化函数说明
-
-```go
-func ServePlugin(r Registerer, newDriver func(cfg *Config) Driver)
-```
-实现一个 Driver 实例的构造函数，函数签名为 `func(*driver.Config) driver.Driver`。`driver.Config` 是 SQLE 在准备调用插件前传给插件的一些必要参数：
-
+### 3. 插件的配置信息说明
 ```go
 type Config struct {
-    // 是否是静态审核。
 	IsOfflineAudit bool
-    // 当前审核在此 Schema 下。
 	Schema         string
-    // 用户选择的数据源信息。
 	Inst           *model.Instance
-    // 规则列表。不同数据源的规则列表可能不相同。
 	Rules          []*model.Rule
 }
 ```
+1. `IsOfflineAudit`: 是否使用静态审核，此时数据源为空；
+2. `Schema`: 当前审核在此 Schema 下；
+3. `Inst`: 数据源信息, 待审核的数据库；
+4. `Rules`: 本次审核制定的规则列表。
 
-### 第 3 步：注册插件
+### 4. 初始化函数说明
+插件的主进程入口，由插件的 main 函数调用即可实现插件
+```go
+func ServePlugin(r Registerer, newDriver func(cfg *Config) Driver)
+```
+1. `r`: 传入 Registerer 的接口实现, 由插件侧实现； 
+2. `newDriver`: 传入 Driver 的初始化函数，该函数的入参是 `Config` 是由 SQLE 向插件传递的配置信息，函数的出参是 Driver 的接口实现，由插件侧实现。
 
-在 main 函数中调用插件层的 `ServePlugin()` 函数。该函数第一个参数传入 Registerer 接口的实现；第二个参数传入第 2 步中定义的构造函数。
