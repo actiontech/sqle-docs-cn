@@ -23,6 +23,7 @@
         * [Scanner 管理](3.modules/3.6_auditplan/scanner_management.md)
     * [审核插件](3.modules/3.7_auditplugin/overview.md)
         * [审核插件管理](3.modules/3.7_auditplugin/auditplugin_management.md)
+        * [审核插件开发](3.modules/3.7_auditplugin/auditplugin_development.md)
 * [FAQ](5.faq/overview.md)
     * [安装启用常见问题](5.faq/5.1_deploy.md)
     * [回滚语句常见问题](5.faq/5.2_rollback_sql.md)
