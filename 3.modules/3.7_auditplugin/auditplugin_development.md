@@ -1,12 +1,12 @@
 # 数据库审核插件开发
 ## 一、本篇文章的目标
-1. 你可以创建一个插件；
+1. 你可以新建一个数据库审核插件；
 2. 你可以编写数据库审核规则。
 
 ## 二、开始
-本篇以 PostgreSQL 审核插件为例，介绍如何从头开发 SQLE 的审核插件（ps：PG 插件是我们开源的一个 SQLE 插件范例，感兴趣的可以上 GitHub [sqle-pg-plugin](https://github.com/actiontech/sqle-pg-plugin) 查看）。
+下文以 PostgreSQL 审核插件为例，介绍如何从头开发 SQLE 的数据库审核插件，并添加一条规则；示例忽略SQL解析，数据库的查询和执行等细节，需要更详细的示例可以参考我们开源的 PostgreSQL 数据库审核插件：[sqle-pg-plugin](https://github.com/actiontech/sqle-pg-plugin) 。
 
-### 1. 引入
+### 1. 引入SQLE插件库
 ```bash
 go get github.com/actiontech/sqle@v1.2111.0-pre1 # 此版本为该文档编辑时的最新版本
 ```
@@ -20,7 +20,7 @@ import (
 2. `github.com/actiontech/sqle/sqle/model` 导入审核规则的定义。
 
 ### 2. 定义插件的注册信息
-定义一个结构体`registererImpl`实现 `driver.Registerer` 接口，接口说明参考附录。
+定义一个结构体`registererImpl`实现 `driver.Registerer` 接口，该接口对应的方法将插件名和该数据库插件的审核规则注册到SQLE，接口说明参考附录。
 ```go
 type registererImpl struct{}
 
@@ -35,16 +35,16 @@ const (
 func (s *registererImpl) Rules() []*model.Rule {
     return []*model.Rule{
         &model.Rule{
-            Name:      "pg_rule_1",
-            Desc:      "不建议使用select *",
-            Level:     model.RuleLevelNotice,
-            Typ:       RuleTypeDMLConvention,
-            IsDefault: true,
+            Name:      "pg_rule_1",             // 定义规则的名称，该名称全局唯一；
+            Desc:      "不建议使用select *",     // 规则的描述，会展示在SQLE的规则页面上；
+            Level:     model.RuleLevelNotice,   // 规则的默认影响级别，可以在配置规则模板时灵活修改；
+            Typ:       RuleTypeDMLConvention,   // 规则的分类，可以自由定义，页面的规则分类会按此进行展示；
+            IsDefault: true,                    // 是否加入默认规则模板。为true时，SQLE平台的默认规则模板会加入该条规则。
         },
     }
 }
 ```
-1. 定义该插件名称`PostgreSQL`；
+1. 定义该插件名称`PostgreSQL`，该名称会展示在SQLE页面上，在添加数据库或者审核时可以选择；
 2. 定义一个审核规则 `不建议使用select *`, 可以定义多个规则，通过`Rules` 函数返回即可。
 
 ### 3. 实现审核驱动
@@ -62,13 +62,18 @@ func NewDriver(cfg *driver.Config) driver.Driver {
 	}
 }
 
+// Audit 接收从SQLE传递的SQL语句，输出审核计划 `driver.AuditResult`
 func (i *driverImpl) Audit(ctx context.Context, sql string) (*driver.AuditResult, error) {
-    result := driver.NewInspectResults()
+    result := driver.NewInspectResults() // 新建审核建议
+    
+    // i.cfg.Rules 为本次审核开启的审核规则
     for _, rule := range i.cfg.Rules {
         switch rule.Name {
-            case "pg_rule_1": // "不建议使用select *"
+        case "pg_rule_1": // "不建议使用select *"
+            
             // 假设这里做了 select * 的检查
-            result.Add(rule.Level, "不建议使用select *")
+            
+            result.Add(rule.Level, "不建议使用select *") // 将”不建议使用select *“加入到审核建议内
         }
     }
     return result, nil
