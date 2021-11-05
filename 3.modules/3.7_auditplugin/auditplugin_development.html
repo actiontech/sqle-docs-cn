@@ -545,12 +545,12 @@
                                 <h1 id="&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#x5F00;&#x53D1;">&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#x5F00;&#x53D1;</h1>
 <h2 id="&#x4E00;&#x3001;&#x672C;&#x7BC7;&#x6587;&#x7AE0;&#x7684;&#x76EE;&#x6807;">&#x4E00;&#x3001;&#x672C;&#x7BC7;&#x6587;&#x7AE0;&#x7684;&#x76EE;&#x6807;</h2>
 <ol>
-<li>&#x4F60;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x63D2;&#x4EF6;&#xFF1B;</li>
+<li>&#x4F60;&#x53EF;&#x4EE5;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#xFF1B;</li>
 <li>&#x4F60;&#x53EF;&#x4EE5;&#x7F16;&#x5199;&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x89C4;&#x5219;&#x3002;</li>
 </ol>
 <h2 id="&#x4E8C;&#x3001;&#x5F00;&#x59CB;">&#x4E8C;&#x3001;&#x5F00;&#x59CB;</h2>
-<p>&#x672C;&#x7BC7;&#x4EE5; PostgreSQL &#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#x4E3A;&#x4F8B;&#xFF0C;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x4ECE;&#x5934;&#x5F00;&#x53D1; SQLE &#x7684;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#xFF08;ps&#xFF1A;PG &#x63D2;&#x4EF6;&#x662F;&#x6211;&#x4EEC;&#x5F00;&#x6E90;&#x7684;&#x4E00;&#x4E2A; SQLE &#x63D2;&#x4EF6;&#x8303;&#x4F8B;&#xFF0C;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x53EF;&#x4EE5;&#x4E0A; GitHub <a href="https://github.com/actiontech/sqle-pg-plugin" target="_blank">sqle-pg-plugin</a> &#x67E5;&#x770B;&#xFF09;&#x3002;</p>
-<h3 id="1-&#x5F15;&#x5165;">1. &#x5F15;&#x5165;</h3>
+<p>&#x4E0B;&#x6587;&#x4EE5; PostgreSQL &#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#x4E3A;&#x4F8B;&#xFF0C;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x4ECE;&#x5934;&#x5F00;&#x53D1; SQLE &#x7684;&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;&#x4E00;&#x6761;&#x89C4;&#x5219;&#xFF1B;&#x793A;&#x4F8B;&#x5FFD;&#x7565;SQL&#x89E3;&#x6790;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x7684;&#x67E5;&#x8BE2;&#x548C;&#x6267;&#x884C;&#x7B49;&#x7EC6;&#x8282;&#xFF0C;&#x9700;&#x8981;&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x793A;&#x4F8B;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x6211;&#x4EEC;&#x5F00;&#x6E90;&#x7684; PostgreSQL &#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#xFF1A;<a href="https://github.com/actiontech/sqle-pg-plugin" target="_blank">sqle-pg-plugin</a> &#x3002;</p>
+<h3 id="1-&#x5F15;&#x5165;sqle&#x63D2;&#x4EF6;&#x5E93;">1. &#x5F15;&#x5165;SQLE&#x63D2;&#x4EF6;&#x5E93;</h3>
 <pre><code class="lang-bash">go get github.com/actiontech/sqle@v1.2111.0-pre1 <span class="hljs-comment"># &#x6B64;&#x7248;&#x672C;&#x4E3A;&#x8BE5;&#x6587;&#x6863;&#x7F16;&#x8F91;&#x65F6;&#x7684;&#x6700;&#x65B0;&#x7248;&#x672C;</span>
 </code></pre>
 <pre><code class="lang-go"><span class="hljs-keyword">import</span> (
@@ -563,7 +563,7 @@
 <li><code>github.com/actiontech/sqle/sqle/model</code> &#x5BFC;&#x5165;&#x5BA1;&#x6838;&#x89C4;&#x5219;&#x7684;&#x5B9A;&#x4E49;&#x3002;</li>
 </ol>
 <h3 id="2-&#x5B9A;&#x4E49;&#x63D2;&#x4EF6;&#x7684;&#x6CE8;&#x518C;&#x4FE1;&#x606F;">2. &#x5B9A;&#x4E49;&#x63D2;&#x4EF6;&#x7684;&#x6CE8;&#x518C;&#x4FE1;&#x606F;</h3>
-<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;<code>registererImpl</code>&#x5B9E;&#x73B0; <code>driver.Registerer</code> &#x63A5;&#x53E3;&#xFF0C;&#x63A5;&#x53E3;&#x8BF4;&#x660E;&#x53C2;&#x8003;&#x9644;&#x5F55;&#x3002;</p>
+<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;<code>registererImpl</code>&#x5B9E;&#x73B0; <code>driver.Registerer</code> &#x63A5;&#x53E3;&#xFF0C;&#x8BE5;&#x63A5;&#x53E3;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#x5C06;&#x63D2;&#x4EF6;&#x540D;&#x548C;&#x8BE5;&#x6570;&#x636E;&#x5E93;&#x63D2;&#x4EF6;&#x7684;&#x5BA1;&#x6838;&#x89C4;&#x5219;&#x6CE8;&#x518C;&#x5230;SQLE&#xFF0C;&#x63A5;&#x53E3;&#x8BF4;&#x660E;&#x53C2;&#x8003;&#x9644;&#x5F55;&#x3002;</p>
 <pre><code class="lang-go"><span class="hljs-keyword">type</span> registererImpl <span class="hljs-keyword">struct</span>{}
 
 <span class="hljs-keyword">func</span> (s *registererImpl) Name() <span class="hljs-keyword">string</span> {
@@ -577,17 +577,17 @@
 <span class="hljs-keyword">func</span> (s *registererImpl) Rules() []*model.Rule {
     <span class="hljs-keyword">return</span> []*model.Rule{
         &amp;model.Rule{
-            Name:      <span class="hljs-string">&quot;pg_rule_1&quot;</span>,
-            Desc:      <span class="hljs-string">&quot;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;select *&quot;</span>,
-            Level:     model.RuleLevelNotice,
-            Typ:       RuleTypeDMLConvention,
-            IsDefault: <span class="hljs-literal">true</span>,
+            Name:      <span class="hljs-string">&quot;pg_rule_1&quot;</span>,             <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x89C4;&#x5219;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x8BE5;&#x540D;&#x79F0;&#x5168;&#x5C40;&#x552F;&#x4E00;&#xFF1B;</span>
+            Desc:      <span class="hljs-string">&quot;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;select *&quot;</span>,     <span class="hljs-comment">// &#x89C4;&#x5219;&#x7684;&#x63CF;&#x8FF0;&#xFF0C;&#x4F1A;&#x5C55;&#x793A;&#x5728;SQLE&#x7684;&#x89C4;&#x5219;&#x9875;&#x9762;&#x4E0A;&#xFF1B;</span>
+            Level:     model.RuleLevelNotice,   <span class="hljs-comment">// &#x89C4;&#x5219;&#x7684;&#x9ED8;&#x8BA4;&#x5F71;&#x54CD;&#x7EA7;&#x522B;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x914D;&#x7F6E;&#x89C4;&#x5219;&#x6A21;&#x677F;&#x65F6;&#x7075;&#x6D3B;&#x4FEE;&#x6539;&#xFF1B;</span>
+            Typ:       RuleTypeDMLConvention,   <span class="hljs-comment">// &#x89C4;&#x5219;&#x7684;&#x5206;&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x5B9A;&#x4E49;&#xFF0C;&#x9875;&#x9762;&#x7684;&#x89C4;&#x5219;&#x5206;&#x7C7B;&#x4F1A;&#x6309;&#x6B64;&#x8FDB;&#x884C;&#x5C55;&#x793A;&#xFF1B;</span>
+            IsDefault: <span class="hljs-literal">true</span>,                    <span class="hljs-comment">// &#x662F;&#x5426;&#x52A0;&#x5165;&#x9ED8;&#x8BA4;&#x89C4;&#x5219;&#x6A21;&#x677F;&#x3002;&#x4E3A;true&#x65F6;&#xFF0C;SQLE&#x5E73;&#x53F0;&#x7684;&#x9ED8;&#x8BA4;&#x89C4;&#x5219;&#x6A21;&#x677F;&#x4F1A;&#x52A0;&#x5165;&#x8BE5;&#x6761;&#x89C4;&#x5219;&#x3002;</span>
         },
     }
 }
 </code></pre>
 <ol>
-<li>&#x5B9A;&#x4E49;&#x8BE5;&#x63D2;&#x4EF6;&#x540D;&#x79F0;<code>PostgreSQL</code>&#xFF1B;</li>
+<li>&#x5B9A;&#x4E49;&#x8BE5;&#x63D2;&#x4EF6;&#x540D;&#x79F0;<code>PostgreSQL</code>&#xFF0C;&#x8BE5;&#x540D;&#x79F0;&#x4F1A;&#x5C55;&#x793A;&#x5728;SQLE&#x9875;&#x9762;&#x4E0A;&#xFF0C;&#x5728;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#x5E93;&#x6216;&#x8005;&#x5BA1;&#x6838;&#x65F6;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#xFF1B;</li>
 <li>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5BA1;&#x6838;&#x89C4;&#x5219; <code>&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;select *</code>, &#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x591A;&#x4E2A;&#x89C4;&#x5219;&#xFF0C;&#x901A;&#x8FC7;<code>Rules</code> &#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x5373;&#x53EF;&#x3002;</li>
 </ol>
 <h3 id="3-&#x5B9E;&#x73B0;&#x5BA1;&#x6838;&#x9A71;&#x52A8;">3. &#x5B9E;&#x73B0;&#x5BA1;&#x6838;&#x9A71;&#x52A8;</h3>
@@ -604,13 +604,18 @@
     }
 }
 
+<span class="hljs-comment">// Audit &#x63A5;&#x6536;&#x4ECE;SQLE&#x4F20;&#x9012;&#x7684;SQL&#x8BED;&#x53E5;&#xFF0C;&#x8F93;&#x51FA;&#x5BA1;&#x6838;&#x8BA1;&#x5212; `driver.AuditResult`</span>
 <span class="hljs-keyword">func</span> (i *driverImpl) Audit(ctx context.Context, sql <span class="hljs-keyword">string</span>) (*driver.AuditResult, error) {
-    result := driver.NewInspectResults()
+    result := driver.NewInspectResults() <span class="hljs-comment">// &#x65B0;&#x5EFA;&#x5BA1;&#x6838;&#x5EFA;&#x8BAE;</span>
+
+    <span class="hljs-comment">// i.cfg.Rules &#x4E3A;&#x672C;&#x6B21;&#x5BA1;&#x6838;&#x5F00;&#x542F;&#x7684;&#x5BA1;&#x6838;&#x89C4;&#x5219;</span>
     <span class="hljs-keyword">for</span> _, rule := <span class="hljs-keyword">range</span> i.cfg.Rules {
         <span class="hljs-keyword">switch</span> rule.Name {
-            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;pg_rule_1&quot;</span>: <span class="hljs-comment">// &quot;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;select *&quot;</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;pg_rule_1&quot;</span>: <span class="hljs-comment">// &quot;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;select *&quot;</span>
+
             <span class="hljs-comment">// &#x5047;&#x8BBE;&#x8FD9;&#x91CC;&#x505A;&#x4E86; select * &#x7684;&#x68C0;&#x67E5;</span>
-            result.Add(rule.Level, <span class="hljs-string">&quot;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;select *&quot;</span>)
+
+            result.Add(rule.Level, <span class="hljs-string">&quot;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;select *&quot;</span>) <span class="hljs-comment">// &#x5C06;&#x201D;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;select *&#x201C;&#x52A0;&#x5165;&#x5230;&#x5BA1;&#x6838;&#x5EFA;&#x8BAE;&#x5185;</span>
         }
     }
     <span class="hljs-keyword">return</span> result, <span class="hljs-literal">nil</span>
@@ -724,7 +729,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据库审核插件开发","level":"1.4.7.2","depth":3,"next":{"title":"FAQ","level":"1.5","depth":1,"path":"5.faq/overview.md","ref":"5.faq/overview.md","articles":[{"title":"安装启用常见问题","level":"1.5.1","depth":2,"path":"5.faq/5.1_deploy.md","ref":"5.faq/5.1_deploy.md","articles":[]},{"title":"回滚语句常见问题","level":"1.5.2","depth":2,"path":"5.faq/5.2_rollback_sql.md","ref":"5.faq/5.2_rollback_sql.md","articles":[]}]},"previous":{"title":"数据库审核插件使用","level":"1.4.7.1","depth":3,"path":"3.modules/3.7_auditplugin/auditplugin_management.md","ref":"3.modules/3.7_auditplugin/auditplugin_management.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/3.7_auditplugin/auditplugin_development.md","mtime":"2021-11-04T15:56:43.921Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-04T15:57:16.373Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数据库审核插件开发","level":"1.4.7.2","depth":3,"next":{"title":"FAQ","level":"1.5","depth":1,"path":"5.faq/overview.md","ref":"5.faq/overview.md","articles":[{"title":"安装启用常见问题","level":"1.5.1","depth":2,"path":"5.faq/5.1_deploy.md","ref":"5.faq/5.1_deploy.md","articles":[]},{"title":"回滚语句常见问题","level":"1.5.2","depth":2,"path":"5.faq/5.2_rollback_sql.md","ref":"5.faq/5.2_rollback_sql.md","articles":[]}]},"previous":{"title":"数据库审核插件使用","level":"1.4.7.1","depth":3,"path":"3.modules/3.7_auditplugin/auditplugin_management.md","ref":"3.modules/3.7_auditplugin/auditplugin_management.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/3.7_auditplugin/auditplugin_development.md","mtime":"2021-11-05T03:36:45.391Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-05T03:37:29.306Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
