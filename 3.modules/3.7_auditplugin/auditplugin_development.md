@@ -3,6 +3,9 @@
 1. 你可以新建一个数据库审核插件；
 2. 你可以编写数据库审核规则。
 
+## 二、SQLE与插件的交互图
+![sqle call plugin](./pictures/sqle_call_plugin.png)
+
 ## 二、开始
 下文以 PostgreSQL 审核插件为例，介绍如何从头开发 SQLE 的数据库审核插件，并添加一条规则；示例忽略SQL解析，数据库的查询和执行等细节，需要更详细的示例可以参考我们开源的 PostgreSQL 数据库审核插件：[sqle-pg-plugin](https://github.com/actiontech/sqle-pg-plugin) 。
 
