@@ -543,96 +543,183 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#x5F00;&#x53D1;">&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#x5F00;&#x53D1;</h1>
-<h2 id="&#x4E00;&#x3001;&#x672C;&#x7BC7;&#x6587;&#x7AE0;&#x7684;&#x76EE;&#x6807;">&#x4E00;&#x3001;&#x672C;&#x7BC7;&#x6587;&#x7AE0;&#x7684;&#x76EE;&#x6807;</h2>
-<ol>
-<li>&#x4F60;&#x53EF;&#x4EE5;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#xFF1B;</li>
-<li>&#x4F60;&#x53EF;&#x4EE5;&#x7F16;&#x5199;&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x89C4;&#x5219;&#x3002;</li>
-</ol>
-<h2 id="&#x4E8C;&#x3001;sqle&#x4E0E;&#x63D2;&#x4EF6;&#x7684;&#x4EA4;&#x4E92;&#x56FE;">&#x4E8C;&#x3001;SQLE&#x4E0E;&#x63D2;&#x4EF6;&#x7684;&#x4EA4;&#x4E92;&#x56FE;</h2>
-<p><img src="pictures/sqle_call_plugin.png" alt="sqle call plugin"></p>
-<h2 id="&#x4E8C;&#x3001;&#x5F00;&#x59CB;">&#x4E8C;&#x3001;&#x5F00;&#x59CB;</h2>
-<p>&#x4E0B;&#x6587;&#x4EE5; PostgreSQL &#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#x4E3A;&#x4F8B;&#xFF0C;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x4ECE;&#x5934;&#x5F00;&#x53D1; SQLE &#x7684;&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;&#x4E00;&#x6761;&#x89C4;&#x5219;&#xFF1B;&#x793A;&#x4F8B;&#x5FFD;&#x7565;SQL&#x89E3;&#x6790;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x7684;&#x67E5;&#x8BE2;&#x548C;&#x6267;&#x884C;&#x7B49;&#x7EC6;&#x8282;&#xFF0C;&#x9700;&#x8981;&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x793A;&#x4F8B;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x6211;&#x4EEC;&#x5F00;&#x6E90;&#x7684; PostgreSQL &#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#xFF1A;<a href="https://github.com/actiontech/sqle-pg-plugin" target="_blank">sqle-pg-plugin</a> &#x3002;</p>
-<h3 id="1-&#x5F15;&#x5165;sqle&#x63D2;&#x4EF6;&#x5E93;">1. &#x5F15;&#x5165;SQLE&#x63D2;&#x4EF6;&#x5E93;</h3>
-<pre><code class="lang-bash">go get github.com/actiontech/sqle@v1.2111.0-pre1 <span class="hljs-comment"># &#x6B64;&#x7248;&#x672C;&#x4E3A;&#x8BE5;&#x6587;&#x6863;&#x7F16;&#x8F91;&#x65F6;&#x7684;&#x6700;&#x65B0;&#x7248;&#x672C;</span>
+<p>&#x5728;&#x672C;&#x7BC7;&#x6587;&#x6863;&#x4E2D;&#xFF0C;&#x4F1A;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5F00;&#x53D1;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#xFF0C;&#x5206;&#x4E3A;<strong>&#x5FEB;&#x901F;&#x5F00;&#x59CB;&#x90E8;&#x5206;</strong>&#x548C;<strong>&#x8BE6;&#x7EC6;&#x90E8;&#x5206;</strong>&#x3002;&#x5982;&#x679C;&#x4F60;&#x662F;&#x4E00;&#x4E2A;&#x5BF9; Go &#x8BED;&#x8A00;&#x4E0D;&#x592A;&#x4E86;&#x89E3;&#x7684;&#x4EBA;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x901A;&#x8FC7;<strong>&#x5FEB;&#x901F;&#x5F00;&#x59CB;&#x90E8;&#x5206;</strong>&#x7684;&#x6587;&#x6863;&#xFF0C;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#x3002;&#x5F53;&#x4F60;&#x5BF9;&#x63D2;&#x4EF6;&#x5F00;&#x53D1;&#x6709;&#x4E86;&#x4E00;&#x5B9A;&#x7684;&#x4E86;&#x89E3;&#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<strong>&#x8BE6;&#x7EC6;&#x90E8;&#x5206;</strong>&#x7684;&#x6587;&#x6863;&#xFF0C;&#x901A;&#x8FC7;&#x66F4;&#x591A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5B9E;&#x73B0;&#x66F4;&#x52A0;&#x590D;&#x6742;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#x3002;</p>
+<h2 id="&#x5FEB;&#x901F;&#x5F00;&#x59CB;&#x90E8;&#x5206;">&#x5FEB;&#x901F;&#x5F00;&#x59CB;&#x90E8;&#x5206;</h2>
+<h3 id="&#x4E00;&#x3001;&#x524D;&#x7F6E;">&#x4E00;&#x3001;&#x524D;&#x7F6E;</h3>
+<h4 id="1-&#x8BED;&#x6CD5;">1. &#x8BED;&#x6CD5;</h4>
+<p>&#x7531;&#x4E8E; SQLE &#x662F;&#x4E00;&#x4E2A;&#x7528; Go &#x8BED;&#x8A00;&#x5F00;&#x53D1;&#x7684;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5BF9; Go &#x8BED;&#x8A00;&#x5B8C;&#x5168;&#x4E0D;&#x4E86;&#x89E3;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x4E86;&#x89E3; Go &#x8BED;&#x8A00;&#x7684;&#x57FA;&#x7840;&#x8BED;&#x6CD5;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x5B98;&#x65B9;&#x7684; Go &#x8BED;&#x8A00;&#x5FEB;&#x901F;&#x5F00;&#x59CB;&#x6587;&#x6863;&#xFF08;<a href="https://tour.golang.org/welcome/1" target="_blank">Go Tour</a> &#x6216;&#x8005; <a href="https://tour.go-zh.org/welcome/1" target="_blank">Go &#x8BED;&#x8A00;&#x4E4B;&#x65C5;</a>&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5DF2;&#x7ECF;&#x4E86;&#x89E3;&#x4E86; Go &#x8BED;&#x8A00;&#x7684;&#x57FA;&#x7840;&#x8BED;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8DF3;&#x8FC7;&#x672C;&#x90E8;&#x5206;&#x3002;</p>
+<h4 id="2-&#x5305;&#x7BA1;&#x7406;">2. &#x5305;&#x7BA1;&#x7406;</h4>
+<p>SQLE &#x63D2;&#x4EF6;&#x662F;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x4E8E; SQLE &#x7684;&#x8FDB;&#x7A0B;&#xFF0C;&#x6240;&#x4EE5;&#x7F16;&#x5199;&#x63D2;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x4E0E;&#x5F00;&#x53D1;&#x4E00;&#x4E2A;&#x65B0;&#x7684; Go &#x8BED;&#x8A00;&#x9879;&#x76EE;&#x5E76;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x5DEE;&#x5F02;&#x3002;Go &#x8BED;&#x8A00;&#x9879;&#x76EE;&#x4F7F;&#x7528; Go Modules &#x6765;&#x7BA1;&#x7406;&#x5305;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x5F00;&#x59CB;&#x4E4B;&#x524D;&#x4F60;&#x9700;&#x8981;&#x5148;&#x4E86;&#x89E3;&#x4E00;&#x4E0B; Go Modules &#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x3002;&#x5EFA;&#x8BAE;&#x53C2;&#x8003;<a href="https://golang.org/doc/tutorial/getting-started" target="_blank">&#x8FD9;&#x7BC7;&#x6587;&#x6863;</a>&#xFF0C;&#x6587;&#x6863;&#x4E2D;&#x5927;&#x81F4;&#x4ECB;&#x7ECD;&#x4E86;&#x5982;&#x679C;&#x5F00;&#x59CB;&#x4E00;&#x4E2A;&#x65B0;&#x7684; Go &#x8BED;&#x8A00;&#x9879;&#x76EE;&#xFF0C;&#x5E76;&#x901A;&#x8FC7; Go Modules &#x7684;&#x65B9;&#x5F0F;&#x6765;&#x8C03;&#x7528;&#x5176;&#x4ED6;&#x9879;&#x76EE;&#x7684;&#x5305;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5DF2;&#x7ECF;&#x4E86;&#x89E3;&#x4E86; Go Modules &#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8DF3;&#x8FC7;&#x672C;&#x90E8;&#x5206;&#x3002;</p>
+<h4 id="3-go-&#x8BED;&#x8A00;&#x9879;&#x76EE;&#x6784;&#x5EFA;">3. Go &#x8BED;&#x8A00;&#x9879;&#x76EE;&#x6784;&#x5EFA;</h4>
+<h3 id="&#x4E8C;&#x3001;&#x7F16;&#x5199;&#x63D2;&#x4EF6;">&#x4E8C;&#x3001;&#x7F16;&#x5199;&#x63D2;&#x4EF6;</h3>
+<p>&#x8FD9;&#x4E00;&#x5C0F;&#x8282;&#x4F1A;&#x5047;&#x8BBE;&#x4F60;&#x5DF2;&#x7ECF;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x7531; Go Modules &#x7BA1;&#x7406;&#x7684;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#x9879;&#x76EE;&#x3002;&#x4E0B;&#x9762;&#x5F00;&#x59CB;&#x4ECB;&#x7ECD;&#x63D2;&#x4EF6;&#x6838;&#x5FC3;&#x4EE3;&#x7801;&#x7684;&#x5F00;&#x53D1;&#x3002;</p>
+<h4 id="1-&#x63D2;&#x4EF6;&#x5E93;&#x4ECB;&#x7ECD;">1. &#x63D2;&#x4EF6;&#x5E93;&#x4ECB;&#x7ECD;</h4>
+<p>SQLE &#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x63D2;&#x4EF6;&#x7684;&#x5F00;&#x53D1;&#xFF0C;&#x5728;&#x81EA;&#x8EAB;&#x7684;&#x63D2;&#x4EF6;&#x5C42;&#x4E4B;&#x4E0A;&#x505A;&#x4E86;&#x4E00;&#x5C42;&#x5C01;&#x88C5;&#xFF08;Adaptor&#xFF09;&#xFF0C;&#x63D2;&#x4EF6;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x5C01;&#x88C5;&#x5E93;&#x6765;&#x5FEB;&#x901F;&#x7684;&#x5F00;&#x53D1;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#x3002;</p>
+<p>&#x5728;&#x5F00;&#x53D1;&#x4E4B;&#x524D;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5148;&#x5F15;&#x5165; SQLE&#xFF1A;</p>
+<pre><code class="lang-bash">go get github.com/actiontech/sqle@v1.2111.0-pre3 <span class="hljs-comment"># &#x6B64;&#x7248;&#x672C;&#x4E3A;&#x8BE5;&#x6587;&#x6863;&#x7F16;&#x8F91;&#x65F6;&#x7684;&#x6700;&#x65B0;&#x7248;&#x672C;</span>
 </code></pre>
-<pre><code class="lang-go"><span class="hljs-keyword">import</span> (
+<p>&#x9009;&#x62E9; SQLE &#x4E2D;&#x4E24;&#x4E2A;&#x5E93;&#x63D2;&#x4EF6;&#x76F8;&#x5173;&#x7684;&#x5E93;&#xFF1A;</p>
+<ol>
+<li>github.com/actiontech/sqle/sqle/driver</li>
+<li>github.com/actiontech/sqle/sqle/pkg/driver</li>
+</ol>
+<p>&#x7B2C;&#x4E00;&#x4E2A;&#x5E93;&#x5B9A;&#x4E49;&#x4E86;&#x63D2;&#x4EF6;&#x89C4;&#x5219;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x5728;&#x4F60;&#x7F16;&#x5199;&#x63D2;&#x4EF6;&#x89C4;&#x5219;&#x65F6;&#x9700;&#x8981;&#x7528;&#x5230;&#x8FD9;&#x4E2A;&#x5E93;&#x3002;</p>
+<p>&#x7B2C;&#x4E8C;&#x4E2A;&#x5E93;&#x4E2D;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E9B;&#x9ED8;&#x8BA4;&#x7684;&#x63D2;&#x4EF6;&#xFF0C;&#x5728;&#x5F15;&#x5165;&#x8FD9;&#x4E2A;&#x5E93;&#x540E;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x76F8;&#x5E94;&#x7684;&#x89C4;&#x5219;&#x4E0E;&#x89C4;&#x5219;&#x5904;&#x7406;&#x51FD;&#x6570;&#x5373;&#x53EF;&#x3002;&#x5176;&#x4E2D;&#x4E09;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x63D2;&#x4EF6;&#x4E3A;&#xFF1A;</p>
+<ol>
+<li>PostgreSQL</li>
+<li>Oracle</li>
+<li>SQL Server</li>
+</ol>
+<p>&#x5982;&#x679C;&#x8FD9;&#x4E09;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x63D2;&#x4EF6;&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;&#x9700;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x63D2;&#x4EF6;&#xFF0C;&#x53C2;&#x8003;&#x672C;&#x7BC7;&#x6587;&#x6863;&#x300C;<strong>&#x81EA;&#x5B9A;&#x4E49;&#x63D2;&#x4EF6;</strong>&#x300D;&#x5C0F;&#x8282;&#x3002;</p>
+<h4 id="2-&#x9009;&#x62E9;&#x63D2;&#x4EF6;">2. &#x9009;&#x62E9;&#x63D2;&#x4EF6;</h4>
+<p>&#x4E0B;&#x9762;&#x5047;&#x8BBE;&#x4F60;&#x60F3;&#x8981;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A; SQL Server &#x7684;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#x3002;&#x5728; main &#x51FD;&#x6570;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7A7A;&#x7684; SQL Server &#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#xFF0C;&#x8FD9;&#x65F6;&#x4F60;&#x7684; main &#x6587;&#x4EF6;&#x5E94;&#x8BE5;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-Go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
     <span class="hljs-string">&quot;github.com/actiontech/sqle/sqle/driver&quot;</span>
-    <span class="hljs-string">&quot;github.com/actiontech/sqle/sqle/model&quot;</span>
-)
-</code></pre>
-<ol>
-<li><code>github.com/actiontech/sqle/sqle/driver</code> &#x5BFC;&#x5165;&#x63D2;&#x4EF6;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x51FD;&#x6570;&#xFF0C;&#x53C2;&#x8003;&#x9644;&#x5F55;&#xFF1B;</li>
-<li><code>github.com/actiontech/sqle/sqle/model</code> &#x5BFC;&#x5165;&#x5BA1;&#x6838;&#x89C4;&#x5219;&#x7684;&#x5B9A;&#x4E49;&#x3002;</li>
-</ol>
-<h3 id="2-&#x5B9A;&#x4E49;&#x63D2;&#x4EF6;&#x7684;&#x6CE8;&#x518C;&#x4FE1;&#x606F;">2. &#x5B9A;&#x4E49;&#x63D2;&#x4EF6;&#x7684;&#x6CE8;&#x518C;&#x4FE1;&#x606F;</h3>
-<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;<code>registererImpl</code>&#x5B9E;&#x73B0; <code>driver.Registerer</code> &#x63A5;&#x53E3;&#xFF0C;&#x8BE5;&#x63A5;&#x53E3;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#x5C06;&#x63D2;&#x4EF6;&#x540D;&#x548C;&#x8BE5;&#x6570;&#x636E;&#x5E93;&#x63D2;&#x4EF6;&#x7684;&#x5BA1;&#x6838;&#x89C4;&#x5219;&#x6CE8;&#x518C;&#x5230;SQLE&#xFF0C;&#x63A5;&#x53E3;&#x8BF4;&#x660E;&#x53C2;&#x8003;&#x9644;&#x5F55;&#x3002;</p>
-<pre><code class="lang-go"><span class="hljs-keyword">type</span> registererImpl <span class="hljs-keyword">struct</span>{}
-
-<span class="hljs-keyword">func</span> (s *registererImpl) Name() <span class="hljs-keyword">string</span> {
-    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;PostgreSQL&quot;</span>
-}
-
-<span class="hljs-keyword">const</span> (
-    RuleTypeDMLConvention = <span class="hljs-string">&quot;DML&#x89C4;&#x8303;&quot;</span>
+    adaptor <span class="hljs-string">&quot;github.com/actiontech/sqle/sqle/pkg/driver&quot;</span>
 )
 
-<span class="hljs-keyword">func</span> (s *registererImpl) Rules() []*model.Rule {
-    <span class="hljs-keyword">return</span> []*model.Rule{
-        &amp;model.Rule{
-            Name:      <span class="hljs-string">&quot;pg_rule_1&quot;</span>,             <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x89C4;&#x5219;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x8BE5;&#x540D;&#x79F0;&#x5168;&#x5C40;&#x552F;&#x4E00;&#xFF1B;</span>
-            Desc:      <span class="hljs-string">&quot;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;select *&quot;</span>,     <span class="hljs-comment">// &#x89C4;&#x5219;&#x7684;&#x63CF;&#x8FF0;&#xFF0C;&#x4F1A;&#x5C55;&#x793A;&#x5728;SQLE&#x7684;&#x89C4;&#x5219;&#x9875;&#x9762;&#x4E0A;&#xFF1B;</span>
-            Level:     model.RuleLevelNotice,   <span class="hljs-comment">// &#x89C4;&#x5219;&#x7684;&#x9ED8;&#x8BA4;&#x5F71;&#x54CD;&#x7EA7;&#x522B;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x914D;&#x7F6E;&#x89C4;&#x5219;&#x6A21;&#x677F;&#x65F6;&#x7075;&#x6D3B;&#x4FEE;&#x6539;&#xFF1B;</span>
-            Typ:       RuleTypeDMLConvention,   <span class="hljs-comment">// &#x89C4;&#x5219;&#x7684;&#x5206;&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x5B9A;&#x4E49;&#xFF0C;&#x9875;&#x9762;&#x7684;&#x89C4;&#x5219;&#x5206;&#x7C7B;&#x4F1A;&#x6309;&#x6B64;&#x8FDB;&#x884C;&#x5C55;&#x793A;&#xFF1B;</span>
-            IsDefault: <span class="hljs-literal">true</span>,                    <span class="hljs-comment">// &#x662F;&#x5426;&#x52A0;&#x5165;&#x9ED8;&#x8BA4;&#x89C4;&#x5219;&#x6A21;&#x677F;&#x3002;&#x4E3A;true&#x65F6;&#xFF0C;SQLE&#x5E73;&#x53F0;&#x7684;&#x9ED8;&#x8BA4;&#x89C4;&#x5219;&#x6A21;&#x677F;&#x4F1A;&#x52A0;&#x5165;&#x8BE5;&#x6761;&#x89C4;&#x5219;&#x3002;</span>
-        },
-    }
+<span class="hljs-keyword">func</span> main() {
+    plugin := adaptor.NewAdaptor(&amp;adaptor.MssqlDialector{})
 }
 </code></pre>
-<ol>
-<li>&#x5B9A;&#x4E49;&#x8BE5;&#x63D2;&#x4EF6;&#x540D;&#x79F0;<code>PostgreSQL</code>&#xFF0C;&#x8BE5;&#x540D;&#x79F0;&#x4F1A;&#x5C55;&#x793A;&#x5728;SQLE&#x9875;&#x9762;&#x4E0A;&#xFF0C;&#x5728;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#x5E93;&#x6216;&#x8005;&#x5BA1;&#x6838;&#x65F6;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#xFF1B;</li>
-<li>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5BA1;&#x6838;&#x89C4;&#x5219; <code>&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;select *</code>, &#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x591A;&#x4E2A;&#x89C4;&#x5219;&#xFF0C;&#x901A;&#x8FC7;<code>Rules</code> &#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x5373;&#x53EF;&#x3002;</li>
-</ol>
-<h3 id="3-&#x5B9E;&#x73B0;&#x5BA1;&#x6838;&#x9A71;&#x52A8;">3. &#x5B9E;&#x73B0;&#x5BA1;&#x6838;&#x9A71;&#x52A8;</h3>
-<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;<code>driverImpl</code>&#x5B9E;&#x73B0; <code>driver.Driver</code> &#x63A5;&#x53E3;&#xFF0C;&#x63A5;&#x53E3;&#x8BF4;&#x660E;&#x53C2;&#x8003;&#x9644;&#x5F55;&#x3002;</p>
-<pre><code class="lang-go"><span class="hljs-keyword">type</span> driverImpl <span class="hljs-keyword">struct</span> {
-    cfg         *driver.Config 
-    <span class="hljs-comment">// &#x7701;&#x7565;&#x5176;&#x4ED6;&#x5B57;&#x6BB5; </span>
+<h4 id="3-&#x7F16;&#x5199;&#x63D2;&#x4EF6;&#x89C4;&#x5219;&#x4E0E;&#x89C4;&#x5219;&#x5904;&#x7406;&#x51FD;&#x6570;">3. &#x7F16;&#x5199;&#x63D2;&#x4EF6;&#x89C4;&#x5219;&#x4E0E;&#x89C4;&#x5219;&#x5904;&#x7406;&#x51FD;&#x6570;</h4>
+<p>&#x5047;&#x8BBE;&#x4F60;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x89C4;&#x5219;&#xFF0C;&#x8BE5;&#x89C4;&#x5219;&#x68C0;&#x67E5; SQL &#x662F;&#x5426;&#x4F7F;&#x7528;&#x4E86; select *&#x3002;</p>
+<p>&#x5B9A;&#x4E49;&#x89C4;&#x5219;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-Go">Rule{
+    Name:     <span class="hljs-string">&quot;aviod_select_all_column&quot;</span>, # &#x89C4;&#x5219;ID&#xFF0C;&#x8BE5;&#x503C;&#x4F1A;&#x4E0E;&#x63D2;&#x4EF6;&#x7C7B;&#x578B;&#x4E00;&#x8D77;&#x4F5C;&#x4E3A;&#x8FD9;&#x6761;&#x89C4;&#x5219;&#x5728; SQLE &#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;
+    Desc:     <span class="hljs-string">&quot;&#x907F;&#x514D;&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x7684;&#x5217;&quot;</span>, # &#x89C4;&#x5219;&#x63CF;&#x8FF0;
+    Category: <span class="hljs-string">&quot;DQL&#x89C4;&#x8303;&quot;</span>, # &#x89C4;&#x5219;&#x5206;&#x7C7B;&#xFF0C;&#x7528;&#x4E8E;&#x5206;&#x7EC4;&#xFF0C;&#x76F8;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x89C4;&#x5219;&#x4F1A;&#x5728; SQLE &#x7684;&#x9875;&#x9762;&#x4E0A;&#x5C55;&#x793A;&#x5728;&#x4E00;&#x8D77;
+    Level:    driver.RuleLevelError, # &#x89C4;&#x5219;&#x7B49;&#x7EA7;&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x89C4;&#x5219;&#x7684;&#x4E25;&#x91CD;&#x7A0B;&#x5EA6;&#x3002;&#x5728;&#x63D2;&#x4EF6;&#x6CE8;&#x518C;&#x9636;&#x6BB5;&#xFF0C;&#x4F1A;&#x4F7F;&#x7528;&#x6240;&#x6709; RuleLevelError &#x7EA7;&#x522B;&#x7684;&#x89C4;&#x5219;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x89C4;&#x5219;&#x6A21;&#x677F;&#x3002;
 }
-
-<span class="hljs-keyword">func</span> NewDriver(cfg *driver.Config) driver.Driver {
-    <span class="hljs-keyword">return</span> &amp;driverImpl{
-        cfg:    cfg, 
-        <span class="hljs-comment">// &#x7701;&#x7565;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;</span>
+</code></pre>
+<p>&#x89C4;&#x5219;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-Go"><span class="hljs-keyword">func</span>(ctx context.Context, rule *driver.Rule, sql <span class="hljs-keyword">string</span>) (<span class="hljs-keyword">string</span>, error) {
+    <span class="hljs-keyword">if</span> strings.Contains(sql, <span class="hljs-string">&quot;select *&quot;</span>) {
+        <span class="hljs-keyword">return</span> rule.Desc, <span class="hljs-literal">nil</span>
     }
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-literal">nil</span>
 }
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x4E3A;&#x4E86;&#x6F14;&#x793A;&#xFF0C;&#x8FD9;&#x4E2A;&#x5904;&#x7406;&#x51FD;&#x6570;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x7684;&#x4F7F;&#x7528;&#x4E86;&#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x6216;&#x8005; AST &#x8BED;&#x6CD5;&#x6811;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x68C0;&#x67E5; SQL &#x8BED;&#x53E5;&#xFF08;AST &#x7684;&#x65B9;&#x5F0F;&#x4F1A;&#x5728;&#x300C;<strong>&#x81EA;&#x5B9A;&#x4E49; SQL &#x89E3;&#x6790;&#x5668;</strong>&#x300D;&#x4E00;&#x5C0F;&#x8282;&#x4E2D;&#x4ECB;&#x7ECD;&#xFF09;&#x3002;</p>
+<p>&#x6700;&#x540E;&#x5C06;&#x63D2;&#x4EF6;&#x89C4;&#x5219;&#x4E0E;&#x89C4;&#x5219;&#x5904;&#x7406;&#x51FD;&#x6570;&#x901A;&#x8FC7; <code>plugin.AddRule()</code> &#x51FD;&#x6570;&#x6CE8;&#x518C;&#x5230; SQLE &#x4E2D;&#xFF0C;&#x6CE8;&#x518C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x4F60;&#x7684; main &#x6587;&#x4EF6;&#x5E94;&#x8BE5;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-Go"><span class="hljs-keyword">package</span> main
 
-<span class="hljs-comment">// Audit &#x63A5;&#x6536;&#x4ECE;SQLE&#x4F20;&#x9012;&#x7684;SQL&#x8BED;&#x53E5;&#xFF0C;&#x8F93;&#x51FA;&#x5BA1;&#x6838;&#x8BA1;&#x5212; `driver.AuditResult`</span>
-<span class="hljs-keyword">func</span> (i *driverImpl) Audit(ctx context.Context, sql <span class="hljs-keyword">string</span>) (*driver.AuditResult, error) {
-    result := driver.NewInspectResults() <span class="hljs-comment">// &#x65B0;&#x5EFA;&#x5BA1;&#x6838;&#x5EFA;&#x8BAE;</span>
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;github.com/actiontech/sqle/sqle/driver&quot;</span>
+    adaptor <span class="hljs-string">&quot;github.com/actiontech/sqle/sqle/pkg/driver&quot;</span>
+)
 
-    <span class="hljs-comment">// i.cfg.Rules &#x4E3A;&#x672C;&#x6B21;&#x5BA1;&#x6838;&#x5F00;&#x542F;&#x7684;&#x5BA1;&#x6838;&#x89C4;&#x5219;</span>
-    <span class="hljs-keyword">for</span> _, rule := <span class="hljs-keyword">range</span> i.cfg.Rules {
-        <span class="hljs-keyword">switch</span> rule.Name {
-        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;pg_rule_1&quot;</span>: <span class="hljs-comment">// &quot;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;select *&quot;</span>
-
-            <span class="hljs-comment">// &#x5047;&#x8BBE;&#x8FD9;&#x91CC;&#x505A;&#x4E86; select * &#x7684;&#x68C0;&#x67E5;</span>
-
-            result.Add(rule.Level, <span class="hljs-string">&quot;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;select *&quot;</span>) <span class="hljs-comment">// &#x5C06;&#x201D;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;select *&#x201C;&#x52A0;&#x5165;&#x5230;&#x5BA1;&#x6838;&#x5EFA;&#x8BAE;&#x5185;</span>
+<span class="hljs-keyword">func</span> main() {
+    plugin := adaptor.NewAdaptor(&amp;adaptor.MssqlDialector{})
+    aviodSelectAllColumn := &amp;driver.Rule{
+        Name:     <span class="hljs-string">&quot;aviod_select_all_column&quot;</span>,
+        Desc:     <span class="hljs-string">&quot;&#x907F;&#x514D;&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x7684;&#x5217;&quot;</span>,
+        Category: <span class="hljs-string">&quot;DQL&#x89C4;&#x8303;&quot;</span>,
+        Level:    driver.RuleLevelError,
+    }
+    aviodSelectAllColumnHandler := <span class="hljs-keyword">func</span>(ctx context.Context, rule *driver.Rule, sql <span class="hljs-keyword">string</span>) (<span class="hljs-keyword">string</span>, error) {
+        <span class="hljs-keyword">if</span> strings.Contains(sql, <span class="hljs-string">&quot;select *&quot;</span>) {
+            <span class="hljs-keyword">return</span> rule.Desc, <span class="hljs-literal">nil</span>
         }
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-literal">nil</span>
     }
-    <span class="hljs-keyword">return</span> result, <span class="hljs-literal">nil</span>
+    plugin.AddRule(aviodSelectAllColumn, aviodSelectAllColumnHandler)
+
+    <span class="hljs-comment">////////////////////////////////////////////</span>
+    <span class="hljs-comment">// ... &#x7F16;&#x5199;&#x66F4;&#x591A;&#x89C4;&#x5219;&#x5E76;&#x901A;&#x8FC7; AddRule &#x6CE8;&#x518C;&#x5230; SQLE &#x4E2D;</span>
+    <span class="hljs-comment">////////////////////////////////////////////</span>
+
+    <span class="hljs-comment">// &#x6700;&#x540E;&#x5173;&#x952E;&#x4E00;&#x6B65;&#xFF0C;&#x8C03;&#x7528; `plugin.Serve()` &#x542F;&#x52A8;&#x63D2;&#x4EF6;&#xFF1A;</span>
+    plugin.Serve() 
 }
 </code></pre>
+<h4 id="4-&#x6784;&#x5EFA;&#x5E76;&#x4F7F;&#x7528;&#x63D2;&#x4EF6;">4. &#x6784;&#x5EFA;&#x5E76;&#x4F7F;&#x7528;&#x63D2;&#x4EF6;</h4>
+<p>&#x548C;&#x901A;&#x5E38;&#x7684;&#x7A0B;&#x5E8F;&#x7F16;&#x5199;&#x6D41;&#x7A0B;&#x4E00;&#x6837;&#xFF0C;&#x7F16;&#x5199;&#x5B8C;&#x63D2;&#x4EF6;&#x4EE3;&#x7801;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x5C06;&#x5176;&#x6784;&#x5EFA;&#x6210;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x624D;&#x80FD;&#x5C06;&#x5176;&#x6CE8;&#x518C;&#x5230; SQLE &#x4E2D;&#x3002;&#x6267;&#x884C; <code>go build -o ${&#x4E8C;&#x8FDB;&#x5236;&#x540D;} main.go</code> &#x5C06;&#x63D2;&#x4EF6;&#x4EE3;&#x7801;&#x6784;&#x5EFA;&#x6210;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x3002;&#x6700;&#x540E;&#x53C2;&#x8003;<a href="auditplugin_management.html">&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#x4F7F;&#x7528;</a> &#x6765;&#x4F7F;&#x7528;&#x4F60;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x63D2;&#x4EF6;&#x3002;</p>
+<h3 id="&#x4E8C;&#x3001;-&#x81EA;&#x5B9A;&#x4E49;&#x90E8;&#x5206;">&#x4E8C;&#x3001; &#x81EA;&#x5B9A;&#x4E49;&#x90E8;&#x5206;</h3>
+<h4 id="1-&#x81EA;&#x5B9A;&#x4E49;-sql-&#x89E3;&#x6790;&#x5668;">1. &#x81EA;&#x5B9A;&#x4E49; SQL &#x89E3;&#x6790;&#x5668;</h4>
+<p>&#x524D;&#x9762;&#x4ECB;&#x7ECD;&#x7684;&#x5BA1;&#x6838;&#x89C4;&#x5219;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x89E3;&#x6790; SQL &#x7684;&#x5185;&#x5BB9;&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x9002;&#x5408;&#x89C4;&#x5219;&#x8F83;&#x5C11;&#x4E14; SQL &#x7B80;&#x5355;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x5BF9; SQL &#x8FDB;&#x884C;&#x66F4;&#x590D;&#x6742;&#x7684;&#x89E3;&#x6790;&#x5339;&#x914D;&#xFF0C;&#x6070;&#x597D;&#x4F60;&#x9009;&#x62E9;&#x7684;&#x6570;&#x636E;&#x5E93;&#x63D2;&#x4EF6;&#x53C8;&#x6709;&#x76F8;&#x5E94;&#x7684; SQL &#x89E3;&#x6790;&#x5668;&#xFF0C;&#x8FD9;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49; SQL &#x89E3;&#x6790;&#x5668;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x7F16;&#x5199;&#x63D2;&#x4EF6;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x901A;&#x8FC7;&#x8C03;&#x7528; <code>WithSQLParser()</code> &#x6CE8;&#x518C;&#x81EA;&#x5DF1;&#x7684; SQL &#x89E3;&#x6790;&#x5668;&#x3002;&#x5728;&#x6DFB;&#x52A0;&#x89C4;&#x5219;&#x65F6;&#x5219;&#x4F7F;&#x7528; <code>plugin.AddRuleWithSQLParser()</code> &#x6DFB;&#x52A0;&#x5E26;&#x6709;&#x89E3;&#x6790;&#x5668;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;&#x3002;&#x5728;&#x5904;&#x7406;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x5C06; interface{} &#x65AD;&#x8A00;&#x6210;&#x5177;&#x4F53;&#x7684; AST &#x8BED;&#x6CD5;&#x6811;&#xFF0C;&#x901A;&#x8FC7;&#x8BED;&#x6CD5;&#x6811;&#x7EA7;&#x522B;&#x7684;&#x64CD;&#x4F5C;&#x6765;&#x66F4;&#x52A0;&#x7CBE;&#x7EC6;&#x7684;&#x5904;&#x7406; SQL&#x3002;PostgreSQL &#x63D0;&#x4F9B;&#x4E86;&#x57FA;&#x4E8E; cgo &#x8C03;&#x7528;&#x7684;&#x89E3;&#x6790;&#x5668;&#xFF08;&#x89C1;&#xFF1A;<a href="github.com/pganalyze/pg_query_go/v2">PostgreSQL SQL &#x89E3;&#x6790;&#x5668;</a>&#xFF09;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5C55;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x5199;&#x4E00;&#x4E2A; SQL &#x89E3;&#x6790;&#x5668;&#x7684;&#x63D2;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-Go"><span class="hljs-keyword">func</span> main() {
+    plugin := adaptor.NewAdaptor(&amp;adaptor.PostgresDialector{})
+
+    <span class="hljs-comment">// &#x4F9D;&#x7136;&#x662F;&#x5B9A;&#x4E49;&#x89C4;&#x5219;</span>
+    aviodSelectAllColumn := &amp;driver.Rule{
+        Name:     <span class="hljs-string">&quot;aviod_select_all_column&quot;</span>,
+        Desc:     <span class="hljs-string">&quot;&#x907F;&#x514D;&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x7684;&#x5217;&quot;</span>,
+        Category: <span class="hljs-string">&quot;DQL&#x89C4;&#x8303;&quot;</span>,
+        Level:    driver.RuleLevelError,
+    }
+
+    <span class="hljs-comment">// &#x4F9D;&#x7136;&#x662F;&#x5B9A;&#x4E49;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x65F6;&#x5904;&#x7406;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x662F; interface{} &#x7C7B;&#x578B;&#xFF0C;&#x9700;&#x8981;&#x5C06;&#x5176;&#x65AD;&#x8A00;&#x6210; AST &#x8BED;&#x6CD5;&#x6811;&#x3002;</span>
+    aviodSelectAllColumnHandler := <span class="hljs-keyword">func</span>(ctx context.Context, rule *driver.Rule, ast <span class="hljs-keyword">interface</span>{}) (<span class="hljs-keyword">string</span>, error) {
+        node, ok := ast.(*parser.RawStmt)
+        <span class="hljs-keyword">if</span> !ok {
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>, errors.New(<span class="hljs-string">&quot;ast is not *parser.RawStmt&quot;</span>)
+        }
+
+        <span class="hljs-keyword">switch</span> stmt := node.GetStmt().GetNode().(<span class="hljs-keyword">type</span>) {
+        <span class="hljs-keyword">case</span> *parser.Node_SelectStmt:
+            <span class="hljs-keyword">for</span> _, target := <span class="hljs-keyword">range</span> stmt.SelectStmt.GetTargetList() {
+                column, ok := target.GetResTarget().GetVal().GetNode().(*parser.Node_ColumnRef)
+                <span class="hljs-keyword">if</span> !ok {
+                    <span class="hljs-keyword">continue</span>
+                }
+                <span class="hljs-keyword">for</span> _, filed := <span class="hljs-keyword">range</span> column.ColumnRef.GetFields() {
+                    _, ok = filed.GetNode().(*parser.Node_AStar)
+                    <span class="hljs-keyword">if</span> ok {
+                        <span class="hljs-keyword">return</span> rule.Desc, <span class="hljs-literal">nil</span>
+                    }
+                }
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-literal">nil</span>
+    }
+
+    <span class="hljs-comment">// &#x4F9D;&#x7136;&#x662F;&#x6CE8;&#x518C;&#x89C4;&#x5219;&#xFF0C;&#x4E0E;&#x524D;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x662F; `plugin.AddRuleWithSQLParser()` &#x3002;</span>
+    plugin.AddRuleWithSQLParser(aviodSelectAllColumn, aviodSelectAllColumnHandler)
+
+    <span class="hljs-comment">// &#x4F9D;&#x7136;&#x662F;&#x542F;&#x52A8;&#x63D2;&#x4EF6;&#xFF0C;&#x4E0E;&#x524D;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x9700;&#x8981;&#x5C06; SQL &#x89E3;&#x6790;&#x7684;&#x65B9;&#x6CD5;&#x6CE8;&#x518C;&#x5230;&#x63D2;&#x4EF6;&#x4E2D;&#x3002;</span>
+    plugin.Serve(adaptor.WithSQLParser(<span class="hljs-keyword">func</span>(sql <span class="hljs-keyword">string</span>) (ast <span class="hljs-keyword">interface</span>{}, err error) {
+        <span class="hljs-comment">// parser.Parse &#x4F7F;&#x7528; PostgreSQL &#x7684;&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x5C06; sql &#x89E3;&#x6790;&#x6210; AST &#x8BED;&#x6CD5;&#x6811;&#x3002;</span>
+        result, err := parser.Parse(sql)
+        <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>, errors.Wrap(err, <span class="hljs-string">&quot;parse sql error&quot;</span>)
+        }
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(result.Stmts) != <span class="hljs-number">1</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>, fmt.Errorf(<span class="hljs-string">&quot;unexpected statement count: %d&quot;</span>, <span class="hljs-built_in">len</span>(result.Stmts))
+        }
+
+        <span class="hljs-comment">// &#x5C06; SQL &#x7684;&#x8BED;&#x6CD5;&#x6811;&#x8FD4;&#x56DE;&#x3002;</span>
+        <span class="hljs-keyword">return</span> result.Stmts[<span class="hljs-number">0</span>], <span class="hljs-literal">nil</span>
+    }))
+}
+</code></pre>
+<h4 id="2-&#x81EA;&#x5B9A;&#x4E49;&#x63D2;&#x4EF6;">2. &#x81EA;&#x5B9A;&#x4E49;&#x63D2;&#x4EF6;</h4>
+<p>&#x5982;&#x679C; driver &#x5305;&#x4E2D;&#x9ED8;&#x8BA4;&#x7684; PostgreSQL&#x3001;Oracle &#x4E0E; SQL Server &#x63D2;&#x4EF6;&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;&#x4F60;&#x7684;&#x9700;&#x6C42;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x63D2;&#x4EF6;&#x3002;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF1A;</p>
+<pre><code class="lang-Go"><span class="hljs-keyword">type</span> Dialector <span class="hljs-keyword">interface</span> {
+    Dialect(dsn *driver.DSN) (driverName <span class="hljs-keyword">string</span>, dsnDetail <span class="hljs-keyword">string</span>)
+    ShowDatabaseSQL() <span class="hljs-keyword">string</span>
+    String() <span class="hljs-keyword">string</span>
+}
+</code></pre>
+<p>&#x5728;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x524D;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5148;&#x4E86;&#x89E3;&#x4E00;&#x4E0B; Go &#x8BED;&#x8A00;&#x539F;&#x751F; Driver &#x7684;&#x6982;&#x5FF5;&#xFF08;&#x4EE5; <a href="https://github.com/go-sql-driver/mysql" target="_blank">MySQL Driver</a> &#x4E3A;&#x4F8B;&#xFF09;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x4ECB;&#x7ECD; Dialector &#x63A5;&#x53E3;&#x7684;&#x542B;&#x4E49;&#xFF1A;</p>
 <ol>
-<li>&#x5B9A;&#x4E49;<code>driverImpl</code>&#x7ED3;&#x6784;&#x4F53;&#x5B9E;&#x73B0; <code>Driver</code> &#x63A5;&#x53E3;&#xFF0C;&#x4E0A;&#x8FF0;&#x5B9E;&#x4F8B;&#x4E2D;&#x4EC5;&#x5C55;&#x793A;<code>Driver</code>&#x7684;<code>Audit</code>&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x7528;&#x6765;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x89C4;&#x5219;&#x7684;&#x5BA1;&#x6838;</li>
+<li><code>Dialect</code>&#xFF1A;&#x5B9E;&#x73B0;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x901A;&#x8FC7; DSN &#x63D0;&#x4F9B;&#x7684; Host Port User Password Database &#x4FE1;&#x606F;&#x548C;&#x4F60;&#x9009;&#x62E9;&#x7684;&#x6570;&#x636E;&#x5E93; driver&#xFF0C;&#x6784;&#x9020;&#x51FA; driverName &#x4E0E; dsnDetail&#x3002;driverName &#x662F;&#x4F60;&#x5F15;&#x5165;&#x7684;&#x6570;&#x636E;&#x5E93; driver &#x540D;&#x79F0;&#xFF1B;dsnDetail &#x662F;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x9A71;&#x52A8;&#x7684;&#x5FC5;&#x8981;&#x4FE1;&#x606F;&#x3002;&#x8FD9;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x6700;&#x7EC8;&#x4F1A;&#x901A;&#x8FC7; <code>sql.Open()</code> &#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x3002;</li>
+<li><code>ShowDatabaseSQL</code>&#xFF1A;&#x5B9E;&#x73B0;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x4F60;&#x6570;&#x636E;&#x6E90;&#x4E2D;&#x9ED8;&#x8BA4;&#x5C55;&#x793A;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5217;&#x8868;&#xFF0C;&#x8BE5;&#x6570;&#x636E;&#x5E93;&#x5217;&#x8868;&#x6700;&#x7EC8;&#x4F1A;&#x5C55;&#x793A;&#x5728;&#x5DE5;&#x5355;&#x5BA1;&#x6838;&#x5217;&#x8868;&#x7684;&#x6570;&#x636E;&#x5E93;&#x4E0B;&#x62C9;&#x6846;&#x4E2D;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;
+<img src="pictures/database_list_of_instance.png" alt="&#x6570;&#x636E;&#x5E93;&#x5217;&#x8868;"></li>
+<li><code>String</code>&#xFF1A;&#x5B9E;&#x73B0;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x4F1A;&#x4F5C;&#x4E3A;&#x4F60;&#x5B9E;&#x73B0;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#x540D;&#x5C55;&#x793A;&#x5728; SQLE &#x7684;&#x76F8;&#x5173;&#x4E0B;&#x62C9;&#x6846;&#x4E2D;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;
+<img src="pictures/instance_type_list.png" alt="&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#x5217;&#x8868;"></li>
 </ol>
-<h3 id="4-&#x6CE8;&#x518C;&#x63D2;&#x4EF6;">4. &#x6CE8;&#x518C;&#x63D2;&#x4EF6;</h3>
-<pre><code class="lang-go"><span class="hljs-keyword">func</span> main() {
-    driver.ServePlugin(&amp;registererImpl{}, NewDriver)
-}
-</code></pre>
-<h2 id="&#x9644;&#x5F55;">&#x9644;&#x5F55;</h2>
-<h3 id="1-&#x6CE8;&#x518C;&#x63A5;&#x53E3;&#x8BF4;&#x660E;">1. &#x6CE8;&#x518C;&#x63A5;&#x53E3;&#x8BF4;&#x660E;</h3>
+<p>&#x5C06;&#x4F60;&#x7684;&#x5B9E;&#x73B0;&#x4F5C;&#x4E3A; NewAdaptor &#x7684;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x5373;&#x53EF;&#xFF0C;&#x540E;&#x7EED;&#x7684;&#x6B65;&#x9AA4;&#x4E0E;&#x524D;&#x9762;&#x89C4;&#x5219;&#x76F8;&#x5173;&#x7684;&#x4ECB;&#x7ECD;&#x4E00;&#x81F4;&#x3002;</p>
+<h2 id="&#x4E8C;&#x3001;&#x8BE6;&#x7EC6;&#x90E8;&#x5206;">&#x4E8C;&#x3001;&#x8BE6;&#x7EC6;&#x90E8;&#x5206;</h2>
+<h3 id="1-sqle&#x4E0E;&#x63D2;&#x4EF6;&#x7684;&#x4EA4;&#x4E92;&#x56FE;">1. SQLE&#x4E0E;&#x63D2;&#x4EF6;&#x7684;&#x4EA4;&#x4E92;&#x56FE;</h3>
+<p><img src="pictures/sqle_call_plugin.png" alt="sqle call plugin"></p>
+<h3 id="2-&#x63D2;&#x4EF6;&#x63A5;&#x53E3;&#x8BF4;&#x660E;">2. &#x63D2;&#x4EF6;&#x63A5;&#x53E3;&#x8BF4;&#x660E;</h3>
+<h4 id="21-&#x6CE8;&#x518C;&#x63A5;&#x53E3;&#x8BF4;&#x660E;">2.1 &#x6CE8;&#x518C;&#x63A5;&#x53E3;&#x8BF4;&#x660E;</h4>
 <p>&#x8BE5;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x4E86;&#x8BE5;&#x63D2;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x548C;&#x5B9E;&#x73B0;&#x7684;&#x89C4;&#x5219;&#xFF0C;SQLE&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x8C03;&#x7528;&#x8BE5;&#x63A5;&#x53E3;&#x83B7;&#x53D6;&#x63D2;&#x4EF6;&#x540D;&#x79F0;&#x548C;&#x8BE5;&#x63D2;&#x4EF6;&#x652F;&#x6301;&#x7684;&#x89C4;&#x5219;&#x5217;&#x8868;&#x3002;</p>
 <pre><code class="lang-go"><span class="hljs-keyword">type</span> Registerer <span class="hljs-keyword">interface</span> {
     Name() <span class="hljs-keyword">string</span>
@@ -643,7 +730,7 @@
 <li><code>Name</code>: &#x63D2;&#x4EF6;&#x540D;&#xFF0C;&#x6700;&#x7EC8;&#x4F1A;&#x5C55;&#x793A;&#x5728; SQLE &#x9875;&#x9762;&#x7684;&#x6570;&#x636E;&#x6E90;&#x7C7B;&#x578B;&#x7684;&#x4E0B;&#x62C9;&#x6846;&#x4E2D;&#xFF1B;</li>
 <li><code>Rules</code>: &#x63D2;&#x4EF6;&#x652F;&#x6301;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x5728;&#x542F;&#x52A8; SQLE &#x65F6;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;&#x63D2;&#x4EF6;&#x83B7;&#x53D6;&#x8FD9;&#x4E9B;&#x89C4;&#x5219;&#xFF0C;&#x4F60;&#x5C06;&#x5728;&#x89C4;&#x5219;&#x6A21;&#x677F;&#x5185;&#x770B;&#x5230;&#x5B83;&#x4EEC;&#x3002;</li>
 </ol>
-<h3 id="2-&#x5BA1;&#x6838;&#x63A5;&#x53E3;&#x8BF4;&#x660E;">2. &#x5BA1;&#x6838;&#x63A5;&#x53E3;&#x8BF4;&#x660E;</h3>
+<h4 id="22-&#x5BA1;&#x6838;&#x63A5;&#x53E3;&#x8BF4;&#x660E;">2.2 &#x5BA1;&#x6838;&#x63A5;&#x53E3;&#x8BF4;&#x660E;</h4>
 <p>&#x8BE5;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x4E86;SQLE&#x8FDB;&#x884C;&#x5BA1;&#x6838;&#x65F6;&#xFF0C;&#x7531;&#x63D2;&#x4EF6;&#x5B8C;&#x6210;&#x7684;&#x548C;&#x5177;&#x4F53;&#x6570;&#x636E;&#x5E93;&#x5E95;&#x5C42;&#x4EA4;&#x4E92;&#x7684;&#x64CD;&#x4F5C;</p>
 <pre><code class="lang-go"><span class="hljs-keyword">type</span> Driver <span class="hljs-keyword">interface</span> {
     Close(ctx context.Context)
@@ -666,21 +753,17 @@
 <li><code>Audit</code>: &#x6839;&#x636E;&#x6307;&#x5B9A;&#x7684;SQL&#x8BED;&#x53E5;&#x751F;&#x6210;&#x5BA1;&#x6838;&#x5EFA;&#x8BAE;&#xFF1B;</li>
 <li><code>GenRollbackSQL</code>: &#x751F;&#x6210; SQL &#x7684;&#x56DE;&#x6EDA;&#x8BED;&#x53E5;&#x3002;</li>
 </ol>
-<h3 id="3-&#x63D2;&#x4EF6;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x8BF4;&#x660E;">3. &#x63D2;&#x4EF6;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x8BF4;&#x660E;</h3>
+<h4 id="23-&#x63D2;&#x4EF6;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x8BF4;&#x660E;">2.3 &#x63D2;&#x4EF6;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x8BF4;&#x660E;</h4>
 <pre><code class="lang-go"><span class="hljs-keyword">type</span> Config <span class="hljs-keyword">struct</span> {
-    IsOfflineAudit <span class="hljs-keyword">bool</span>
-    Schema         <span class="hljs-keyword">string</span>
-    Inst           *model.Instance
-    Rules          []*model.Rule
+    DSN           *DSN
+    Rules          []*Rule
 }
 </code></pre>
 <ol>
-<li><code>IsOfflineAudit</code>: &#x662F;&#x5426;&#x4F7F;&#x7528;&#x9759;&#x6001;&#x5BA1;&#x6838;&#xFF0C;&#x6B64;&#x65F6;&#x6570;&#x636E;&#x6E90;&#x4E3A;&#x7A7A;&#xFF1B;</li>
-<li><code>Schema</code>: &#x5F53;&#x524D;&#x5BA1;&#x6838;&#x5728;&#x6B64; Schema &#x4E0B;&#xFF1B;</li>
-<li><code>Inst</code>: &#x6570;&#x636E;&#x6E90;&#x4FE1;&#x606F;, &#x5F85;&#x5BA1;&#x6838;&#x7684;&#x6570;&#x636E;&#x5E93;&#xFF1B;</li>
+<li><code>DSN</code>: &#x6570;&#x636E;&#x6E90;&#x4FE1;&#x606F;, &#x5F85;&#x5BA1;&#x6838;&#x7684;&#x6570;&#x636E;&#x5E93;&#xFF1B;</li>
 <li><code>Rules</code>: &#x672C;&#x6B21;&#x5BA1;&#x6838;&#x5236;&#x5B9A;&#x7684;&#x89C4;&#x5219;&#x5217;&#x8868;&#x3002;</li>
 </ol>
-<h3 id="4-&#x521D;&#x59CB;&#x5316;&#x51FD;&#x6570;&#x8BF4;&#x660E;">4. &#x521D;&#x59CB;&#x5316;&#x51FD;&#x6570;&#x8BF4;&#x660E;</h3>
+<h4 id="24-&#x521D;&#x59CB;&#x5316;&#x51FD;&#x6570;&#x8BF4;&#x660E;">2.4 &#x521D;&#x59CB;&#x5316;&#x51FD;&#x6570;&#x8BF4;&#x660E;</h4>
 <p>&#x63D2;&#x4EF6;&#x7684;&#x4E3B;&#x8FDB;&#x7A0B;&#x5165;&#x53E3;&#xFF0C;&#x7531;&#x63D2;&#x4EF6;&#x7684; main &#x51FD;&#x6570;&#x8C03;&#x7528;&#x5373;&#x53EF;&#x5B9E;&#x73B0;&#x63D2;&#x4EF6;</p>
 <pre><code class="lang-go"><span class="hljs-keyword">func</span> ServePlugin(r Registerer, newDriver <span class="hljs-keyword">func</span>(cfg *Config) Driver)
 </code></pre>
@@ -731,7 +814,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据库审核插件开发","level":"1.4.7.2","depth":3,"next":{"title":"FAQ","level":"1.5","depth":1,"path":"5.faq/overview.md","ref":"5.faq/overview.md","articles":[{"title":"安装启用常见问题","level":"1.5.1","depth":2,"path":"5.faq/5.1_deploy.md","ref":"5.faq/5.1_deploy.md","articles":[]},{"title":"回滚语句常见问题","level":"1.5.2","depth":2,"path":"5.faq/5.2_rollback_sql.md","ref":"5.faq/5.2_rollback_sql.md","articles":[]}]},"previous":{"title":"数据库审核插件使用","level":"1.4.7.1","depth":3,"path":"3.modules/3.7_auditplugin/auditplugin_management.md","ref":"3.modules/3.7_auditplugin/auditplugin_management.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/3.7_auditplugin/auditplugin_development.md","mtime":"2021-11-05T09:52:26.607Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-05T09:53:12.194Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数据库审核插件开发","level":"1.4.7.2","depth":3,"next":{"title":"FAQ","level":"1.5","depth":1,"path":"5.faq/overview.md","ref":"5.faq/overview.md","articles":[{"title":"安装启用常见问题","level":"1.5.1","depth":2,"path":"5.faq/5.1_deploy.md","ref":"5.faq/5.1_deploy.md","articles":[]},{"title":"回滚语句常见问题","level":"1.5.2","depth":2,"path":"5.faq/5.2_rollback_sql.md","ref":"5.faq/5.2_rollback_sql.md","articles":[]}]},"previous":{"title":"数据库审核插件使用","level":"1.4.7.1","depth":3,"path":"3.modules/3.7_auditplugin/auditplugin_management.md","ref":"3.modules/3.7_auditplugin/auditplugin_management.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/3.7_auditplugin/auditplugin_development.md","mtime":"2021-11-19T05:10:02.994Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-19T05:10:35.080Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
