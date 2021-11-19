@@ -114,7 +114,7 @@ func main() {
 
 如果你编写的数据库插件有相应的 SQL 解析器，这时你可以通过调用 `plugin.WithSQLParser()` 来注册自己的 SQL 解析器。在添加规则时则使用 `plugin.AddRuleWithSQLParser()` 来添加带有解析器的处理函数。在处理函数中，将 interface{} 断言成具体的 AST 语法树，通过语法树级别的操作来更加精细的处理 SQL。
 
-#### 4.2 自定义插件
+##### 4.2 自定义插件
 如果 driver 包中默认的 PostgreSQL、Oracle 与 SQL Server 插件不能满足你的需求的话，你也可以自定义一个数据库插件。方法就是实现一个接口：
 ```Go
 type Dialector interface {
@@ -128,8 +128,10 @@ type Dialector interface {
 
 下面介绍 Dialector 接口的含义：
 1. `Dialect`：实现该方法，通过 DSN 提供的 Host Port User Password Database 信息和你选择的数据库 driver，构造出 driverName 与 dsnDetail。driverName 是你引入的数据库 driver 名称；dsnDetail 是连接数据库驱动的必要信息。
-2. `ShowDatabaseSQL`：实现该方法，可以自定义你数据源中默认展示的数据库列表，该数据库列表最终会展示在工单审核列表的数据库下拉框中。
-3. `String`：实现该方法，该方法的返回值会作为你实现的数据库审核插件名展示在 SQLE 的相关下拉框中
+2. `ShowDatabaseSQL`：实现该方法，可以自定义你数据源中默认展示的数据库列表，该数据库列表最终会展示在工单审核列表的数据库下拉框中，如下图：
+![数据库列表](./pictures/database_list_of_instance.png)
+3. `String`：实现该方法，该方法的返回值会作为你实现的数据库审核插件名展示在 SQLE 的相关下拉框中，如下图：
+![审核插件列表](./pictures/instance_type_list.png)
 
 将你的实现作为 NewAdaptor 的参数传入即可，后续的步骤与前面规则相关的介绍一致。
 
