@@ -25,7 +25,7 @@ SQLE 为了方便插件的开发，在自身的插件层之上做了一层封装
 在开发之前，你需要先引入 SQLE：
 
 ```bash
-go get github.com/actiontech/sqle@v1.2111.0-pre1 # 此版本为该文档编辑时的最新版本
+go get github.com/actiontech/sqle@v1.2111.0-pre3 # 此版本为该文档编辑时的最新版本
 ```
 
 选择 SQLE 中两个库插件相关的库：
