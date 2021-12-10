@@ -32,7 +32,6 @@ SQLE 是由[上海爱可生信息技术股份有限公司](http://www.actionsky.
 ### SQL 上线
 1. 支持 SQL 上线；
 2. 支持对大表进行 Online DDL([使用文档](../3.modules/3.5_auditworkflow/online_ddl.html))；
-3. 支持 SQL 上线进度展示。
 
 ### SQL 审核计划
 1. 支持通过标准接口收集来自业务的 SQL 统计信息；
