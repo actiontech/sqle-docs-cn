@@ -18,6 +18,7 @@
     * [审核工单](3.modules/3.5_auditworkflow/overview.md)
         * [审核工单管理](3.modules/3.5_auditworkflow/auditworkflow_management.md)
         * [Online DDL](3.modules/3.5_auditworkflow/online_ddl.md)
+        * [索引优化](3.modules/3.5_auditworkflow/index_optimization.md)
     * [审核计划](3.modules/3.6_auditplan/overview.md)
         * [审核计划管理](3.modules/3.6_auditplan/auditplan_management.md)
         * [Scanner 管理](3.modules/3.6_auditplan/scanner_management.md)

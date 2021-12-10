@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>流程模板管理 · SQLE manual</title>
+        <title>索引优化 · SQLE manual</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../3.4_whitelist/whitelist_management.html" />
+    <link rel="next" href="../3.6_auditplan/overview.html" />
     
     
-    <link rel="prev" href="rule_template_management.html" />
+    <link rel="prev" href="online_ddl.html" />
     
 
     </head>
@@ -254,9 +254,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="overview.html">
+        <li class="chapter " data-level="1.4.3" data-path="../3.3_template/overview.html">
             
-                <a href="overview.html">
+                <a href="../3.3_template/overview.html">
             
                     
                     模板管理
@@ -268,9 +268,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.3.1" data-path="rule_template_management.html">
+        <li class="chapter " data-level="1.4.3.1" data-path="../3.3_template/rule_template_management.html">
             
-                <a href="rule_template_management.html">
+                <a href="../3.3_template/rule_template_management.html">
             
                     
                     规则模板管理
@@ -281,9 +281,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.3.2" data-path="workflow_template_management.html">
+        <li class="chapter " data-level="1.4.3.2" data-path="../3.3_template/workflow_template_management.html">
             
-                <a href="workflow_template_management.html">
+                <a href="../3.3_template/workflow_template_management.html">
             
                     
                     流程模板管理
@@ -312,9 +312,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.5" data-path="../3.5_auditworkflow/overview.html">
+        <li class="chapter " data-level="1.4.5" data-path="overview.html">
             
-                <a href="../3.5_auditworkflow/overview.html">
+                <a href="overview.html">
             
                     
                     审核工单
@@ -326,9 +326,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.5.1" data-path="../3.5_auditworkflow/auditworkflow_management.html">
+        <li class="chapter " data-level="1.4.5.1" data-path="auditworkflow_management.html">
             
-                <a href="../3.5_auditworkflow/auditworkflow_management.html">
+                <a href="auditworkflow_management.html">
             
                     
                     审核工单管理
@@ -339,9 +339,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.5.2" data-path="../3.5_auditworkflow/online_ddl.html">
+        <li class="chapter " data-level="1.4.5.2" data-path="online_ddl.html">
             
-                <a href="../3.5_auditworkflow/online_ddl.html">
+                <a href="online_ddl.html">
             
                     
                     Online DDL
@@ -352,9 +352,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.5.3" data-path="../3.5_auditworkflow/index_optimization.html">
+        <li class="chapter active" data-level="1.4.5.3" data-path="index_optimization.html">
             
-                <a href="../3.5_auditworkflow/index_optimization.html">
+                <a href="index_optimization.html">
             
                     
                     索引优化
@@ -540,7 +540,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >流程模板管理</a>
+        <a href="../.." >索引优化</a>
     </h1>
 </div>
 
@@ -555,21 +555,52 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x6D41;&#x7A0B;&#x6A21;&#x677F;&#x7BA1;&#x7406;&#xFF08;&#x4F01;&#x4E1A;&#x7248;&#x529F;&#x80FD;&#xFF09;">&#x6D41;&#x7A0B;&#x6A21;&#x677F;&#x7BA1;&#x7406;&#xFF08;&#x4F01;&#x4E1A;&#x7248;&#x529F;&#x80FD;&#xFF09;</h1>
-<p><a href="https://en.wikipedia.org/wiki/Workflow" target="_blank">&#x5DE5;&#x4F5C;&#x6D41;</a>&#x8981;&#x89E3;&#x51B3;&#x7684;&#x4E3B;&#x8981;&#x95EE;&#x9898;&#x662F;&#xFF1A;&#x4E3A;&#x5B9E;&#x73B0;&#x67D0;&#x4E2A;&#x4E1A;&#x52A1;&#x76EE;&#x6807;&#xFF0C;&#x5728;&#x591A;&#x4E2A;&#x53C2;&#x4E0E;&#x8005;&#x4E4B;&#x95F4;&#x6309;&#x67D0;&#x79CD;&#x9884;&#x5B9A;&#x89C4;&#x5219;&#x81EA;&#x52A8;&#x4F20;&#x9012;&#x6587;&#x6863;&#x3001;&#x4FE1;&#x606F;&#x6216;&#x8005;&#x4EFB;&#x52A1;&#x3002;</p>
-<p>SQLE &#x4F7F;&#x7528;&#x5DE5;&#x4F5C;&#x6D41;&#x6765;&#x89E3;&#x51B3; SQL &#x4E0A;&#x7EBF;&#x7684;&#x6D41;&#x7A0B;&#x5316;&#x95EE;&#x9898;&#x3002;&#x5728; SQLE &#x4E2D;&#x79F0;&#x4E3A;&#x6D41;&#x7A0B;&#x6A21;&#x677F;&#x3002;</p>
-<h2 id="&#x521B;&#x5EFA;&#x6D41;&#x7A0B;&#x6A21;&#x677F;">&#x521B;&#x5EFA;&#x6D41;&#x7A0B;&#x6A21;&#x677F;</h2>
-<p>&#x5728;&#x5DE6;&#x4FA7;&#x5BFC;&#x822A;&#x680F;&#x7684;&#x300C;&#x5E73;&#x53F0;&#x7BA1;&#x7406;&#x300D;&#x4E2D;&#x7684;&#x300C;&#x6D41;&#x7A0B;&#x7BA1;&#x7406;&#x300D;&#x9875;&#x9762;&#x4E2D;&#xFF0C;&#x70B9;&#x51FB;&#x300C;&#x521B;&#x5EFA;&#x6D41;&#x7A0B;&#x6A21;&#x677F;&#x300D;&#xFF0C;&#x586B;&#x5199;&#x6D41;&#x7A0B;&#x6A21;&#x677F;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x3002;</p>
-<h3 id="&#x6B65;&#x9AA4;-1&#xFF1A;">&#x6B65;&#x9AA4; 1&#xFF1A;</h3>
-<p><img src="pictures/create_workflow_template_step1.png" alt="create workflow template step1"></p>
-<h3 id="&#x6B65;&#x9AA4;-2&#xFF1A;">&#x6B65;&#x9AA4; 2&#xFF1A;</h3>
-<p><img src="pictures/create_workflow_template_step2.png" alt="create workflow template step2"></p>
-<p>&#x5728;&#x8FD9;&#x4E00;&#x6B65;&#x4E2D;&#xFF0C;&#x6DFB;&#x52A0;&#x4E86;&#x4E24;&#x4E2A;&#x5BA1;&#x6838;&#x6B65;&#x9AA4;&#xFF1A;</p>
-<ul>
-<li>&#x5DE5;&#x5355;&#x521B;&#x5EFA;&#x540E;&#xFF0C;&#x6D41;&#x8F6C;&#x5230; DBA &#x521D;&#x5BA1;</li>
-<li>DBA &#x521D;&#x5BA1;&#x540E;&#xFF0C;&#x6D41;&#x8F6C;&#x5230;&#x90E8;&#x95E8;&#x9886;&#x5BFC;&#x590D;&#x5BA1;</li>
-</ul>
-<p>&#x6700;&#x540E;&#xFF0C;&#x90E8;&#x95E8;&#x9886;&#x5BFC;&#x590D;&#x5BA1;&#x540E;&#xFF0C;&#x6D41;&#x8F6C;&#x5230; DBA &#x6267;&#x884C;&#x4E0A;&#x7EBF;&#x3002;</p>
+                                <h1 id="&#x7D22;&#x5F15;&#x4F18;&#x5316;">&#x7D22;&#x5F15;&#x4F18;&#x5316;</h1>
+<h2 id="&#x4E00;&#x3001;&#x80CC;&#x666F;">&#x4E00;&#x3001;&#x80CC;&#x666F;</h2>
+<p>&#x5927;&#x591A;&#x6570;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E0A;&#x5BF9;&#x6570;&#x636E;&#x5E93;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x8BFB;&#x591A;&#x5199;&#x5C11;&#x3002;&#x5BF9;&#x6570;&#x636E;&#x5E93;&#x7684;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x7ECF;&#x5E38;&#x5BB9;&#x6613;&#x9020;&#x6210;&#x5E94;&#x7528;&#x7684;&#x6027;&#x80FD;&#x74F6;&#x9888;&#x3002;&#x5176;&#x4E2D;&#x5927;&#x6982;&#x7387;&#x539F;&#x56E0;&#x662F;&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A;&#xFF1A;</p>
+<ol>
+<li>SQL &#x8BED;&#x53E5;&#x4E0D;&#x5408;&#x7406;&#xFF0C;&#x5BFC;&#x81F4;&#x67E5;&#x8BE2;&#x6548;&#x7387;&#x4F4E;&#x4E0B;&#xFF1B;</li>
+<li>&#x6570;&#x636E;&#x5E93;&#x7D22;&#x5F15;&#x4E0D;&#x5408;&#x7406;&#xFF0C;&#x5BFC;&#x81F4;&#x67E5;&#x8BE2;&#x6548;&#x7387;&#x4F4E;&#x4E0B;&#x3002;</li>
+</ol>
+<p>&#x9488;&#x5BF9;&#x7B2C;&#x4E8C;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F18;&#x5316;&#x6570;&#x636E;&#x5E93;&#x7D22;&#x5F15;&#x6765;&#x63D0;&#x9AD8;&#x67E5;&#x8BE2;&#x6548;&#x7387;&#x3002;&#x5728; SQLE &#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x7D22;&#x5F15;&#x4F18;&#x5316;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<h2 id="&#x4E8C;&#x3001;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;">&#x4E8C;&#x3001;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;</h2>
+<p>&#x5BF9; SQL &#x7684;&#x7D22;&#x5F15;&#x4F18;&#x5316;&#x7ED3;&#x679C;&#x901A;&#x8FC7; SQL &#x5BA1;&#x6838;&#x9875;&#x9762;&#x5C55;&#x793A;&#x51FA;&#x6765;&#x3002;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;
+<img src="pictures/index-optimization-demo.png" alt="index optimization demo"></p>
+<p>&#x5728; SQLE &#x4E2D;&#x7D22;&#x5F15;&#x4F18;&#x5316;&#x9ED8;&#x8BA4;&#x662F;&#x5173;&#x95ED;&#x72B6;&#x6001;&#x3002;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x89C4;&#x5219;&#x5F00;&#x542F;&#x7D22;&#x5F15;&#x4F18;&#x5316;&#xFF1A;
+<img src="pictures/index-optimization-rule.png" alt="index optimization rule"></p>
+<p>&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x4E0A;&#x6709;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#xFF1A;</p>
+<h3 id="&#x53C2;&#x6570;-1&#xFF1A;&#x8054;&#x5408;&#x7D22;&#x5F15;&#x6700;&#x5927;&#x5217;&#x6570;">&#x53C2;&#x6570; 1&#xFF1A;&#x8054;&#x5408;&#x7D22;&#x5F15;&#x6700;&#x5927;&#x5217;&#x6570;</h3>
+<p>SQLE &#x7ED9;&#x51FA;&#x7684;&#x7D22;&#x5F15;&#x5EFA;&#x8BAE;&#x53EF;&#x80FD;&#x662F;&#x591A;&#x5217;&#x8054;&#x5408;&#x7D22;&#x5F15;&#x3002;&#x5F53;&#x8054;&#x5408;&#x7D22;&#x5F15;&#x7684;&#x5217;&#x6570;&#x592A;&#x591A;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x589E;&#x52A0;&#x6570;&#x636E;&#x5E93;&#x5BF9;&#x7D22;&#x5F15;&#x7684;&#x7EF4;&#x62A4;&#x6210;&#x672C;&#x3002;&#x6240;&#x4EE5;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x6765;&#x63A7;&#x5236;&#x8054;&#x5408;&#x7D22;&#x5F15;&#x7684;&#x6700;&#x5927;&#x5217;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F; 3&#x3002;</p>
+<h3 id="&#x53C2;&#x6570;-2&#xFF1A;&#x8BA1;&#x7B97;&#x5217;&#x57FA;&#x6570;&#x9608;&#x503C;">&#x53C2;&#x6570; 2&#xFF1A;&#x8BA1;&#x7B97;&#x5217;&#x57FA;&#x6570;&#x9608;&#x503C;</h3>
+<p>&#x5728;&#x5EFA;&#x7ACB;&#x8054;&#x5408;&#x7D22;&#x5F15;&#x65F6;&#xFF0C;&#x5B57;&#x6BB5;&#x7684;&#x987A;&#x5E8F;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;&#x5C06;&#x57FA;&#x6570;&#x8F83;&#x9AD8;&#x7684;&#x5217;&#x653E;&#x5230;&#x524D;&#x9762;&#xFF0C;&#x53EF;&#x4EE5;&#x8D70;&#x7D22;&#x5F15;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x7B5B;&#x9009;&#x6389;&#x66F4;&#x591A;&#x7684;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x8BB0;&#x5F55;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x5B8C;&#x5168;&#x6309;&#x7167;&#x57FA;&#x6570;&#x987A;&#x5E8F;&#x5EFA;&#x7ACB;&#x8054;&#x5408;&#x7D22;&#x5F15;&#xFF0C;&#x5728;&#x4E00;&#x4E9B;&#x573A;&#x666F;&#x4E0B;&#x53EF;&#x80FD;&#x4E5F;&#x4E0D;&#x90A3;&#x4E48;&#x5B8C;&#x7F8E;&#xFF1A;</p>
+<ol>
+<li>&#x8868;&#x7684;&#x8BB0;&#x5F55;&#x8F83;&#x591A;&#xFF0C;&#x8BA1;&#x7B97;&#x57FA;&#x6570;&#x5BF9;&#x6027;&#x80FD;&#x5F71;&#x54CD;&#x8F83;&#x5927;&#xFF1B;</li>
+<li>&#x8868;&#x7684;&#x6570;&#x636E;&#x5206;&#x5E03;&#x53EF;&#x80FD;&#x7ECF;&#x5E38;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x5217;&#x7684;&#x57FA;&#x6570;&#x5927;&#x5C0F;&#x6709;&#x53EF;&#x80FD;&#x56E0;&#x6B64;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x3002;</li>
+</ol>
+<p>&#x6240;&#x4EE5; SQLE &#x7ED9;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x9608;&#x503C;&#x53C2;&#x6570;&#xFF0C;&#x6765;&#x63A7;&#x5236;&#x8054;&#x5408;&#x7D22;&#x5F15;&#x662F;&#x5426;&#x6309;&#x7167;&#x57FA;&#x6570;&#x4ECE;&#x5927;&#x5230;&#x5C0F;&#x7684;&#x987A;&#x5E8F;&#x5EFA;&#x7ACB;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F; 1000000&#x3002;</p>
+<h2 id="&#x4E09;&#x3001;&#x4F18;&#x5316;&#x7B56;&#x7565;">&#x4E09;&#x3001;&#x4F18;&#x5316;&#x7B56;&#x7565;</h2>
+<p>&#x6574;&#x4E2A;&#x7D22;&#x5F15;&#x4F18;&#x5316;&#x7684;&#x6D41;&#x7A0B;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;
+<img src="pictures/sqle-index-optimization.png" alt="index optimization"></p>
+<p>&#x4E0B;&#x9762;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#x90E8;&#x5206;&#x7684;&#x6D41;&#x7A0B;&#x6A21;&#x5757;&#x91CC;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#xFF1A;</p>
+<h3 id="1-explain-sql">1. explain SQL</h3>
+<p>&#x5728;&#x7D22;&#x5F15;&#x4F18;&#x5316;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4F1A;&#x501F;&#x52A9; MySQL &#x7684; EXPLAIN &#x547D;&#x4EE4;&#xFF0C;&#x6765;&#x67E5;&#x8BE2; SQL &#x6267;&#x884C;&#x8BA1;&#x5212;&#x3002;&#x901A;&#x8FC7;&#x6267;&#x884C;&#x8BA1;&#x5212;&#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x51C6;&#x786E;&#x7684;&#x77E5;&#x9053;&#x5F53;&#x524D; SQL &#x7684;&#x7D22;&#x5F15;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x3002;</p>
+<h3 id="2-need-optimize">2. need optimize</h3>
+<p>&#x65E0;&#x8BBA;&#x591A;&#x4E48;&#x590D;&#x6742;&#x7684;&#x67E5;&#x8BE2;&#xFF0C;&#x6700;&#x7EC8;&#x90FD;&#x4F1A;&#x88AB;&#x89E3;&#x6790;&#x6210;&#x4E00;&#x4E2A;&#x4E2A;&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x3002;&#x4E00;&#x4E2A;&#x5355;&#x8868;&#x67E5;&#x8BE2;&#x5BF9;&#x5E94;&#x6267;&#x884C;&#x8BA1;&#x5212;&#x7684;&#x4E00;&#x884C;&#x8BB0;&#x5F55;&#x3002;&#x901A;&#x8FC7;&#x5BF9;&#x6BCF;&#x4E00;&#x884C;&#x8BB0;&#x5F55;&#x7684;&#x5206;&#x6790;&#xFF0C;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#x662F;&#x5426;&#x9700;&#x8981;&#x5BF9;&#x8868;&#x8FDB;&#x884C;&#x7D22;&#x5F15;&#x4F18;&#x5316;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x5224;&#x65AD;&#x5355;&#x8868;&#x7684;&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x662F;&#x5426;&#x9700;&#x8981;&#x5BF9;&#x8868;&#x8FDB;&#x884C;&#x7D22;&#x5F15;&#x4F18;&#x5316;&#x3002;&#x5355;&#x8868;&#x7684;&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;&#x5728;&#x6267;&#x884C;&#x8BA1;&#x5212;&#x8BB0;&#x5F55;&#x4E2D;&#x5BF9;&#x5E94; <code>type</code> &#x5217;&#x3002;<code>type</code> &#x7684;&#x5177;&#x4F53;&#x503C;&#x5C31;&#x4E0D;&#x4E00;&#x4E00;&#x4ECB;&#x7ECD;&#x4E86;&#xFF0C;&#x8BE6;&#x60C5;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x6587;&#x6863; <a href="https://dev.mysql.com/doc/refman/5.7/en/explain-output.html#explain-join-types" target="_blank">EXPLAIN Output Format</a>&#x3002;</p>
+<p>SQLE &#x4F1A;&#x5BF9;&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;&#x4E3A; <code>ALL</code> &#x548C; <code>index</code> &#x7684;&#x8868;&#x505A;&#x7D22;&#x5F15;&#x4F18;&#x5316;&#x3002;</p>
+<h3 id="3-optimize-single-select">3. optimize single select</h3>
+<p>&#x5BF9;&#x4E8E;&#x590D;&#x6742;&#x7684;&#x5982;&#x5E26;&#x6709;&#x5B50;&#x67E5;&#x8BE2;&#x7684; SQL &#x8BED;&#x53E5;&#xFF0C;SQLE &#x4F1A;&#x5BF9;&#x6BCF;&#x4E00;&#x4E2A;&#x5B50;&#x67E5;&#x8BE2;&#x8FDB;&#x884C;&#x7D22;&#x5F15;&#x4F18;&#x5316;&#x3002;</p>
+<h3 id="4-three-star-optimizationjoin-optimization">4. three-star optimization/join optimization</h3>
+<p>&#x5BF9;&#x4E8E;&#x591A;&#x8868;&#x7684; select &#x8BED;&#x53E5;&#xFF0C;SQLE &#x4F1A;&#x6839;&#x636E; explain &#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5BF9;&#x88AB;&#x9A71;&#x52A8;&#x8868;&#x8FDB;&#x884C;&#x7D22;&#x5F15;&#x4F18;&#x5316;&#xFF0C;&#x4F18;&#x5316;&#x65B9;&#x5F0F;&#x662F;&#x5EFA;&#x8BAE;&#x5728;&#x88AB;&#x9A71;&#x52A8;&#x8868;&#x7684;&#x5173;&#x8054;&#x5B57;&#x6BB5;&#x4E0A;&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x5355;&#x8868;&#x7684; select &#x8BED;&#x53E5;&#xFF0C;SQLE &#x5219;&#x53C2;&#x8003;&#x300C;Relational database index design and the optimizers&#x300D;&#x4E00;&#x4E66;&#x4E2D;&#x7684;&#x4E09;&#x661F;&#x7D22;&#x5F15;&#x7B97;&#x6CD5;&#xFF0C;&#x5C3D;&#x91CF;&#x7ED9;&#x51FA;&#x4E09;&#x661F;&#x7D22;&#x5F15;&#x5EFA;&#x8BAE;&#x3002;</p>
+<h3 id="5-if-exist-indexes-columns">5. if exist indexes columns</h3>
+<p>&#x901A;&#x8FC7;&#x524D;&#x9762;&#x7684;&#x6B65;&#x9AA4;&#xFF0C;&#x5982;&#x679C;&#x7ED9;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;&#x5EFA;&#x8BAE;&#x3002;&#x4F8B;&#x5982;&#x5EFA;&#x8BAE; c1 &#x4E0A;&#x6DFB;&#x52A0;&#x7D22;&#x5F15;&#x3002;&#x8FD9;&#x65F6;&#x8FD8;&#x9700;&#x8981;&#x5224;&#x65AD;&#xFF1A;</p>
+<ol>
+<li>&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;&#x8BE5;&#x7D22;&#x5F15;</li>
+<li>&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;&#x4EE5; c1 &#x4E3A;&#x524D;&#x7F00;&#x7684;&#x8054;&#x5408;&#x7D22;&#x5F15;</li>
+</ol>
+<p>&#x5982;&#x679C;&#x6EE1;&#x8DB3;&#x4E0A;&#x9762;&#x4E24;&#x4E2A;&#x6761;&#x4EF6;&#x4E4B;&#x4E00;&#xFF0C;&#x5219;&#x653E;&#x5F03;&#x8BE5;&#x7D22;&#x5F15;&#x5EFA;&#x8BAE;&#x3002;</p>
 
                                 
                                 </section>
@@ -597,12 +628,12 @@
 
             
                 
-                <a href="rule_template_management.html" class="navigation navigation-prev " aria-label="Previous page: 规则模板管理">
+                <a href="online_ddl.html" class="navigation navigation-prev " aria-label="Previous page: Online DDL">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../3.4_whitelist/whitelist_management.html" class="navigation navigation-next " aria-label="Next page: 白名单管理">
+                <a href="../3.6_auditplan/overview.html" class="navigation navigation-next " aria-label="Next page: 审核计划">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -613,7 +644,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"流程模板管理","level":"1.4.3.2","depth":3,"next":{"title":"白名单管理","level":"1.4.4","depth":2,"path":"3.modules/3.4_whitelist/whitelist_management.md","ref":"3.modules/3.4_whitelist/whitelist_management.md","articles":[]},"previous":{"title":"规则模板管理","level":"1.4.3.1","depth":3,"path":"3.modules/3.3_template/rule_template_management.md","ref":"3.modules/3.3_template/rule_template_management.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/3.3_template/workflow_template_management.md","mtime":"2021-12-10T04:55:28.052Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-10T04:55:57.826Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"索引优化","level":"1.4.5.3","depth":3,"next":{"title":"审核计划","level":"1.4.6","depth":2,"path":"3.modules/3.6_auditplan/overview.md","ref":"3.modules/3.6_auditplan/overview.md","articles":[{"title":"审核计划管理","level":"1.4.6.1","depth":3,"path":"3.modules/3.6_auditplan/auditplan_management.md","ref":"3.modules/3.6_auditplan/auditplan_management.md","articles":[]},{"title":"Scanner 管理","level":"1.4.6.2","depth":3,"path":"3.modules/3.6_auditplan/scanner_management.md","ref":"3.modules/3.6_auditplan/scanner_management.md","articles":[]}]},"previous":{"title":"Online DDL","level":"1.4.5.2","depth":3,"path":"3.modules/3.5_auditworkflow/online_ddl.md","ref":"3.modules/3.5_auditworkflow/online_ddl.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/3.5_auditworkflow/index_optimization.md","mtime":"2021-12-10T04:55:28.056Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-10T04:55:57.826Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
