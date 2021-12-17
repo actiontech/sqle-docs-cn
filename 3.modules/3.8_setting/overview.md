@@ -2,7 +2,8 @@
 
 ## 目录
 
-* [LDAP配置修改](ldap_config.md)
+* [LDAP配置](ldap_configuration.md)
+* [邮箱配置](email_configuration.md)
 
 ## 背景
 

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>白名单管理 · SQLE manual</title>
+        <title>LDAP配置 · SQLE manual</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../3.5_auditworkflow/overview.html" />
+    <link rel="next" href="email_configuration.html" />
     
     
-    <link rel="prev" href="../3.3_template/workflow_template_management.html" />
+    <link rel="prev" href="overview.html" />
     
 
     </head>
@@ -299,9 +299,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.4" data-path="whitelist_management.html">
+        <li class="chapter " data-level="1.4.4" data-path="../3.4_whitelist/whitelist_management.html">
             
-                <a href="whitelist_management.html">
+                <a href="../3.4_whitelist/whitelist_management.html">
             
                     
                     白名单管理
@@ -460,9 +460,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.8" data-path="../3.8_setting/overview.html">
+        <li class="chapter " data-level="1.4.8" data-path="overview.html">
             
-                <a href="../3.8_setting/overview.html">
+                <a href="overview.html">
             
                     
                     系统设置
@@ -474,9 +474,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.8.1" data-path="../3.8_setting/ldap_configuration.html">
+        <li class="chapter active" data-level="1.4.8.1" data-path="ldap_configuration.html">
             
-                <a href="../3.8_setting/ldap_configuration.html">
+                <a href="ldap_configuration.html">
             
                     
                     LDAP配置
@@ -487,9 +487,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.8.2" data-path="../3.8_setting/email_configuration.html">
+        <li class="chapter " data-level="1.4.8.2" data-path="email_configuration.html">
             
-                <a href="../3.8_setting/email_configuration.html">
+                <a href="email_configuration.html">
             
                     
                     邮箱配置
@@ -585,7 +585,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >白名单管理</a>
+        <a href="../.." >LDAP配置</a>
     </h1>
 </div>
 
@@ -600,21 +600,77 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x767D;&#x540D;&#x5355;&#x7BA1;&#x7406;&#xFF08;&#x4F01;&#x4E1A;&#x7248;&#x529F;&#x80FD;&#xFF09;">&#x767D;&#x540D;&#x5355;&#x7BA1;&#x7406;&#xFF08;&#x4F01;&#x4E1A;&#x7248;&#x529F;&#x80FD;&#xFF09;</h1>
-<p>&#x5F53;&#x6211;&#x4EEC;&#x5DF2;&#x77E5;&#x4E00;&#x4E9B; SQL &#x5B58;&#x5728;&#x4E0D;&#x89C4;&#x8303;&#x4E4B;&#x5904;&#xFF0C;&#x4F46;&#x53C8;&#x60F3;&#x5FFD;&#x7565;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; SQL &#x767D;&#x540D;&#x5355;&#x529F;&#x80FD;&#x3002;</p>
-<h2 id="&#x6DFB;&#x52A0;&#x767D;&#x540D;&#x5355;">&#x6DFB;&#x52A0;&#x767D;&#x540D;&#x5355;</h2>
-<h3 id="&#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;">&#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;</h3>
-<p>&#x5728;&#x5DE6;&#x4FA7;&#x5BFC;&#x822A;&#x680F;&#x7684;&#x300C;&#x5E73;&#x53F0;&#x7BA1;&#x7406;&#x300D;&#x4E2D;&#x7684;&#x300C;&#x767D;&#x540D;&#x5355;&#x7BA1;&#x7406;&#x300D;&#x9875;&#x9762;&#x4E2D;&#xFF0C;&#x70B9;&#x51FB;&#x300C;&#x6DFB;&#x52A0;&#x767D;&#x540D;&#x5355;&#x300D;&#xFF0C;&#x586B;&#x5199; SQL &#x767D;&#x540D;&#x5355;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x3002;</p>
-<p>&#x6709;&#x4E00;&#x6761; SQL&#xFF1A;<strong>alter table orders add column create_date TIMESTAMP default current_timestamp</strong> &#x9700;&#x8981;&#x4E0A;&#x7EBF;&#xFF0C;&#x5728;&#x4F7F;&#x7528;&#x767D;&#x540D;&#x5355;&#x524D;&#xFF0C;&#x63D0;&#x4EA4;&#x5BA1;&#x6838;&#xFF1A;
-<img src="pictures/audit_before_add_whitelist.png" alt="audit before add whitelist"></p>
-<p>&#x5BA1;&#x6838;&#x901A;&#x8FC7;&#x7387;&#x4E3A; 0% &#x65E0;&#x6CD5;&#x4E0A;&#x7EBF;&#x3002;</p>
-<p>&#x5047;&#x8BBE;&#x56E0;&#x4E3A;&#x67D0;&#x4E9B;&#x539F;&#x56E0;&#x65E0;&#x6CD5;&#x4FEE;&#x6539; SQL&#xFF0C;&#x4F46;&#x662F;&#x8BE5; SQL &#x53C8;&#x5FC5;&#x987B;&#x4E0A;&#x7EBF;&#x3002;&#x8FD9;&#x65F6;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x4E00;&#x6761;&#x9488;&#x5BF9;&#x4E8E;&#x8BE5; SQL &#x7684;&#x767D;&#x540D;&#x5355;&#xFF1A;</p>
-<p><img src="pictures/create_whitelist.png" alt="create whitelist"></p>
-<p>&#x518D;&#x6B21;&#x63D0;&#x4EA4;&#x5BA1;&#x6838;&#xFF1A;
-<img src="pictures/audit_after_add_whitelist.png" alt="audit after add whitelist"></p>
-<p>&#x5BA1;&#x6838;&#x901A;&#x8FC7;&#x7387;&#x4E3A; 100% &#x53EF;&#x4EE5;&#x63D0;&#x4EA4;&#x5DE5;&#x5355;&#x4E0A;&#x7EBF;&#x3002;</p>
-<h3 id="&#x6307;&#x7EB9;&#x5339;&#x914D;">&#x6307;&#x7EB9;&#x5339;&#x914D;</h3>
-<p>&#x5F53;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5FFD;&#x7565;&#x4E00;&#x7C7B; SQL &#x65F6;&#xFF0C;&#x53C8;&#x4E0D;&#x60F3;&#x4E3A;&#x6BCF;&#x6761; SQL &#x6DFB;&#x52A0;&#x767D;&#x540D;&#x5355;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6DFB;&#x52A0;&#x767D;&#x540D;&#x5355;&#x65F6;&#x9009;&#x62E9;&#x300C;sql&#x6307;&#x7EB9;&#x5339;&#x914D;&#x300D;&#x3002;</p>
+                                <h1 id="ldap&#x8BBE;&#x7F6E;">LDAP&#x8BBE;&#x7F6E;</h1>
+<h2 id="&#x80CC;&#x666F;">&#x80CC;&#x666F;</h2>
+<h3 id="ldap-&#x7B80;&#x4ECB;">LDAP &#x7B80;&#x4ECB;</h3>
+<p>&#x4F01;&#x4E1A;&#x5185;&#x90E8;&#x9700;&#x8981;&#x8BA4;&#x8BC1;&#x7684;&#x670D;&#x52A1;&#x5F88;&#x591A;&#xFF0C;&#x5458;&#x5DE5;&#x9700;&#x8981;&#x8BB0;&#x4F4F;&#x5F88;&#x591A;&#x7684;&#x5BC6;&#x7801;&#xFF0C;
+&#x5373;&#x4F7F;&#x5BF9;&#x8FD9;&#x4E9B;&#x670D;&#x52A1;&#x8FDB;&#x884C;&#x76F8;&#x540C;&#x7684;&#x5BC6;&#x7801;&#x8BBE;&#x7F6E;&#xFF0C;&#x4E5F;&#x5B58;&#x5728;&#x5F88;&#x5927;&#x7684;&#x5B89;&#x5168;&#x9690;&#x60A3;&#x3002;&#x6BCF;&#x4E00;&#x4E2A;&#x65B0;&#x5458;&#x5DE5;&#x7684;&#x5230;&#x6765;&#x7BA1;&#x7406;&#x5458;&#x90FD;&#x8981;&#x521D;&#x59CB;&#x5316;&#x5F88;&#x591A;&#x5BC6;&#x7801;&#xFF0C;&#x800C;&#x8FD9;&#x4E9B;&#x5BC6;&#x7801;&#x90FD;&#x88AB;&#x8BBE;&#x7F6E;&#x6210;&#x4E86;&#x201C;888888&#x201D;&#x7B49;&#x5F31;&#x5BC6;&#x7801;&#xFF0C;&#x7531;&#x4E8E;&#x5404;&#x79CD;&#x8F6F;&#x4EF6;&#x7684;&#x8BA4;&#x8BC1;&#x673A;&#x5236;&#x4E4B;&#x95F4;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x7EDF;&#x4E00;&#x7684;&#x6807;&#x51C6;&#xFF0C;&#x5458;&#x5DE5;&#x65E0;&#x6CD5;&#x4E00;&#x6B21;&#x6027;&#x4FEE;&#x6539;&#x6240;&#x6709;&#x670D;&#x52A1;&#x7684;&#x5BC6;&#x7801;&#xFF0C;&#x8FD9;&#x5BFC;&#x81F4;&#x5F88;&#x591A;&#x5373;&#x4F7F;&#x662F;&#x5165;&#x804C;&#x5F88;&#x4E45;&#x7684;&#x5458;&#x5DE5;&#x90FD;&#x8FD8;&#x5728;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x201C;&#x4F17;&#x6240;&#x5468;&#x77E5;&#x201D;&#x7684;&#x5BC6;&#x7801;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#x2014;&#x4E2A;&#x6BD4;&#x8F83;&#x4E25;&#x91CD;&#x7684;&#x95EE;&#x9898;&#x51FA;&#x73B0;&#x5728;&#x516C;&#x53F8;&#x589E;&#x52A0;&#x5185;&#x90E8;&#x670D;&#x52A1;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F8B;&#x5982;&#x9886;&#x5BFC;&#x8981;&#x5728;&#x516C;&#x53F8;&#x5185;&#x90E8;&#x63D0;&#x4F9B;&#x90AE;&#x4EF6;&#x670D;&#x52A1;&#x6216;&#x628A;&#x73B0;&#x6709;&#x7684;Proftpd &#x6362;&#x6210;&#x66F4;&#x9AD8;&#x6548;&#x7684;Vsftpd&#xFF0C;&#x7BA1;&#x7406;&#x5458;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x4E3A;&#x6240;&#x6709;&#x7684;&#x5458;&#x5DE5;&#x521D;&#x59CB;&#x5316;&#x65B0;&#x7684;&#x8D26;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x6709;&#x4E0A;&#x5343;&#x5458;&#x5DE5;&#x7684;&#x4F01;&#x4E1A;&#x6765;&#x8BF4;&#x8FD9;&#x5C06;&#x662F;&#x4E00;&#x4E2A;&#x201C;&#x707E;&#x96BE;&#x201D;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x53EF;&#x4EE5;&#x4E3A;&#x5404;&#x79CD;&#x8F6F;&#x4EF6;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x7684;&#x8BA4;&#x8BC1;&#x673A;&#x5236;&#xFF0C;&#x6240;&#x6709;&#x8F6F;&#x4EF6;&#x5C31;&#x53EF;&#x4EE5;&#x4E0D;&#x518D;&#x7528;&#x72EC;&#x6709;&#x7684;&#x7528;&#x6237;&#x7BA1;&#x7406;&#x65B9;&#x6CD5;&#xFF0C;
+&#x800C;&#x662F;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x7EDF;&#x4E00;&#x7684;&#x8BA4;&#x8BC1;&#x673A;&#x5236;&#x8FDB;&#x884C;&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x89E3;&#x51B3;&#x4E86;&#x76EE;&#x524D;&#x5F88;&#x591A;&#x4F01;&#x4E1A;&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#x3002;LDAP&#x6B63;&#x662F;&#x8FD9;&#x6837;&#x4E00;&#x79CD;&#x6807;&#x51C6;&#x7684;&#x534F;&#x8BAE;&#xFF0C;LDAP&#x7684;&#x5386;&#x53F2;&#x53EF;&#x4EE5;&#x8FFD;&#x6EAF;&#x5230;1988&#x5E74;&#xFF0C;&#x4E4B;&#x540E;&#x8BDE;&#x751F;&#x7684;&#x5F88;&#x591A;&#x8F6F;&#x4EF6;&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x652F;&#x6301;&#x8FD9;&#x4E2A;&#x534F;&#x8BAE;&#x3002;&#x8FD1;&#x5E74;&#x968F;&#x7740;&#x4F01;&#x4E1A;&#x5BF9;LDAP&#x9700;&#x6C42;&#x7684;&#x4E0D;&#x65AD;&#x589E;&#x52A0;&#xFF0C;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x6709;&#x8BA4;&#x8BC1;&#x673A;&#x5236;&#x7684;&#x8F6F;&#x4EF6;&#x90FD;&#x4F1A;&#x9996;&#x5148;&#x63D0;&#x4F9B;&#x5BF9;LDAP&#x7684;&#x652F;&#x6301;&#x3002;&#x672C;&#x6587;&#x5C06;&#x4ECB;&#x7ECD;&#x901A;&#x8FC7;LDAP&#x7EDF;&#x4E00;&#x8EAB;&#x4EFD;&#x8BA4;&#x8BC1;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x7B80;&#x5316;&#x8FD9;&#x79CD;&#x590D;&#x6742;&#x7684;&#x7BA1;&#x7406;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>LDAP&#x7684;&#x5185;&#x90E8;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;&#x6811;&#x72B6;&#x7ED3;&#x6784;, &#x6240;&#x6709;&#x7684;&#x7528;&#x6237;&#x548C;&#x90E8;&#x95E8;&#x90FD;&#x4F5C;&#x4E3A;&#x8FD9;&#x68F5;&#x6811;&#x7684;&#x4E00;&#x4E2A;&#x8282;&#x70B9;, &#x90E8;&#x95E8;&#x540D;&#x79F0;,&#x7528;&#x6237;&#x540D;,&#x5BC6;&#x7801;,&#x90AE;&#x7BB1;&#x7B49;&#x4F1A;&#x4F5C;&#x4E3A;&#x8282;&#x70B9;&#x7684;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x5B58;&#x5728;</p>
+<h3 id="sqle-&#x4E2D;&#x7684;ldap&#x767B;&#x5F55;&#x529F;&#x80FD;">SQLE &#x4E2D;&#x7684;LDAP&#x767B;&#x5F55;&#x529F;&#x80FD;</h3>
+<p>SQLE&#x4E2D;&#x652F;&#x6301;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x7684;&#x65B9;&#x5F0F;&#x63A5;&#x5165;LDAP&#x7CFB;&#x7EDF;, &#x5982;&#x540C;&#x5176;&#x4ED6;&#x7CFB;&#x7EDF;&#x4E00;&#x6837;&#x63A5;&#x53D7;&#x7EDF;&#x4E00;&#x7684;&#x7528;&#x6237;&#x7BA1;&#x7406;, &#x4EE5;&#x4FBF;&#x4E8E;&#x7BA1;&#x7406;&#x5458;&#x7BA1;&#x7406;SQLE&#x4E2D;&#x7684;&#x7528;&#x6237;, &#x4E5F;&#x4F7F;&#x5F97;&#x5458;&#x5DE5;&#x65E0;&#x9700;&#x5728;&#x4F7F;&#x7528;&#x4E00;&#x5957;&#x516C;&#x53F8;&#x5185;&#x901A;&#x7528;&#x8D26;&#x53F7;&#x5BC6;&#x7801;&#x7684;&#x540C;&#x65F6;&#x5355;&#x72EC;&#x8BB0;&#x5F55;SQLE&#x7684;&#x8D26;&#x53F7;&#x5BC6;&#x7801;</p>
+<p>&#x5728;SQLE&#x4E2D;, &#x5982;&#x679C;&#x6B63;&#x786E;&#x914D;&#x7F6E;&#x5E76;&#x542F;&#x7528;&#x4E86;LDAP&#x529F;&#x80FD;, &#x7528;&#x6237;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x767B;&#x5F55;&#x754C;&#x9762;&#x4F7F;&#x7528;LDAP&#x4E2D;&#x8BB0;&#x5F55;&#x7684;&#x8D26;&#x53F7;&#x5BC6;&#x7801;&#x8FDB;&#x884C;&#x767B;&#x5F55;, SQLE&#x4F1A;&#x5728;&#x5458;&#x5DE5;&#x7B2C;&#x4E00;&#x6B21;&#x767B;&#x5F55;&#x65F6;&#x540C;&#x6B65;&#x6B64;&#x5458;&#x5DE5;&#x7684;&#x8D26;&#x53F7;&#x548C;&#x90AE;&#x7BB1;, &#x5E76;&#x5728;&#x4EE5;&#x540E;&#x7684;&#x767B;&#x5F55;&#x4E2D;&#x5747;&#x901A;&#x8FC7;LDAP&#x6821;&#x9A8C;&#x6B64;&#x8D26;&#x6237;</p>
+<h2 id="ldap&#x914D;&#x7F6E;&#x4FEE;&#x6539;&#x65B9;&#x5F0F;">LDAP&#x914D;&#x7F6E;&#x4FEE;&#x6539;&#x65B9;&#x5F0F;</h2>
+<p><img src="pictures/ldap_position.png" alt="ldap_position"></p>
+<p>LDAP&#x7684;&#x914D;&#x7F6E;&#x5C55;&#x793A;&#x5728;&#x5982;&#x56FE;&#x7684;&#x4F4D;&#x7F6E;, &#x70B9;&#x51FB;&#x5BF9;&#x5E94; <strong>[&#x4FEE;&#x6539;]</strong> &#x6309;&#x94AE;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x4FEE;&#x6539;, &#x70B9;&#x51FB;&#x6309;&#x94AE;&#x540E;&#x6548;&#x679C;&#x5982;&#x4E0B;&#x56FE;</p>
+<p><img src="pictures/setting_ldap_position.png" alt="setting_ldap_position"></p>
+<p>&#x53EF;&#x6839;&#x636E;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x5BF9;&#x5E94;&#x6761;&#x76EE;, &#x4FEE;&#x6539;&#x540E;&#x70B9;&#x51FB; <strong>[&#x63D0;&#x4EA4;]</strong> &#x4FDD;&#x5B58;&#x914D;&#x7F6E;, &#x4E5F;&#x53EF;&#x70B9;&#x51FB; <strong>[&#x53D6;&#x6D88;]</strong> &#x53D6;&#x6D88;&#x672C;&#x6B21;&#x4FEE;&#x6539;</p>
+<p>&#x4FEE;&#x6539;&#x540E;ldap&#x7528;&#x6237;&#x5373;&#x53EF;&#x901A;&#x8FC7;sqle&#x767B;&#x5F55;&#x754C;&#x9762;&#x8FDB;&#x884C;&#x767B;&#x5F55;</p>
+<p><img src="pictures/ldap_user_login.png" alt="img.png"></p>
+<p><img src="pictures/ldap_user_login_success.png" alt="img_1.png"></p>
+<h2 id="ldap&#x914D;&#x7F6E;&#x5404;&#x53C2;&#x6570;&#x91CA;&#x4E49;">LDAP&#x914D;&#x7F6E;&#x5404;&#x53C2;&#x6570;&#x91CA;&#x4E49;</h2>
+<ol>
+<li><p>&#x662F;&#x5426;&#x542F;&#x7528;LDAP&#x670D;&#x52A1;</p>
+<ul>
+<li>&#x586B;&#x5199;&#x8BF4;&#x660E;: &#x6B64;&#x9009;&#x9879;&#x4E3A;&#x5F00;&#x5173;</li>
+<li>&#x4F5C;&#x7528;: &#x53EA;&#x6709;&#x5F53;&#x6B64;&#x9009;&#x9879;&#x88AB;&#x6253;&#x5F00;&#x65F6;LDAP&#x529F;&#x80FD;&#x624D;&#x4F1A;&#x751F;&#x6548;. &#x6B64;&#x9009;&#x9879;&#x5173;&#x95ED;&#x65F6;&#x4EC5;&#x4FDD;&#x5B58;LDAP&#x76F8;&#x5173;&#x914D;&#x7F6E;, &#x4E0D;&#x4F1A;&#x4F7F;&#x7528;&#x6B64;&#x529F;&#x80FD;</li>
+</ul>
+</li>
+<li><p>LDAP&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;</p>
+<ul>
+<li>&#x586B;&#x5199;&#x8BF4;&#x660E;: &#x586B;&#x5199;LDAP&#x670D;&#x52A1;&#x5668;&#x7684;IP&#x5730;&#x5740;(&#x4E0D;&#x542B;&#x7AEF;&#x53E3;&#x53F7;)</li>
+<li>&#x4F5C;&#x7528;: &#x7528;&#x4E8E;LDAP&#x767B;&#x9646;&#x65F6;SQLE&#x627E;&#x5230;LDAP&#x670D;&#x52A1;&#x5668;&#x7684;&#x4F4D;&#x7F6E;</li>
+</ul>
+</li>
+<li><p>LDAP&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53E3;</p>
+<ul>
+<li>&#x586B;&#x5199;&#x8BF4;&#x660E;: &#x586B;&#x5199;LDAP&#x670D;&#x52A1;&#x5668;&#x4E0A;LDAP&#x670D;&#x52A1;&#x7684;&#x76D1;&#x542C;&#x7AEF;&#x53E3;</li>
+<li>&#x4F5C;&#x7528;: &#x7528;&#x4E8E;LDAP&#x767B;&#x9646;&#x65F6;SQLE&#x627E;&#x5230;LDAP&#x670D;&#x52A1;&#x7684;&#x5DE5;&#x4F5C;&#x7AEF;&#x53E3;</li>
+</ul>
+</li>
+<li><p>&#x8FDE;&#x63A5;&#x7528;&#x6237;DN:</p>
+<ul>
+<li>&#x586B;&#x5199;&#x8BF4;&#x660E;: &#x586B;&#x5199;&#x7BA1;&#x7406;&#x7528;&#x6237;&#x7684; DN(Distinguished Name) ,&#x7C7B;&#x4F3C;&#x4E8E; &apos;cn=admin,dc=example,dc=org&apos; , &#x4E0D;&#x662F;&#x7BA1;&#x7406;&#x7528;&#x6237;&#x7684;&#x7528;&#x6237;&#x540D;, &#x4E14;&#x7BA1;&#x7406;&#x7528;&#x6237;&#x9700;&#x8981;&#x6709;&#x67E5;&#x8BE2;&#x5176;&#x4ED6;&#x53EF;&#x80FD;&#x767B;&#x5F55;&#x7528;&#x6237;&#x7684;&#x6743;&#x9650;</li>
+<li>&#x4F5C;&#x7528;: &#x5F53;&#x7528;&#x6237;&#x767B;&#x5F55;&#x65F6;&#x9700;&#x8981;&#x5148;&#x4F7F;&#x7528;&#x7BA1;&#x7406;&#x7528;&#x6237;&#x767B;&#x5F55;&#x5230;LDAP&#x4E2D;&#x67E5;&#x627E;&#x51FA;&#x767B;&#x5F55;&#x7528;&#x6237;&#x5728;LDAP&#x4E2D;&#x7684;DN, &#x518D;&#x4F7F;&#x7528;&#x67E5;&#x627E;&#x51FA;&#x7684;DN&#x548C;&#x767B;&#x5F55;&#x7528;&#x6237;&#x586B;&#x5199;&#x7684;&#x5BC6;&#x7801;&#x8FDB;&#x884C;LDAP&#x767B;&#x5F55;&#x6821;&#x9A8C;</li>
+</ul>
+</li>
+<li><p>&#x8FDE;&#x63A5;&#x7528;&#x6237;&#x5BC6;&#x7801;:</p>
+<ul>
+<li>&#x586B;&#x5199;&#x8BF4;&#x660E;: &#x6B64;&#x9879;&#x4E0D;&#x4F1A;&#x8FDB;&#x884C;&#x5C55;&#x793A;, &#x5982;&#x679C;&#x4E0D;&#x5E0C;&#x671B;&#x4FEE;&#x6539;&#x4E4B;&#x524D;&#x8BBE;&#x7F6E;&#x7684;&#x5BC6;&#x7801;&#x53EF;&#x4EE5;&#x4E0D;&#x586B;&#x8FD9;&#x4E00;&#x9879;, &#x70B9;&#x51FB;&#x4FDD;&#x5B58;&#x540E;&#x4F1A;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x539F;&#x5BC6;&#x7801;&#x800C;&#x4E0D;&#x4F1A;&#x4F7F;&#x7528;&#x7A7A;&#x503C;&#x8986;&#x76D6;&#x539F;&#x5BC6;&#x7801;</li>
+<li>&#x4F5C;&#x7528;: &#x8FDE;&#x63A5;&#x7528;&#x6237;DN&#x767B;&#x5F55;&#x65F6;&#x7684;&#x5BC6;&#x7801;</li>
+</ul>
+</li>
+<li><p>&#x67E5;&#x8BE2;&#x6839;DN</p>
+<ul>
+<li>&#x586B;&#x5199;&#x8BF4;&#x660E;: &#x67E5;&#x8BE2;&#x65F6;&#x53EA;&#x4F1A;&#x67E5;&#x627E;&#x4EE5;&#x6B64;DN&#x4E3A;&#x6839;&#x8282;&#x70B9;&#x7684;&#x6811;, &#x5982;&#x4E24;&#x4E2A;&#x90E8;&#x95E8;&#x5728;LDAP&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x8282;&#x70B9;&#x4E92;&#x76F8;&#x4E0D;&#x5728;&#x5BF9;&#x65B9;&#x7684;&#x5B50;&#x6811;&#x4E0A;, &#x6B64;&#x65F6;&#x5982;&#x679C;&#x67E5;&#x8BE2;&#x6839;DN&#x8BBE;&#x7F6E;&#x6210;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x90E8;&#x95E8;&#x7684;DN, &#x5219;&#x53E6;&#x4E00;&#x4E2A;&#x90E8;&#x95E8;&#x5C06;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;LDAP&#x767B;&#x5F55;SQLE</li>
+<li>&#x4F5C;&#x7528;: &#x7528;&#x4E8E;&#x9650;&#x5B9A;SQLE&#x4E2D;LDAP&#x767B;&#x5F55;&#x7684;&#x4F5C;&#x7528;&#x8303;&#x56F4;</li>
+</ul>
+</li>
+<li><p>&#x7528;&#x6237;&#x5C5E;&#x6027;&#x540D;</p>
+<ul>
+<li>&#x586B;&#x5199;&#x8BF4;&#x660E;: &#x586B;&#x5199;&#x7528;&#x6237;&#x540D;&#x5728;LDAP&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x8282;&#x70B9;&#x5C5E;&#x6027;&#x540D;, &#x4E00;&#x822C;&#x8BBE;&#x7F6E;&#x4E3A;uid</li>
+<li>&#x4F5C;&#x7528;: &#x7528;&#x4E8E;LDAP&#x7528;&#x6237;&#x767B;&#x5F55;&#x65F6;&#x67E5;&#x8BE2;&#x767B;&#x5F55;&#x7528;&#x6237;&#x7684;DN, LDAP&#x4E2D;&#x6B64;&#x5C5E;&#x6027;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x4E5F;&#x5C06;&#x7528;&#x4F5C;&#x6B64;&#x7528;&#x6237;&#x7B2C;&#x4E00;&#x6B21;&#x767B;&#x5F55;SQLE&#x81EA;&#x52A8;&#x6CE8;&#x518C;&#x65F6;&#x7684;&#x7528;&#x6237;&#x540D;</li>
+</ul>
+</li>
+<li><p>&#x7528;&#x6237;&#x90AE;&#x7BB1;&#x5C5E;&#x6027;&#x540D;</p>
+<ul>
+<li>&#x586B;&#x5199;&#x8BF4;&#x660E;: &#x586B;&#x5199;&#x7528;&#x6237;&#x90AE;&#x7BB1;&#x5728;LDAP&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x8282;&#x70B9;&#x5C5E;&#x6027;&#x540D;, &#x4E00;&#x822C;&#x8BBE;&#x7F6E;&#x4E3A;mail</li>
+<li>&#x4F5C;&#x7528;: SQLE&#x5C06;&#x6839;&#x636E;&#x6B64;&#x5C5E;&#x6027;&#x540D;&#x4ECE;LDAP&#x4E2D;&#x83B7;&#x53D6;&#x5230;&#x7528;&#x6237;&#x7684;&#x90AE;&#x7BB1;, &#x5E76;&#x5C06;&#x6B64;&#x90AE;&#x7BB1;&#x7528;&#x4E8E;&#x6B64;&#x7528;&#x6237;&#x7B2C;&#x4E00;&#x6B21;&#x767B;&#x5F55;SQLE&#x81EA;&#x52A8;&#x6CE8;&#x518C;&#x65F6;&#x7684;&#x7528;&#x6237;&#x90AE;&#x7BB1;</li>
+</ul>
+</li>
+</ol>
 
                                 
                                 </section>
@@ -642,12 +698,12 @@
 
             
                 
-                <a href="../3.3_template/workflow_template_management.html" class="navigation navigation-prev " aria-label="Previous page: 流程模板管理">
+                <a href="overview.html" class="navigation navigation-prev " aria-label="Previous page: 系统设置">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../3.5_auditworkflow/overview.html" class="navigation navigation-next " aria-label="Next page: 审核工单">
+                <a href="email_configuration.html" class="navigation navigation-next " aria-label="Next page: 邮箱配置">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -658,7 +714,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"白名单管理","level":"1.4.4","depth":2,"next":{"title":"审核工单","level":"1.4.5","depth":2,"path":"3.modules/3.5_auditworkflow/overview.md","ref":"3.modules/3.5_auditworkflow/overview.md","articles":[{"title":"审核工单管理","level":"1.4.5.1","depth":3,"path":"3.modules/3.5_auditworkflow/auditworkflow_management.md","ref":"3.modules/3.5_auditworkflow/auditworkflow_management.md","articles":[]},{"title":"Online DDL","level":"1.4.5.2","depth":3,"path":"3.modules/3.5_auditworkflow/online_ddl.md","ref":"3.modules/3.5_auditworkflow/online_ddl.md","articles":[]},{"title":"索引优化","level":"1.4.5.3","depth":3,"path":"3.modules/3.5_auditworkflow/index_optimization.md","ref":"3.modules/3.5_auditworkflow/index_optimization.md","articles":[]}]},"previous":{"title":"流程模板管理","level":"1.4.3.2","depth":3,"path":"3.modules/3.3_template/workflow_template_management.md","ref":"3.modules/3.3_template/workflow_template_management.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/3.4_whitelist/whitelist_management.md","mtime":"2021-12-17T10:11:27.338Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-17T10:11:59.371Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"LDAP配置","level":"1.4.8.1","depth":3,"next":{"title":"邮箱配置","level":"1.4.8.2","depth":3,"path":"3.modules/3.8_setting/email_configuration.md","ref":"3.modules/3.8_setting/email_configuration.md","articles":[]},"previous":{"title":"系统设置","level":"1.4.8","depth":2,"path":"3.modules/3.8_setting/overview.md","ref":"3.modules/3.8_setting/overview.md","articles":[{"title":"LDAP配置","level":"1.4.8.1","depth":3,"path":"3.modules/3.8_setting/ldap_configuration.md","ref":"3.modules/3.8_setting/ldap_configuration.md","articles":[]},{"title":"邮箱配置","level":"1.4.8.2","depth":3,"path":"3.modules/3.8_setting/email_configuration.md","ref":"3.modules/3.8_setting/email_configuration.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/3.8_setting/ldap_configuration.md","mtime":"2021-12-17T10:11:27.362Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-17T10:11:59.371Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
