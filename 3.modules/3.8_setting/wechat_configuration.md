@@ -29,6 +29,7 @@ SQLE在企业版中提供了企业微信通知的方式, 用于补充SQLE消息�
 
 1. 配置好相关配置并打开企业微信通知功能
 2. 点击测试, 输入测试用[企业微信用户ID](https://open.work.weixin.qq.com/help2/pc/15956?person_id=1), 点击测试
+   ![](./pictures/wechat_test.png)
 3. 查看企业微信, 收到对应消息
 4. 为SQLE用户绑定[企业微信用户ID](https://open.work.weixin.qq.com/help2/pc/15956?person_id=1), 各处修改用户信息的地方均可以修改企业微信ID
    ![](./pictures/bind_wechat_user.png)
