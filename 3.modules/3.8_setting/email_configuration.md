@@ -4,7 +4,15 @@ SQLE 支持在工单流转过程中，通过邮件通知工单下一步操作人
 ![email configuration](./pictures/email_configuration.png)
 
 邮箱配置项：
+
 * SMTP 地址：SMTP 服务器地址，如 smtp.163.com
 * SMTP 端口：SMTP 服务器端口，如 25
 * SMTP 用户名：完整的邮箱用户名
 * SMTP 密码：该用户名的授权码（非邮箱用户密码）
+
+邮箱测试方式:
+
+* 配置好相关参数
+* 点击测试按钮, 输入邮箱地址点击测试
+  ![](./pictures/email_test.png)
+* 查看测试邮箱是否收到测试邮件
