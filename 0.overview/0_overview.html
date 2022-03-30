@@ -375,7 +375,7 @@
                 <a href="../3.modules/3.6_auditplan/overview.html">
             
                     
-                    审核计划
+                    审核任务
             
                 </a>
             
@@ -384,12 +384,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.6.1" data-path="../3.modules/3.6_auditplan/auditplan_management.html">
+        <li class="chapter " data-level="1.4.6.1" data-path="../3.modules/3.6_auditplan/introduction.html">
             
-                <a href="../3.modules/3.6_auditplan/auditplan_management.html">
+                <a href="../3.modules/3.6_auditplan/introduction.html">
             
                     
-                    审核计划管理
+                    审核任务介绍
             
                 </a>
             
@@ -397,12 +397,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6.2" data-path="../3.modules/3.6_auditplan/scanner_management.html">
+        <li class="chapter " data-level="1.4.6.2" data-path="../3.modules/3.6_auditplan/auditplan_management.html">
+            
+                <a href="../3.modules/3.6_auditplan/auditplan_management.html">
+            
+                    
+                    审核任务管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="../3.modules/3.6_auditplan/scanner_management.html">
             
                 <a href="../3.modules/3.6_auditplan/scanner_management.html">
             
                     
-                    Scanner 管理
+                    Scanner 使用说明
             
                 </a>
             
@@ -641,10 +654,12 @@
 <li>&#x652F;&#x6301;&#x5BF9;&#x5927;&#x8868;&#x8FDB;&#x884C; Online DDL(<a href="../3.modules/3.5_auditworkflow/online_ddl.html">&#x4F7F;&#x7528;&#x6587;&#x6863;</a>)&#xFF1B;</li>
 <li>&#x652F;&#x6301;&#x5B9A;&#x65F6;&#x4E0A;&#x7EBF;&#x3002;</li>
 </ol>
-<h3 id="sql-&#x5BA1;&#x6838;&#x8BA1;&#x5212;">SQL &#x5BA1;&#x6838;&#x8BA1;&#x5212;</h3>
+<h3 id="sql-&#x5BA1;&#x6838;&#x4EFB;&#x52A1;">SQL &#x5BA1;&#x6838;&#x4EFB;&#x52A1;</h3>
 <ol>
 <li>&#x652F;&#x6301;&#x901A;&#x8FC7;&#x6807;&#x51C6;&#x63A5;&#x53E3;&#x6536;&#x96C6;&#x6765;&#x81EA;&#x4E1A;&#x52A1;&#x7684; SQL &#x7EDF;&#x8BA1;&#x4FE1;&#x606F;&#xFF1B;</li>
 <li>&#x63D0;&#x4F9B; MyBatis &#x6587;&#x4EF6;&#x626B;&#x63CF;&#x4E0A;&#x4F20;&#x7A0B;&#x5E8F;&#xFF08;scanner&#xFF09;&#xFF0C;&#x53EF;&#x96C6;&#x6210;CI/CD&#xFF1B;</li>
+<li>&#x652F;&#x6301; MySQL &#x5E93;&#x8868;&#x5143;&#x6570;&#x636E;&#x91C7;&#x96C6;&#x5BA1;&#x6838;&#xFF1B;</li>
+<li>&#x652F;&#x6301; Oracle TopSQL &#x91C7;&#x96C6;&#x5BA1;&#x6838;;</li>
 <li>&#x652F;&#x6301;&#x9759;&#x6001;&#x5BA1;&#x6838;&#xFF0C;&#x5373;&#x8131;&#x79BB;&#x4E0A;&#x7EBF;&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#xFF1B;</li>
 <li>&#x652F;&#x6301;&#x5B9A;&#x65F6;&#x5BA1;&#x6838;&#xFF0C;&#x65E2;&#x6709; SQL &#x8FDB;&#x884C;&#x751F;&#x6210;&#x5BA1;&#x6838;&#x62A5;&#x544A;&#x3002;</li>
 </ol>
@@ -652,7 +667,9 @@
 <ol>
 <li>&#x652F;&#x6301;&#x5BA1;&#x6838;&#x767D;&#x540D;&#x5355;&#xFF1B;</li>
 <li>&#x652F;&#x6301;&#x5BA1;&#x6279;&#x6D41;&#x7A0B;&#x53EF;&#x89C6;&#x5316;&#x914D;&#x7F6E;&#xFF1B;</li>
-<li>&#x652F;&#x6301; MySQL &#x6162;&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x8FDB;&#x884C; SQL &#x5BA1;&#x6838;&#x3002;</li>
+<li>&#x652F;&#x6301; MySQL &#x6162;&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x8FDB;&#x884C; SQL &#x5BA1;&#x6838;&#xFF1B;</li>
+<li>&#x652F;&#x6301; Java &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;SQL &#x5BA1;&#x6838;&#xFF1B;</li>
+<li>&#x652F;&#x6301;&#x5DE5;&#x5355;&#x901A;&#x8FC7;&#x5FAE;&#x4FE1;&#x4F01;&#x4E1A;&#x53F7;&#x63A8;&#x9001;&#x3002;</li>
 </ol>
 
                                 
@@ -697,7 +714,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"关于 SQLE","level":"1.2","depth":1,"next":{"title":"安装部署","level":"1.3","depth":1,"path":"2.deploy/overview.md","ref":"2.deploy/overview.md","articles":[{"title":"源码安装","level":"1.3.1","depth":2,"path":"2.deploy/2.1_source_deploy.md","ref":"2.deploy/2.1_source_deploy.md","articles":[]},{"title":"RPM 部署","level":"1.3.2","depth":2,"path":"2.deploy/2.2_rpm_deploy.md","ref":"2.deploy/2.2_rpm_deploy.md","articles":[]},{"title":"Docker 部署","level":"1.3.3","depth":2,"path":"2.deploy/2.3_docker_deploy.md","ref":"2.deploy/2.3_docker_deploy.md","articles":[]},{"title":"开始使用","level":"1.3.4","depth":2,"path":"2.deploy/2.4_after_deploy.md","ref":"2.deploy/2.4_after_deploy.md","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"0.overview/0_overview.md","mtime":"2022-03-29T05:28:41.358Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-29T05:29:12.588Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"关于 SQLE","level":"1.2","depth":1,"next":{"title":"安装部署","level":"1.3","depth":1,"path":"2.deploy/overview.md","ref":"2.deploy/overview.md","articles":[{"title":"源码安装","level":"1.3.1","depth":2,"path":"2.deploy/2.1_source_deploy.md","ref":"2.deploy/2.1_source_deploy.md","articles":[]},{"title":"RPM 部署","level":"1.3.2","depth":2,"path":"2.deploy/2.2_rpm_deploy.md","ref":"2.deploy/2.2_rpm_deploy.md","articles":[]},{"title":"Docker 部署","level":"1.3.3","depth":2,"path":"2.deploy/2.3_docker_deploy.md","ref":"2.deploy/2.3_docker_deploy.md","articles":[]},{"title":"开始使用","level":"1.3.4","depth":2,"path":"2.deploy/2.4_after_deploy.md","ref":"2.deploy/2.4_after_deploy.md","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"0.overview/0_overview.md","mtime":"2022-03-30T07:08:00.812Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-30T07:08:37.028Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
