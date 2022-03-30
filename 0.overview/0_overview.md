@@ -34,7 +34,7 @@ SQLE 是由[上海爱可生信息技术股份有限公司](http://www.actionsky.
 2. 支持对大表进行 Online DDL([使用文档](../3.modules/3.5_auditworkflow/online_ddl.html))；
 3. 支持定时上线。
 
-### SQL 审核计划
+### SQL 审核任务
 1. 支持通过标准接口收集来自业务的 SQL 统计信息；
 2. 提供 MyBatis 文件扫描上传程序（scanner），可集成CI/CD；
 3. 支持静态审核，即脱离上线数据库审核；

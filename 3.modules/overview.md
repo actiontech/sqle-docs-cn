@@ -6,6 +6,6 @@
 * [模板管理](3.3_template/overview.md)
 * [白名单管理](3.4_whitelist/whitelist_management.md)
 * [审核工单](3.5_auditworkflow/overview.md)
-* [审核计划](3.6_auditplan/overview.md)
+* [审核任务](3.6_auditplan/overview.md)
 * [数据库审核插件](3.7_auditplugin/overview.md)
 * [系统设置](3.8_setting/overview.md)
