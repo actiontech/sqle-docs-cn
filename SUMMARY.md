@@ -1,6 +1,7 @@
 # Summary
 
 * [关于 SQLE](0.overview/0_overview.md)
+* [在线体验](0.overview/1_online_demo.md)
 * [安装部署](2.deploy/overview.md)
     * [源码安装](2.deploy/2.1_source_deploy.md)
     * [RPM 部署](2.deploy/2.2_rpm_deploy.md)
