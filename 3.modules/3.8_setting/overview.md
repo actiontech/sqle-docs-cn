@@ -5,6 +5,7 @@
 * [LDAP配置](ldap_configuration.md)
 * [OAUTH2配置](oauth2_configuration.md)
 * [邮箱配置](email_configuration.md)
+* [企业微信配置](wechat_configuration.md)
 
 ## 背景
 
