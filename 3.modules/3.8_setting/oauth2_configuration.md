@@ -17,14 +17,14 @@ SQLE中支持通过配置的方式接入OAUTH2系统, 如同其他系统一样�
 ## OAUTH2 配置修改方式
 
 LDAP的配置位于 [系统设置] 模块中, 点击对应 **[修改]** 按钮可以进行配置修改
-![oauth2_position](oauth2_position.png)
+![oauth2_position](pictures/oauth2_position.png)
 
 可根据需要修改对应条目, 修改后点击 **[提交]** 保存配置, 也可点击 **[取消]** 取消本次修改
-![setting_oauth2_position](setting_oauth2_position.png)
+![setting_oauth2_position](pictures/setting_oauth2_position.png)
 
 启用后SQLE登录界面出现第三方登录入口
 
-![oauth2_user_login](oauth2_user_login.png)
+![oauth2_user_login](pictures/oauth2_user_login.png)
 
 ### 配置项说明
 
