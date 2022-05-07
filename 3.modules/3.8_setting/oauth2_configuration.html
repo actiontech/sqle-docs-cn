@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>规则模板管理 · SQLE manual</title>
+        <title>OAUTH2配置 · SQLE manual</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="workflow_template_management.html" />
+    <link rel="next" href="email_configuration.html" />
     
     
-    <link rel="prev" href="overview.html" />
+    <link rel="prev" href="ldap_configuration.html" />
     
 
     </head>
@@ -280,9 +280,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="overview.html">
+        <li class="chapter " data-level="1.6.3" data-path="../3.3_template/overview.html">
             
-                <a href="overview.html">
+                <a href="../3.3_template/overview.html">
             
                     
                     模板管理
@@ -294,9 +294,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.6.3.1" data-path="rule_template_management.html">
+        <li class="chapter " data-level="1.6.3.1" data-path="../3.3_template/rule_template_management.html">
             
-                <a href="rule_template_management.html">
+                <a href="../3.3_template/rule_template_management.html">
             
                     
                     规则模板管理
@@ -307,9 +307,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3.2" data-path="workflow_template_management.html">
+        <li class="chapter " data-level="1.6.3.2" data-path="../3.3_template/workflow_template_management.html">
             
-                <a href="workflow_template_management.html">
+                <a href="../3.3_template/workflow_template_management.html">
             
                     
                     流程模板管理
@@ -512,9 +512,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.8" data-path="../3.8_setting/overview.html">
+        <li class="chapter " data-level="1.6.8" data-path="overview.html">
             
-                <a href="../3.8_setting/overview.html">
+                <a href="overview.html">
             
                     
                     系统设置
@@ -526,9 +526,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.8.1" data-path="../3.8_setting/ldap_configuration.html">
+        <li class="chapter " data-level="1.6.8.1" data-path="ldap_configuration.html">
             
-                <a href="../3.8_setting/ldap_configuration.html">
+                <a href="ldap_configuration.html">
             
                     
                     LDAP配置
@@ -539,9 +539,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.8.2" data-path="../3.8_setting/oauth2_configuration.html">
+        <li class="chapter active" data-level="1.6.8.2" data-path="oauth2_configuration.html">
             
-                <a href="../3.8_setting/oauth2_configuration.html">
+                <a href="oauth2_configuration.html">
             
                     
                     OAUTH2配置
@@ -552,9 +552,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.8.3" data-path="../3.8_setting/email_configuration.html">
+        <li class="chapter " data-level="1.6.8.3" data-path="email_configuration.html">
             
-                <a href="../3.8_setting/email_configuration.html">
+                <a href="email_configuration.html">
             
                     
                     邮箱配置
@@ -565,9 +565,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.8.4" data-path="../3.8_setting/wechat_configuration.html">
+        <li class="chapter " data-level="1.6.8.4" data-path="wechat_configuration.html">
             
-                <a href="../3.8_setting/wechat_configuration.html">
+                <a href="wechat_configuration.html">
             
                     
                     企业微信配置
@@ -676,7 +676,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >规则模板管理</a>
+        <a href="../.." >OAUTH2配置</a>
     </h1>
 </div>
 
@@ -691,36 +691,77 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x89C4;&#x5219;&#x6A21;&#x677F;&#x7BA1;&#x7406;">&#x89C4;&#x5219;&#x6A21;&#x677F;&#x7BA1;&#x7406;</h1>
-<h2 id="&#x5BA1;&#x6838;&#x89C4;&#x5219;">&#x5BA1;&#x6838;&#x89C4;&#x5219;</h2>
-<p>&#x5BA1;&#x6838;&#x89C4;&#x5219;&#x662F;&#x4F9D;&#x636E;&#x6570;&#x636E;&#x5E93;&#x7279;&#x6027;&#x7ECF;&#x8FC7;&#x957F;&#x671F;&#x5B9E;&#x8DF5;&#x603B;&#x7ED3;&#x51FA;&#x7684;&#x4E00;&#x4E9B;&#x89C4;&#x8303;&#x3002;</p>
-<p>SQLE &#x9ED8;&#x8BA4;&#x652F;&#x6301; 70 &#x4F59;&#x6761; MySQL &#x5BA1;&#x6838;&#x89C4;&#x5219;&#x3002;SQLE&#x4F01;&#x4E1A;&#x7248;&#x989D;&#x5916;&#x652F;&#x6301;&#x90E8;&#x5206;&#x4F01;&#x4E1A;&#x7248;&#x89C4;&#x5219;
-<img src="pictures/all_mysql_audit_rule.png" alt="all MySQL audit rule"></p>
-<p>&#x5BA1;&#x6838;&#x89C4;&#x5219;&#x6709; 4 &#x4E2A;<strong>&#x89C4;&#x5219;&#x7B49;&#x7EA7;</strong>&#xFF08;&#x4E25;&#x91CD;&#x7EA7;&#x522B;&#x7531;&#x9AD8;&#x5230;&#x4F4E;&#xFF09;&#xFF1A;</p>
-<ul>
-<li>Error</li>
-<li>Warn</li>
-<li>Notice</li>
-<li>Normal</li>
-</ul>
-<p>&#x90E8;&#x5206;&#x89C4;&#x5219;&#x8FD8;&#x5E26;&#x6709;<strong>&#x89C4;&#x5219;&#x503C;</strong>&#xFF1A;</p>
-<ul>
-<li>&#x89C4;&#x5219;&#x300C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x89C4;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x5E93;&#x6392;&#x5E8F;&#x89C4;&#x5219;&#x300D; &#x7684;&#x89C4;&#x5219;&#x503C;&#x4E3A; utf8mb4_0900_ai_ci&#xFF1B;</li>
-<li>&#x89C4;&#x5219;&#x300C;&#x590D;&#x5408;&#x7D22;&#x5F15;&#x7684;&#x5217;&#x6570;&#x91CF;&#x4E0D;&#x5EFA;&#x8BAE;&#x8D85;&#x8FC7;&#x9608;&#x503C;&#x300D; &#x7684;&#x89C4;&#x5219;&#x503C;&#x4E3A; 3&#xFF1B;</li>
-<li>...</li>
-</ul>
-<p>&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x6E90;&#xFF0C;<strong>&#x89C4;&#x5219;&#x7B49;&#x7EA7;</strong>&#x548C;<strong>&#x89C4;&#x5219;&#x503C;</strong>&#x90FD;&#x662F;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x8BE6;&#x60C5;&#x89C1;&#x4E0B;&#x4E00;&#x5C0F;&#x8282;&#x3002;</p>
-<h2 id="&#x89C4;&#x5219;&#x6A21;&#x677F;">&#x89C4;&#x5219;&#x6A21;&#x677F;</h2>
-<p>&#x4E0D;&#x540C;&#x6570;&#x636E;&#x6E90;&#x4E0A;&#x7684;&#x89C4;&#x8303;&#x53EF;&#x80FD;&#x4E0D;&#x540C;&#xFF0C;&#x5373;&#x5B83;&#x4EEC;&#x7684;&#x5BA1;&#x6838;&#x89C4;&#x5219;&#x96C6;&#x53EF;&#x80FD;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x3002;&#x5728; SQLE &#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<strong>&#x5BA1;&#x6838;&#x6A21;&#x677F;</strong>&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x6E90;&#x914D;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x5BA1;&#x6838;&#x89C4;&#x5219;&#x3002;</p>
-<p>&#x5728;&#x5DE6;&#x4FA7;&#x5BFC;&#x822A;&#x680F;&#x7684;&#x300C;&#x5E73;&#x53F0;&#x7BA1;&#x7406;&#x300D;&#x4E2D;&#x7684;&#x300C;&#x6A21;&#x677F;&#x7BA1;&#x7406;&#x300D;&#x9875;&#x9762;&#x4E2D;&#xFF0C;&#x70B9;&#x51FB;&#x300C;&#x521B;&#x5EFA;&#x6A21;&#x677F;&#x300D;</p>
-<h3 id="&#x6B65;&#x9AA4;-1&#xFF1A;">&#x6B65;&#x9AA4; 1&#xFF1A;</h3>
-<p>&#x9996;&#x5148;&#x586B;&#x5199;&#x6A21;&#x677F;&#x76F8;&#x5173;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;&#xFF1A;
-<img src="pictures/create_rule_template_step1.png" alt="create rule template step1"></p>
-<p>&#x8FD9;&#x91CC;&#x5C06;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x89C4;&#x5219;&#x6A21;&#x677F;&#x540C;&#x65F6;&#x5E94;&#x7528;&#x5230;&#x4E24;&#x4E2A;&#x6570;&#x636E;&#x6E90;&#x4E0A;&#x3002;</p>
-<h3 id="&#x6B65;&#x9AA4;-2&#xFF1A;">&#x6B65;&#x9AA4; 2&#xFF1A;</h3>
-<p>&#x7136;&#x540E;&#x9009;&#x62E9;&#x9700;&#x8981;&#x542F;&#x7528;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x9700;&#x6C42;&#x4FEE;&#x6539;&#x89C4;&#x5219;&#x7684;<strong>&#x89C4;&#x5219;&#x7B49;&#x7EA7;</strong>&#x548C;<strong>&#x89C4;&#x5219;&#x503C;</strong>&#xFF1A;
-<img src="pictures/create_rule_template_step2.png" alt="create rule template step2"></p>
-<p>&#x8FD9;&#x91CC;&#x4EC5;&#x542F;&#x7528;&#x4E00;&#x4E2A;&#x5BA1;&#x6838;&#x89C4;&#x5219;&#xFF0C;&#x5E76;&#x4E14;&#x81EA;&#x5B9A;&#x4E49;&#x4E86;&#x5BA1;&#x6838;&#x89C4;&#x5219;&#x7684;<strong>&#x89C4;&#x5219;&#x7B49;&#x7EA7;</strong>&#x548C;<strong>&#x89C4;&#x5219;&#x503C;</strong>&#xFF08;&#x8BE5;&#x89C4;&#x5219;&#x9ED8;&#x8BA4;&#x7684;&#x7B49;&#x7EA7;&#x4E3A;Notice&#xFF0C;&#x503C;&#x4E3A;utf8mb4_0900_ai_ci&#xFF09;&#x3002;</p>
+                                <h1 id="oauth2&#x8BBE;&#x7F6E;">OAUTH2&#x8BBE;&#x7F6E;</h1>
+<h2 id="&#x80CC;&#x666F;">&#x80CC;&#x666F;</h2>
+<h3 id="oauth2-&#x7B80;&#x4ECB;">OAUTH2 &#x7B80;&#x4ECB;</h3>
+<p>OAuth 2.0&#x662F;&#x4E00;&#x4E2A;&#x4E1A;&#x754C;&#x6807;&#x51C6;&#x7684;&#x6388;&#x6743;&#x534F;&#x8BAE;&#xFF08;authorization protocol&#xFF09;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x6388;&#x6743;&#x662F;&#x4EE5;&#x59D4;&#x6D3E;&#x4EE3;&#x7406;&#xFF08;delegation&#xFF09;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x7406;&#x89E3;&#xFF0C;OAuth
+2.0&#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x534F;&#x8BAE;&#x4EA4;&#x4E92;&#x6846;&#x67B6;&#xFF0C;&#x8BA9;&#x67D0;&#x4E2A;&#x5E94;&#x7528;&#x80FD;&#x591F;&#x4EE5;&#x5B89;&#x5168;&#x5730;&#x65B9;&#x5F0F;&#x83B7;&#x53D6;&#x5230;&#x7528;&#x6237;&#x7684;&#x59D4;&#x6D3E;&#x4E66;&#xFF0C;&#x8FD9;&#x4E2A;&#x59D4;&#x6D3E;&#x4E66;&#x5728;OAuth 2.0&#x4E2D;&#x5C31;&#x662F;&#x8BBF;&#x95EE;&#x4EE4;&#x724C;&#xFF08;access token&#xFF09;&#xFF0C;&#x968F;&#x540E;&#x5E94;&#x7528;&#x4FBF;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8BE5;&#x59D4;&#x6D3E;&#x4E66;&#xFF0C;&#x4EE3;&#x8868;&#x7528;&#x6237;&#x6765;&#x8BBF;&#x95EE;&#x7528;&#x6237;&#x7684;&#x76F8;&#x5173;&#x8D44;&#x6E90;&#x3002;</p>
+<h3 id="sqle-&#x4E2D;&#x7684;oauth2&#x767B;&#x5F55;&#x529F;&#x80FD;">SQLE &#x4E2D;&#x7684;OAUTH2&#x767B;&#x5F55;&#x529F;&#x80FD;</h3>
+<p>SQLE&#x4E2D;&#x652F;&#x6301;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x7684;&#x65B9;&#x5F0F;&#x63A5;&#x5165;OAUTH2&#x7CFB;&#x7EDF;, &#x5982;&#x540C;&#x5176;&#x4ED6;&#x7CFB;&#x7EDF;&#x4E00;&#x6837;&#x63A5;&#x53D7;&#x7EDF;&#x4E00;&#x7684;&#x7528;&#x6237;&#x7BA1;&#x7406;, &#x4EE5;&#x4FBF;&#x4E8E;&#x7BA1;&#x7406;&#x5458;&#x7BA1;&#x7406;SQLE&#x4E2D;&#x7684;&#x7528;&#x6237;, &#x4E5F;&#x4F7F;&#x5F97;&#x5458;&#x5DE5;&#x65E0;&#x9700;&#x5728;&#x4F7F;&#x7528;&#x4E00;&#x5957;&#x516C;&#x53F8;&#x5185;&#x901A;&#x7528;&#x8D26;&#x53F7;&#x5BC6;&#x7801;&#x7684;&#x540C;&#x65F6;&#x5355;&#x72EC;&#x8BB0;&#x5F55;SQLE&#x7684;&#x8D26;&#x53F7;&#x5BC6;&#x7801;</p>
+<p>&#x5728;SQLE&#x4E2D;, &#x5982;&#x679C;&#x6B63;&#x786E;&#x914D;&#x7F6E;&#x5E76;&#x542F;&#x7528;&#x4E86;OAUTH2&#x529F;&#x80FD;, &#x7528;&#x6237;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x767B;&#x5F55;&#x754C;&#x9762;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x767B;&#x5F55;, SQLE&#x4F1A;&#x5728;&#x5458;&#x5DE5;&#x7B2C;&#x4E00;&#x6B21;&#x767B;&#x5F55;&#x65F6;&#x8981;&#x6C42;&#x7528;&#x6237;&#x7ED1;&#x5B9A;&#x6216;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;SQLE&#x7528;&#x6237;, &#x5E76;&#x5728;&#x4EE5;&#x540E;&#x7684;&#x767B;&#x5F55;&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;OAUTH2&#x7528;&#x6237;&#x767B;&#x5F55;,
+&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x7ED1;&#x5B9A;&#x7684;SQLE&#x7528;&#x6237;&#x8D26;&#x53F7;&#x5BC6;&#x7801;&#x767B;&#x5F55;</p>
+<h2 id="oauth2-&#x914D;&#x7F6E;&#x4FEE;&#x6539;&#x65B9;&#x5F0F;">OAUTH2 &#x914D;&#x7F6E;&#x4FEE;&#x6539;&#x65B9;&#x5F0F;</h2>
+<p>LDAP&#x7684;&#x914D;&#x7F6E;&#x4F4D;&#x4E8E; [&#x7CFB;&#x7EDF;&#x8BBE;&#x7F6E;] &#x6A21;&#x5757;&#x4E2D;, &#x70B9;&#x51FB;&#x5BF9;&#x5E94; <strong>[&#x4FEE;&#x6539;]</strong> &#x6309;&#x94AE;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x4FEE;&#x6539;
+<img src="pictures/oauth2_position.png" alt="oauth2_position"></p>
+<p>&#x53EF;&#x6839;&#x636E;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x5BF9;&#x5E94;&#x6761;&#x76EE;, &#x4FEE;&#x6539;&#x540E;&#x70B9;&#x51FB; <strong>[&#x63D0;&#x4EA4;]</strong> &#x4FDD;&#x5B58;&#x914D;&#x7F6E;, &#x4E5F;&#x53EF;&#x70B9;&#x51FB; <strong>[&#x53D6;&#x6D88;]</strong> &#x53D6;&#x6D88;&#x672C;&#x6B21;&#x4FEE;&#x6539;
+<img src="pictures/setting_oauth2_position.png" alt="setting_oauth2_position"></p>
+<p>&#x542F;&#x7528;&#x540E;SQLE&#x767B;&#x5F55;&#x754C;&#x9762;&#x51FA;&#x73B0;&#x7B2C;&#x4E09;&#x65B9;&#x767B;&#x5F55;&#x5165;&#x53E3;</p>
+<p><img src="pictures/oauth2_user_login.png" alt="oauth2_user_login"></p>
+<h3 id="&#x914D;&#x7F6E;&#x9879;&#x8BF4;&#x660E;">&#x914D;&#x7F6E;&#x9879;&#x8BF4;&#x660E;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;</th>
+<th>&#x5B57;&#x6BB5;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x662F;&#x5426;&#x542F;&#x7528;oauth2</td>
+<td>&#x5F00;&#x542F;&#x540E;&#x624D;&#x4F1A;&#x542F;&#x7528;oauth2&#x767B;&#x5F55;</td>
+</tr>
+<tr>
+<td>&#x5E94;&#x7528;ID</td>
+<td>&#x5E94;&#x7528;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;, &#x4ECE;&#x8981;&#x5BF9;&#x63A5;&#x7684;&#x5E73;&#x53F0;&#x7533;&#x8BF7; , &#x5728;OAuth2.0&#x8BA4;&#x8BC1;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;appid&#x7684;&#x503C;&#x5373;&#x4E3A;oauth_consumer_key&#x7684;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x5E94;&#x7528;&#x5BC6;&#x94A5;</td>
+<td>appid&#x5BF9;&#x5E94;&#x7684;&#x5BC6;&#x94A5;&#xFF0C;&#x8BBF;&#x95EE;&#x7528;&#x6237;&#x8D44;&#x6E90;&#x65F6;&#x7528;&#x6765;&#x9A8C;&#x8BC1;&#x5E94;&#x7528;&#x7684;&#x5408;&#x6CD5;&#x6027;&#x3002;&#x5728;OAuth2.0&#x8BA4;&#x8BC1;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;appkey&#x7684;&#x503C;&#x5373;&#x4E3A;oauth_consumer_secret&#x7684;&#x503C;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x5916;&#x90E8;&#x8BBF;&#x95EE;sqle&#x7684;&#x5730;&#x5740;</td>
+<td>&#x683C;&#x5F0F;&#x4E3A; http(s)://ip:port</td>
+</tr>
+<tr>
+<td>oauth2&#x767B;&#x5F55;&#x6388;&#x6743;&#x9875;&#x9762;&#x5730;&#x5740;</td>
+<td>&#x683C;&#x5F0F;&#x7C7B;&#x4F3C;&#x4E8E; http(s)://ip:port/xxx</td>
+</tr>
+<tr>
+<td>oauth2 access_token &#x83B7;&#x53D6;&#x5730;&#x5740;</td>
+<td>&#x683C;&#x5F0F;&#x7C7B;&#x4F3C;&#x4E8E; http(s)://ip:port/xxx</td>
+</tr>
+<tr>
+<td>oauth2 user id &#x83B7;&#x53D6;&#x5730;&#x5740;</td>
+<td>&#x683C;&#x5F0F;&#x7C7B;&#x4F3C;&#x4E8E; http(s)://ip:port/xxx</td>
+</tr>
+<tr>
+<td>&#x8BF7;&#x6C42;&#x8D44;&#x6E90;&#x8303;&#x56F4;</td>
+<td>&#x6B64;&#x8303;&#x56F4;&#x7531;&#x9A8C;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x5B9A;&#x4E49;</td>
+</tr>
+<tr>
+<td>access_token&#x653E;&#x7F6E;&#x4F4D;&#x7F6E;</td>
+<td>sqle&#x4F1A;&#x5728;&#x83B7;&#x53D6;&#x7528;&#x6237;ID&#x65F6;&#x5C06;access_token&#x653E;&#x5728;&#x8FD9;&#x4E2A;key&#x5BF9;&#x5E94;&#x7684;value&#x4E2D;, &#x6B64;&#x53C2;&#x6570;&#x4F1A;&#x4F5C;&#x4E3A;get&#x8BF7;&#x6C42;&#x7684;&#x53C2;&#x6570;&#x53D1;&#x9001;&#x7ED9;&#x7528;&#x6237;ID&#x83B7;&#x53D6;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>&#x7528;&#x6237;ID&#x4FDD;&#x5B58;&#x4F4D;&#x7F6E;</td>
+<td>sqle&#x4F1A;&#x5C1D;&#x8BD5;&#x4F7F;&#x7528;&#x6B64;key&#x4ECE;&#x7B2C;&#x4E09;&#x65B9;&#x5E73;&#x53F0;&#x7684;&#x54CD;&#x5E94;&#x4E2D;&#x89E3;&#x6790;&#x51FA;&#x7528;&#x6237;ID,&#x7528;&#x6237;ID&#x5E94;&#x5F53;&#x4E3A;&#x552F;&#x4E00;ID</td>
+</tr>
+<tr>
+<td>&#x767B;&#x5F55;&#x6309;&#x94AE;&#x6587;&#x5B57;</td>
+<td>oauth2&#x767B;&#x5F55;&#x6309;&#x94AE;&#x6587;&#x5B57;</td>
+</tr>
+</tbody>
+</table>
 
                                 
                                 </section>
@@ -748,12 +789,12 @@
 
             
                 
-                <a href="overview.html" class="navigation navigation-prev " aria-label="Previous page: 模板管理">
+                <a href="ldap_configuration.html" class="navigation navigation-prev " aria-label="Previous page: LDAP配置">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="workflow_template_management.html" class="navigation navigation-next " aria-label="Next page: 流程模板管理">
+                <a href="email_configuration.html" class="navigation navigation-next " aria-label="Next page: 邮箱配置">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -764,7 +805,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"规则模板管理","level":"1.6.3.1","depth":3,"next":{"title":"流程模板管理","level":"1.6.3.2","depth":3,"path":"3.modules/3.3_template/workflow_template_management.md","ref":"3.modules/3.3_template/workflow_template_management.md","articles":[]},"previous":{"title":"模板管理","level":"1.6.3","depth":2,"path":"3.modules/3.3_template/overview.md","ref":"3.modules/3.3_template/overview.md","articles":[{"title":"规则模板管理","level":"1.6.3.1","depth":3,"path":"3.modules/3.3_template/rule_template_management.md","ref":"3.modules/3.3_template/rule_template_management.md","articles":[]},{"title":"流程模板管理","level":"1.6.3.2","depth":3,"path":"3.modules/3.3_template/workflow_template_management.md","ref":"3.modules/3.3_template/workflow_template_management.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/3.3_template/rule_template_management.md","mtime":"2022-05-07T08:49:09.801Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-05-07T08:49:40.576Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"OAUTH2配置","level":"1.6.8.2","depth":3,"next":{"title":"邮箱配置","level":"1.6.8.3","depth":3,"path":"3.modules/3.8_setting/email_configuration.md","ref":"3.modules/3.8_setting/email_configuration.md","articles":[]},"previous":{"title":"LDAP配置","level":"1.6.8.1","depth":3,"path":"3.modules/3.8_setting/ldap_configuration.md","ref":"3.modules/3.8_setting/ldap_configuration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/3.8_setting/oauth2_configuration.md","mtime":"2022-05-07T08:49:09.825Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-05-07T08:49:40.576Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
