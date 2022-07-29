@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>白名单管理 · SQLE manual</title>
+        <title>辅助工具 · SQLE manual</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../3.5_auditworkflow/overview.html" />
+    <link rel="next" href="jetbrains_plugin.html" />
     
     
-    <link rel="prev" href="../3.3_template/workflow_template_management.html" />
+    <link rel="prev" href="../4.0_sqlquery/sqlquery_history.html" />
     
 
     </head>
@@ -325,9 +325,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.4" data-path="whitelist_management.html">
+        <li class="chapter " data-level="1.6.4" data-path="../3.4_whitelist/whitelist_management.html">
             
-                <a href="whitelist_management.html">
+                <a href="../3.4_whitelist/whitelist_management.html">
             
                     
                     白名单管理
@@ -570,9 +570,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.9" data-path="../4.1_auxiliary_tool/overview.html">
+        <li class="chapter active" data-level="1.6.9" data-path="overview.html">
             
-                <a href="../4.1_auxiliary_tool/overview.html">
+                <a href="overview.html">
             
                     
                     辅助工具
@@ -584,9 +584,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.9.1" data-path="../4.1_auxiliary_tool/jetbrains_plugin.html">
+        <li class="chapter " data-level="1.6.9.1" data-path="jetbrains_plugin.html">
             
-                <a href="../4.1_auxiliary_tool/jetbrains_plugin.html">
+                <a href="jetbrains_plugin.html">
             
                     
                     Jetbrains插件
@@ -766,7 +766,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >白名单管理</a>
+        <a href="../.." >辅助工具</a>
     </h1>
 </div>
 
@@ -781,21 +781,15 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x767D;&#x540D;&#x5355;&#x7BA1;&#x7406;&#xFF08;&#x4F01;&#x4E1A;&#x7248;&#x529F;&#x80FD;&#xFF09;">&#x767D;&#x540D;&#x5355;&#x7BA1;&#x7406;&#xFF08;&#x4F01;&#x4E1A;&#x7248;&#x529F;&#x80FD;&#xFF09;</h1>
-<p>&#x5F53;&#x6211;&#x4EEC;&#x5DF2;&#x77E5;&#x4E00;&#x4E9B; SQL &#x5B58;&#x5728;&#x4E0D;&#x89C4;&#x8303;&#x4E4B;&#x5904;&#xFF0C;&#x4F46;&#x53C8;&#x60F3;&#x5FFD;&#x7565;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; SQL &#x767D;&#x540D;&#x5355;&#x529F;&#x80FD;&#x3002;</p>
-<h2 id="&#x6DFB;&#x52A0;&#x767D;&#x540D;&#x5355;">&#x6DFB;&#x52A0;&#x767D;&#x540D;&#x5355;</h2>
-<h3 id="&#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;">&#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;</h3>
-<p>&#x5728;&#x5DE6;&#x4FA7;&#x5BFC;&#x822A;&#x680F;&#x7684;&#x300C;&#x5E73;&#x53F0;&#x7BA1;&#x7406;&#x300D;&#x4E2D;&#x7684;&#x300C;&#x767D;&#x540D;&#x5355;&#x7BA1;&#x7406;&#x300D;&#x9875;&#x9762;&#x4E2D;&#xFF0C;&#x70B9;&#x51FB;&#x300C;&#x6DFB;&#x52A0;&#x767D;&#x540D;&#x5355;&#x300D;&#xFF0C;&#x586B;&#x5199; SQL &#x767D;&#x540D;&#x5355;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x3002;</p>
-<p>&#x6709;&#x4E00;&#x6761; SQL&#xFF1A;<strong>alter table orders add column create_date TIMESTAMP default current_timestamp</strong> &#x9700;&#x8981;&#x4E0A;&#x7EBF;&#xFF0C;&#x5728;&#x4F7F;&#x7528;&#x767D;&#x540D;&#x5355;&#x524D;&#xFF0C;&#x63D0;&#x4EA4;&#x5BA1;&#x6838;&#xFF1A;
-<img src="pictures/audit_before_add_whitelist.png" alt="audit before add whitelist"></p>
-<p>&#x5BA1;&#x6838;&#x901A;&#x8FC7;&#x7387;&#x4E3A; 0% &#x65E0;&#x6CD5;&#x4E0A;&#x7EBF;&#x3002;</p>
-<p>&#x5047;&#x8BBE;&#x56E0;&#x4E3A;&#x67D0;&#x4E9B;&#x539F;&#x56E0;&#x65E0;&#x6CD5;&#x4FEE;&#x6539; SQL&#xFF0C;&#x4F46;&#x662F;&#x8BE5; SQL &#x53C8;&#x5FC5;&#x987B;&#x4E0A;&#x7EBF;&#x3002;&#x8FD9;&#x65F6;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x4E00;&#x6761;&#x9488;&#x5BF9;&#x4E8E;&#x8BE5; SQL &#x7684;&#x767D;&#x540D;&#x5355;&#xFF1A;</p>
-<p><img src="pictures/create_whitelist.png" alt="create whitelist"></p>
-<p>&#x518D;&#x6B21;&#x63D0;&#x4EA4;&#x5BA1;&#x6838;&#xFF1A;
-<img src="pictures/audit_after_add_whitelist.png" alt="audit after add whitelist"></p>
-<p>&#x5BA1;&#x6838;&#x901A;&#x8FC7;&#x7387;&#x4E3A; 100% &#x53EF;&#x4EE5;&#x63D0;&#x4EA4;&#x5DE5;&#x5355;&#x4E0A;&#x7EBF;&#x3002;</p>
-<h3 id="&#x6307;&#x7EB9;&#x5339;&#x914D;">&#x6307;&#x7EB9;&#x5339;&#x914D;</h3>
-<p>&#x5F53;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5FFD;&#x7565;&#x4E00;&#x7C7B; SQL &#x65F6;&#xFF0C;&#x53C8;&#x4E0D;&#x60F3;&#x4E3A;&#x6BCF;&#x6761; SQL &#x6DFB;&#x52A0;&#x767D;&#x540D;&#x5355;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6DFB;&#x52A0;&#x767D;&#x540D;&#x5355;&#x65F6;&#x9009;&#x62E9;&#x300C;sql&#x6307;&#x7EB9;&#x5339;&#x914D;&#x300D;&#x3002;</p>
+                                <h1 id="&#x8F85;&#x52A9;&#x5DE5;&#x5177;">&#x8F85;&#x52A9;&#x5DE5;&#x5177;</h1>
+<h2 id="&#x76EE;&#x5F55;">&#x76EE;&#x5F55;</h2>
+<ul>
+<li><a href="jetbrains_plugin.html">Jetbrains&#x5BA1;&#x6838;&#x63D2;&#x4EF6;</a></li>
+</ul>
+<h2 id="&#x80CC;&#x666F;">&#x80CC;&#x666F;</h2>
+<p>&#x5728;&#x90E8;&#x5206;&#x573A;&#x666F;&#x4E2D;, &#x4F7F;&#x7528;SQLE&#x8FD8;&#x662F;&#x76F8;&#x5BF9;&#x9EBB;&#x70E6;&#x7684;, &#x6BD4;&#x5982;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x65B0;&#x5199;&#x7684;SQL&#x4F7F;&#x7528;SQLE&#x8F85;&#x52A9;&#x8C03;&#x4F18;&#x5C31;&#x4E0D;&#x662F;&#x5F88;&#x65B9;&#x4FBF;, &#x57FA;&#x4E8E;&#x6B64;, SQLE&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x8F85;&#x52A9;&#x5DE5;&#x5177;, &#x7528;&#x4E8E;&#x5728;&#x8FD9;&#x4E9B;&#x4E0D;&#x65B9;&#x4FBF;&#x7684;&#x573A;&#x666F;&#x4E2D;&#x8F85;&#x52A9;&#x7528;&#x6237;&#x4F7F;&#x7528;SQLE&#x7684;&#x76F8;&#x5173;&#x529F;&#x80FD;</p>
+<h2 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h2>
+<p>SQLE&#x63D0;&#x4F9B;&#x4E86;&#x90E8;&#x5206;&#x8F85;&#x52A9;&#x5DE5;&#x5177;, &#x7528;&#x4E8E;&#x5E2E;&#x52A9;&#x7528;&#x6237;&#x66F4;&#x65B9;&#x4FBF;&#x7684;&#x4F7F;&#x7528;SQLE&#x7684;&#x529F;&#x80FD;, &#x4ECE;&#x800C;&#x5728;&#x5F00;&#x53D1;&#x5BA1;&#x6838;&#x4E0A;&#x7EBF;&#x7B49;&#x5404;&#x4E2A;&#x9636;&#x6BB5;&#x4FDD;&#x8BC1;SQL&#x7B26;&#x5408;&#x89C4;&#x8303;</p>
 
                                 
                                 </section>
@@ -823,12 +817,12 @@
 
             
                 
-                <a href="../3.3_template/workflow_template_management.html" class="navigation navigation-prev " aria-label="Previous page: 流程模板管理">
+                <a href="../4.0_sqlquery/sqlquery_history.html" class="navigation navigation-prev " aria-label="Previous page: 历史记录">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../3.5_auditworkflow/overview.html" class="navigation navigation-next " aria-label="Next page: 审核工单">
+                <a href="jetbrains_plugin.html" class="navigation navigation-next " aria-label="Next page: Jetbrains插件">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -839,7 +833,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"白名单管理","level":"1.6.4","depth":2,"next":{"title":"审核工单","level":"1.6.5","depth":2,"path":"3.modules/3.5_auditworkflow/overview.md","ref":"3.modules/3.5_auditworkflow/overview.md","articles":[{"title":"审核工单管理","level":"1.6.5.1","depth":3,"path":"3.modules/3.5_auditworkflow/auditworkflow_management.md","ref":"3.modules/3.5_auditworkflow/auditworkflow_management.md","articles":[]},{"title":"Online DDL","level":"1.6.5.2","depth":3,"path":"3.modules/3.5_auditworkflow/online_ddl.md","ref":"3.modules/3.5_auditworkflow/online_ddl.md","articles":[]},{"title":"索引优化","level":"1.6.5.3","depth":3,"path":"3.modules/3.5_auditworkflow/index_optimization.md","ref":"3.modules/3.5_auditworkflow/index_optimization.md","articles":[]}]},"previous":{"title":"流程模板管理","level":"1.6.3.2","depth":3,"path":"3.modules/3.3_template/workflow_template_management.md","ref":"3.modules/3.3_template/workflow_template_management.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/3.4_whitelist/whitelist_management.md","mtime":"2022-07-29T08:47:24.954Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-29T08:48:10.444Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"辅助工具","level":"1.6.9","depth":2,"next":{"title":"Jetbrains插件","level":"1.6.9.1","depth":3,"path":"3.modules/4.1_auxiliary_tool/jetbrains_plugin.md","ref":"3.modules/4.1_auxiliary_tool/jetbrains_plugin.md","articles":[]},"previous":{"title":"历史记录","level":"1.6.8.3","depth":3,"path":"3.modules/4.0_sqlquery/sqlquery_history.md","ref":"3.modules/4.0_sqlquery/sqlquery_history.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/4.1_auxiliary_tool/overview.md","mtime":"2022-07-29T08:47:25.002Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-29T08:48:10.444Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
