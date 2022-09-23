@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>数据库审核插件使用 · SQLE manual</title>
+        <title>SQL工作台 · SQLE manual</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="auditplugin_development.html" />
+    <link rel="next" href="../3.1_permission/overview.html" />
     
     
-    <link rel="prev" href="overview.html" />
+    <link rel="prev" href="../overview.html" />
     
 
     </head>
@@ -222,9 +222,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../4.2_sql_editor/overview.html">
+        <li class="chapter active" data-level="1.6.1" data-path="overview.html">
             
-                <a href="../4.2_sql_editor/overview.html">
+                <a href="overview.html">
             
                     
                     SQL工作台
@@ -480,9 +480,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.8" data-path="overview.html">
+        <li class="chapter " data-level="1.6.8" data-path="../3.7_auditplugin/overview.html">
             
-                <a href="overview.html">
+                <a href="../3.7_auditplugin/overview.html">
             
                     
                     数据库审核插件
@@ -494,9 +494,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.6.8.1" data-path="auditplugin_management.html">
+        <li class="chapter " data-level="1.6.8.1" data-path="../3.7_auditplugin/auditplugin_management.html">
             
-                <a href="auditplugin_management.html">
+                <a href="../3.7_auditplugin/auditplugin_management.html">
             
                     
                     数据库审核插件使用
@@ -507,9 +507,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.8.2" data-path="auditplugin_development.html">
+        <li class="chapter " data-level="1.6.8.2" data-path="../3.7_auditplugin/auditplugin_development.html">
             
-                <a href="auditplugin_development.html">
+                <a href="../3.7_auditplugin/auditplugin_development.html">
             
                     
                     数据库审核插件开发
@@ -779,7 +779,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >数据库审核插件使用</a>
+        <a href="../.." >SQL工作台</a>
     </h1>
 </div>
 
@@ -794,60 +794,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#x4F7F;&#x7528;">&#x6570;&#x636E;&#x5E93;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#x4F7F;&#x7528;</h1>
-<h2 id="&#x4E00;&#x3001;&#x914D;&#x7F6E;&#x63D2;&#x4EF6;">&#x4E00;&#x3001;&#x914D;&#x7F6E;&#x63D2;&#x4EF6;</h2>
-<p>&#x521B;&#x5EFA;&#x63D2;&#x4EF6;&#x4E8C;&#x8FDB;&#x5236;&#x76EE;&#x5F55;&#xFF0C;&#x901A;&#x5E38;&#x521B;&#x5EFA;&#x5728; SQLE &#x7684;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x4E0B;&#xFF1A;</p>
-<pre><code>bash-4.2$ ls -l
-total 24
-drwxr-x--- 2 actiontech-universe actiontech 4096 Oct  8 09:30 bin
-drwxrwx--- 1 actiontech-universe actiontech 4096 Oct 12 13:40 etc
-drwxr-x--- 1 actiontech-universe actiontech 4096 Oct 12 13:40 logs
-drwxr-xr-x 1 actiontech-universe actiontech 4096 Oct  8 09:30 plugins # &#x521B;&#x5EFA;&#x63D2;&#x4EF6;&#x76EE;&#x5F55;
-drwxr-x--- 2 actiontech-universe actiontech 4096 Oct  8 09:30 scripts
-drwxr-x--- 3 actiontech-universe actiontech 4096 Oct  8 09:30 ui
-</code></pre><p>&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6; sqle.yml&#xFF1A;</p>
-<pre><code>server:
-  sqle_config:
-    server_port: 10000
-    auto_migrate_table: true
-    debug_log: false
-    log_path: &apos;./logs&apos;
-    plugin_path: &apos;./plugins&apos;   # &#x6B64;&#x5904;&#x586B;&#x5199;&#x63D2;&#x4EF6;&#x76EE;&#x5F55;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x586B;&#x5199;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;
-  db_config:
-    mysql_cnf:
-      mysql_host: &apos;127.0.0.1&apos;
-      mysql_port: &apos;3306&apos;
-      mysql_user: &apos;root&apos;
-      mysql_password: &apos;mysqlpass&apos;
-      mysql_schema: &apos;sqle&apos;
-</code></pre><h2 id="&#x4E8C;&#x3001;&#x96C6;&#x6210;&#x63D2;&#x4EF6;">&#x4E8C;&#x3001;&#x96C6;&#x6210;&#x63D2;&#x4EF6;</h2>
-<p>&#x5C06;&#x63D2;&#x4EF6;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x653E;&#x5728;<code>&#x4E00;&#x3001;&#x914D;&#x7F6E;&#x63D2;&#x4EF6;</code>&#x4E2D;&#x521B;&#x5EFA;&#x7684;&#x76EE;&#x5F55; <code>plugins/</code>&#x5185;&#xFF0C;&#x5176;&#x4E2D;&#x63D2;&#x4EF6;&#x7684;&#x53EF;&#x4EE5;&#x7531;&#x7B2C;&#x4E09;&#x65B9;&#x63D0;&#x4F9B;&#x6216;&#x8005;&#x81EA;&#x884C;&#x7F16;&#x8BD1;&#xFF0C;&#x53C2;&#x8003;&#xFF1A;<a href="https://github.com/actiontech/sqle-pg-plugin" target="_blank">sqle-pg-plugin</a></p>
-<p>ps&#xFF1A;&#x5728;&#x91CD;&#x542F; SQLE &#x524D;&#xFF0C;&#x9700;&#x8981;&#x786E;&#x4FDD; SQLE &#x7684;&#x8FD0;&#x884C;&#x7528;&#x6237;&#x62E5;&#x6709;&#x63D2;&#x4EF6;&#x4E8C;&#x8FDB;&#x5236;&#x7684;&#x6267;&#x884C;&#x6743;&#x9650;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x6765;&#x8BBE;&#x7F6E;&#xFF1A;</p>
-<pre><code class="lang-sh">chmod +x /opt/sqle/plugins/sqle-pg-plugin
-</code></pre>
-<h2 id="&#x4E09;&#x3001;&#x91CD;&#x542F;-sqle-server">&#x4E09;&#x3001;&#x91CD;&#x542F; SQLE Server</h2>
-<h3 id="rpm-&#x5B89;&#x88C5;">rpm &#x5B89;&#x88C5;</h3>
-<pre><code class="lang-bash">systemctl restart sqled
-</code></pre>
-<h3 id="docker">docker</h3>
-<pre><code class="lang-bash">docker restart sqle-server
-</code></pre>
-<h2 id="&#x56DB;&#x3001;&#x786E;&#x8BA4;&#x63D2;&#x4EF6;&#x751F;&#x6548;">&#x56DB;&#x3001;&#x786E;&#x8BA4;&#x63D2;&#x4EF6;&#x751F;&#x6548;</h2>
-<h3 id="&#x901A;&#x8FC7;&#x65E5;&#x5FD7;">&#x901A;&#x8FC7;&#x65E5;&#x5FD7;</h3>
-<p>&#x91CD;&#x542F;&#x540E;&#xFF0C;&#x82E5;&#x6210;&#x529F;&#x52A0;&#x8F7D;&#x63D2;&#x4EF6;&#xFF0C;&#x65E5;&#x5FD7;&#x4E2D;&#x4F1A;&#x6253;&#x5370;&#x5F53;&#x524D;&#x52A0;&#x8F7D;&#x7684;&#x5BA1;&#x6838;&#x63D2;&#x4EF6;&#xFF1A;</p>
-<pre><code>time=&quot;2021-10-12T14:06:42+08:00&quot; level=info msg=&quot;starting sqled server&quot;
-time=&quot;2021-10-12T14:06:42+08:00&quot; level=info msg=&quot;plugin inited&quot; plugin_name=PostgreSQL
-...
-time=&quot;2021-10-12T14:06:43+08:00&quot; level=info msg=&quot;starting http server on :10000&quot;
-</code></pre><h3 id="&#x901A;&#x8FC7;&#x9875;&#x9762;">&#x901A;&#x8FC7;&#x9875;&#x9762;</h3>
-<ul>
-<li>&#x67E5;&#x770B; SQLE &#x89C4;&#x5219;&#x9875;&#x9762;&#xFF0C;PostgreSQL &#x63D2;&#x4EF6;&#x652F;&#x6301;&#x7684;&#x5BA1;&#x6838;&#x89C4;&#x5219;&#x5DF2;&#x7ECF;&#x52A0;&#x8F7D;&#x5230; SQLE Server&#xFF1A;</li>
-</ul>
-<p><img src="pictures/audit_rule_for_pg.png" alt="audit rule for pg"></p>
-<ul>
-<li>&#x6DFB;&#x52A0;&#x6570;&#x636E;&#x6E90;&#xFF0C;&#x663E;&#x793A;&#x5DF2;&#x7ECF;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0; PostgreSQL &#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x6E90;&#x3002;</li>
-</ul>
-<p><img src="pictures/create_instance_with_pg.png" alt="create instance with pg"></p>
+                                <h1 id="sql-&#x5DE5;&#x4F5C;&#x53F0;">SQL &#x5DE5;&#x4F5C;&#x53F0;</h1>
+<p>&#x5F85;&#x8865;&#x5145;</p>
 
                                 
                                 </section>
@@ -875,12 +823,12 @@ time=&quot;2021-10-12T14:06:43+08:00&quot; level=info msg=&quot;starting http se
 
             
                 
-                <a href="overview.html" class="navigation navigation-prev " aria-label="Previous page: 数据库审核插件">
+                <a href="../overview.html" class="navigation navigation-prev " aria-label="Previous page: 功能模块">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="auditplugin_development.html" class="navigation navigation-next " aria-label="Next page: 数据库审核插件开发">
+                <a href="../3.1_permission/overview.html" class="navigation navigation-next " aria-label="Next page: 权限管理">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -891,7 +839,7 @@ time=&quot;2021-10-12T14:06:43+08:00&quot; level=info msg=&quot;starting http se
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据库审核插件使用","level":"1.6.8.1","depth":3,"next":{"title":"数据库审核插件开发","level":"1.6.8.2","depth":3,"path":"3.modules/3.7_auditplugin/auditplugin_development.md","ref":"3.modules/3.7_auditplugin/auditplugin_development.md","articles":[]},"previous":{"title":"数据库审核插件","level":"1.6.8","depth":2,"path":"3.modules/3.7_auditplugin/overview.md","ref":"3.modules/3.7_auditplugin/overview.md","articles":[{"title":"数据库审核插件使用","level":"1.6.8.1","depth":3,"path":"3.modules/3.7_auditplugin/auditplugin_management.md","ref":"3.modules/3.7_auditplugin/auditplugin_management.md","articles":[]},{"title":"数据库审核插件开发","level":"1.6.8.2","depth":3,"path":"3.modules/3.7_auditplugin/auditplugin_development.md","ref":"3.modules/3.7_auditplugin/auditplugin_development.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/3.7_auditplugin/auditplugin_management.md","mtime":"2022-09-23T02:24:37.929Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-23T02:25:10.479Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SQL工作台","level":"1.6.1","depth":2,"next":{"title":"权限管理","level":"1.6.2","depth":2,"path":"3.modules/3.1_permission/overview.md","ref":"3.modules/3.1_permission/overview.md","articles":[{"title":"角色管理","level":"1.6.2.1","depth":3,"path":"3.modules/3.1_permission/role_management.md","ref":"3.modules/3.1_permission/role_management.md","articles":[]},{"title":"用户管理","level":"1.6.2.2","depth":3,"path":"3.modules/3.1_permission/user_management.md","ref":"3.modules/3.1_permission/user_management.md","articles":[]}]},"previous":{"title":"功能模块","level":"1.6","depth":1,"path":"3.modules/overview.md","ref":"3.modules/overview.md","articles":[{"title":"SQL工作台","level":"1.6.1","depth":2,"path":"3.modules/4.2_sql_editor/overview.md","ref":"3.modules/4.2_sql_editor/overview.md","articles":[]},{"title":"权限管理","level":"1.6.2","depth":2,"path":"3.modules/3.1_permission/overview.md","ref":"3.modules/3.1_permission/overview.md","articles":[{"title":"角色管理","level":"1.6.2.1","depth":3,"path":"3.modules/3.1_permission/role_management.md","ref":"3.modules/3.1_permission/role_management.md","articles":[]},{"title":"用户管理","level":"1.6.2.2","depth":3,"path":"3.modules/3.1_permission/user_management.md","ref":"3.modules/3.1_permission/user_management.md","articles":[]}]},{"title":"数据源管理","level":"1.6.3","depth":2,"path":"3.modules/3.2_instance/instance_management.md","ref":"3.modules/3.2_instance/instance_management.md","articles":[]},{"title":"模板管理","level":"1.6.4","depth":2,"path":"3.modules/3.3_template/overview.md","ref":"3.modules/3.3_template/overview.md","articles":[{"title":"规则模板管理","level":"1.6.4.1","depth":3,"path":"3.modules/3.3_template/rule_template_management.md","ref":"3.modules/3.3_template/rule_template_management.md","articles":[]},{"title":"流程模板管理","level":"1.6.4.2","depth":3,"path":"3.modules/3.3_template/workflow_template_management.md","ref":"3.modules/3.3_template/workflow_template_management.md","articles":[]}]},{"title":"白名单管理","level":"1.6.5","depth":2,"path":"3.modules/3.4_whitelist/whitelist_management.md","ref":"3.modules/3.4_whitelist/whitelist_management.md","articles":[]},{"title":"审核工单","level":"1.6.6","depth":2,"path":"3.modules/3.5_auditworkflow/overview.md","ref":"3.modules/3.5_auditworkflow/overview.md","articles":[{"title":"审核工单管理","level":"1.6.6.1","depth":3,"path":"3.modules/3.5_auditworkflow/auditworkflow_management.md","ref":"3.modules/3.5_auditworkflow/auditworkflow_management.md","articles":[]},{"title":"Online DDL","level":"1.6.6.2","depth":3,"path":"3.modules/3.5_auditworkflow/online_ddl.md","ref":"3.modules/3.5_auditworkflow/online_ddl.md","articles":[]},{"title":"索引优化","level":"1.6.6.3","depth":3,"path":"3.modules/3.5_auditworkflow/index_optimization.md","ref":"3.modules/3.5_auditworkflow/index_optimization.md","articles":[]}]},{"title":"审核任务","level":"1.6.7","depth":2,"path":"3.modules/3.6_auditplan/overview.md","ref":"3.modules/3.6_auditplan/overview.md","articles":[{"title":"审核任务介绍","level":"1.6.7.1","depth":3,"path":"3.modules/3.6_auditplan/introduction.md","ref":"3.modules/3.6_auditplan/introduction.md","articles":[]},{"title":"审核任务管理","level":"1.6.7.2","depth":3,"path":"3.modules/3.6_auditplan/auditplan_management.md","ref":"3.modules/3.6_auditplan/auditplan_management.md","articles":[]},{"title":"审核任务通知","level":"1.6.7.3","depth":3,"path":"3.modules/3.6_auditplan/auditplan_notify.md","ref":"3.modules/3.6_auditplan/auditplan_notify.md","articles":[]},{"title":"Scanner 使用说明","level":"1.6.7.4","depth":3,"path":"3.modules/3.6_auditplan/scanner_management.md","ref":"3.modules/3.6_auditplan/scanner_management.md","articles":[]}]},{"title":"数据库审核插件","level":"1.6.8","depth":2,"path":"3.modules/3.7_auditplugin/overview.md","ref":"3.modules/3.7_auditplugin/overview.md","articles":[{"title":"数据库审核插件使用","level":"1.6.8.1","depth":3,"path":"3.modules/3.7_auditplugin/auditplugin_management.md","ref":"3.modules/3.7_auditplugin/auditplugin_management.md","articles":[]},{"title":"数据库审核插件开发","level":"1.6.8.2","depth":3,"path":"3.modules/3.7_auditplugin/auditplugin_development.md","ref":"3.modules/3.7_auditplugin/auditplugin_development.md","articles":[]}]},{"title":"SQL查询","level":"1.6.9","depth":2,"path":"3.modules/4.0_sqlquery/overview.md","ref":"3.modules/4.0_sqlquery/overview.md","articles":[{"title":"SQL查询","level":"1.6.9.1","depth":3,"path":"3.modules/4.0_sqlquery/sqlquery_query.md","ref":"3.modules/4.0_sqlquery/sqlquery_query.md","articles":[]},{"title":"SQL审核","level":"1.6.9.2","depth":3,"path":"3.modules/4.0_sqlquery/sqlquery_audit.md","ref":"3.modules/4.0_sqlquery/sqlquery_audit.md","articles":[]},{"title":"历史记录","level":"1.6.9.3","depth":3,"path":"3.modules/4.0_sqlquery/sqlquery_history.md","ref":"3.modules/4.0_sqlquery/sqlquery_history.md","articles":[]}]},{"title":"辅助工具","level":"1.6.10","depth":2,"path":"3.modules/4.1_auxiliary_tool/overview.md","ref":"3.modules/4.1_auxiliary_tool/overview.md","articles":[{"title":"Jetbrains插件","level":"1.6.10.1","depth":3,"path":"3.modules/4.1_auxiliary_tool/jetbrains_plugin.md","ref":"3.modules/4.1_auxiliary_tool/jetbrains_plugin.md","articles":[]}]},{"title":"系统设置","level":"1.6.11","depth":2,"path":"3.modules/3.8_setting/overview.md","ref":"3.modules/3.8_setting/overview.md","articles":[{"title":"LDAP配置","level":"1.6.11.1","depth":3,"path":"3.modules/3.8_setting/ldap_configuration.md","ref":"3.modules/3.8_setting/ldap_configuration.md","articles":[]},{"title":"OAUTH2配置","level":"1.6.11.2","depth":3,"path":"3.modules/3.8_setting/oauth2_configuration.md","ref":"3.modules/3.8_setting/oauth2_configuration.md","articles":[]},{"title":"邮箱配置","level":"1.6.11.3","depth":3,"path":"3.modules/3.8_setting/email_configuration.md","ref":"3.modules/3.8_setting/email_configuration.md","articles":[]},{"title":"企业微信配置","level":"1.6.11.4","depth":3,"path":"3.modules/3.8_setting/wechat_configuration.md","ref":"3.modules/3.8_setting/wechat_configuration.md","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/4.2_sql_editor/overview.md","mtime":"2022-09-23T02:24:37.949Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-23T02:25:10.479Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
