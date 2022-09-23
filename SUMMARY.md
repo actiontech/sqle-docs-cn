@@ -9,6 +9,7 @@
     * [Docker 部署](2.deploy/2.3_docker_deploy.md)
     * [开始使用](2.deploy/2.4_after_deploy.md)
 * [功能模块](3.modules/overview.md)
+    * [SQL工作台](3.modules/4.2_sql_editor/overview.md)
     * [权限管理](3.modules/3.1_permission/overview.md)
         * [角色管理](3.modules/3.1_permission/role_management.md)
         * [用户管理](3.modules/3.1_permission/user_management.md)
