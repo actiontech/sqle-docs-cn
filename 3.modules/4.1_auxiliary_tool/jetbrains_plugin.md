@@ -77,3 +77,15 @@
 #### 插件支持哪些IDE
 
 答: Jetbrains家的所有软件和 [Android Studio] 都是支持的
+
+#### SQLE插件的配置存在什么地方
+
+答:
+
+      {用户根目录}\AppData\Roaming\JetBrains\{idea版本号对应目录}\options\SQLESettings.xml
+
+| 变量 | 说明 |
+| --- | --- |
+| 用户根目录 | 一般为 C:\Users 目录下和用户名同名的目录, 内部一般包含 '桌面', '下载' 等文件夹 |
+| idea版本号对应目录 | 一般为 软件名版本号 的格式, 如社区版idea 2022.1版本对应目录名为 IdealC2022.1 |
+
