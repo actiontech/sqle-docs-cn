@@ -6,6 +6,8 @@
 
 #### 2. 配置SQLE
 
+#### 3. 配置完成检查
+
 ## CloudBeaver配置流程
 
 1. 修改CloudBeaver配置文件
@@ -67,3 +69,41 @@ sql_query_config 子参数
 2. sql_query_config 与 sqle_config在同一级, 其余参数在 sql_query_config 的下一级, 需要注意缩进
 3. 管理员账户需要有 [添加/修改/删除] [用户/实例/权限] 的权限
 4. SQLE集成CloudBeaver后请勿在使用管理员账户直接操作CloudBeaver的 用户/实例/权限
+
+## 配置完成检查
+
+### 1. 确认CloudBeaver配置正确
+
+#### 1.1. 确认关键配置文件正确
+
+使用 http://{IP}:8978/sql_query#/ 可以进入CloudBeaver即代表配置正确
+
+#### 1.2. 使用管理员账户登录CloudBeaver原地址
+
+![img_17.png](pictures/img_17.png)
+
+#### 1.3. 进入管理界面
+
+![img_18.png](pictures/img_18.png)
+
+#### 1.4. 检查服务器配置, 确认安全选项均已打开
+
+![img_19.png](pictures/img_19.png)
+
+#### 1.5. 确认角色正确
+
+[访问管理] - [角色] 处应当只有admin和user两个角色
+
+![img_20.png](pictures/img_20.png)
+
+#### 1.6. 确认没有冲突用户
+
+[访问管理] - [用户] 处不应当有名称格式为 sqle-xxx的用户存在, 这会与SQLE自动创建的用户冲突
+
+![img_21.png](pictures/img_21.png)
+
+### 1. 检查SQLE是否已成功集成CloudBeaver
+
+点击SQL工作台, 应当可以正常跳转到CloudBeaver, 且原SQLE网页应当如图所示
+
+![img.png](pictures/img_16.png)
