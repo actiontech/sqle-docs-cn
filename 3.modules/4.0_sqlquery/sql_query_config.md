@@ -1,4 +1,3 @@
-
 # 配置SQL工作台
 
 ## 1. 安装CloudBeaver(已安装CloudBeaver的可以跳过这一步)
@@ -18,17 +17,12 @@ docker 部署：https://github.com/dbeaver/cloudbeaver/wiki/Run-Docker-Container
 | 配置文件名 | 是否必须修改 | 修改内容 | 修改原因 |
 | --- | --- | --- | --- |
 | cloudbeaver.conf | 是 | 1. 将server.rootURI的值改为'/sql_query'</br>2. server.serviceURI 的值改为 '/api/'(server.serviceURI默认就是/api/) | SQLE目前只支持代理这个路由 |
-| product.conf | 否 | 将core.user.defaultTheme的值改为'dark' | 暗色主题与SQLE更搭 |
 
 #### 2.1.2修改完毕后的文件效果
 
 cloudbeaver.conf
 
 ![img_1.png](pictures/img_1.png)
-
-product.conf
-
-![img_2.png](pictures/img_2.png)
 
 ### 2.2. 重启CloudBeaver
 
