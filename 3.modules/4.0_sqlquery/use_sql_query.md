@@ -1,109 +1,72 @@
-# 配置SQL工作台
+# SQL工作台使用
 
-## 整体配置流程
+## 1. 配置实例权限
 
-#### 1. 配置CloudBeaver
+### 1.1. 创建一个有SQL查询权限的角色
 
-#### 2. 配置SQLE
+![img_6.png](pictures/img_6.png)
 
-#### 3. 配置完成检查
+### 1.2. 绑定角色和实例
 
-## CloudBeaver配置流程
+![img_8.png](pictures/img_8.png)
 
-1. 修改CloudBeaver配置文件
-2. 重启CloudBeaver
-3. 使用管理员登录CloudBeaver(此时CloudBeaver地址应当为 http://{IP}:8978/sql_query#/)
+### 1.3. 创建一个用户,并绑定到刚才的角色
 
-4. 确认CloudBeaver配置
+![img_7.png](pictures/img_7.png)
 
-### 配置文件修改内容
+## 2. 配置实例审核等级
 
-| 配置文件名 | 是否必须修改 | 修改内容 | 修改原因 |
-| --- | --- | --- | --- |
-| cloudbeaver.conf | 是 | 1. 将server.rootURI的值改为'/sql_query'</br>2. server.serviceURI 的值改为 '/api/'(server.serviceURI默认就是/api/) | SQLE目前只支持代理这个路由 |
-| product.conf | 否 | 将core.user.defaultTheme的值改为'dark' | 暗色主题与SQLE更搭 |
+### 2.1. 创建/修改一个实例, 填写基础参数
 
-#### 修改完毕后的文件效果
+![img_4.png](pictures/img_4.png)
 
-cloudbeaver.conf
+### 2.2. 填写实例参数最下方SQL查询相关配置, 并提交修改
 
-![img_1.png](pictures/img_1.png)
+![img_5.png](pictures/img_5.png)
 
-product.conf
+#### 2.2.1参数说明
 
-![img_2.png](pictures/img_2.png)
-
-#### 确认服务器配置
-
-![img_3.png](pictures/img_3.png)
-
-## SQLE配置流程
-
-1. 修改SQLE配置文件, 增加SQL工作台参数(参数见下方说明)
-2. 重启SQLE
-
-### 参数说明
-
-配置文件新增参数
-
-| 参数字段 | 参数说明 |
+| 参数名 | 参数含义 |
 | --- | --- |
-| sql_query_config | sql工作台参数, 此参数与 sqle_config在同一级 |
+| SQL查询是否需要审核 | 只要此项开启的实例才会在执行SQL时进行审核 |
+| 运行查询的最高审核等级 | 如果审核等级低于这个等级将会放行, 高于这个等级将无法执行 |
 
-sql_query_config 子参数
+## 3.使用SQL工作台
 
-| 参数字段 | 参数说明 |
-| --- | --- |
-| cloud_beaver_host | cloudbeaver IP地址 |
-| cloud_beaver_port | cloudbeaver访问端口 |
-| cloud_beaver_admin_user | cloudbeaver管理员账户 |
-| cloud_beaver_admin_password | cloudbeaver管理员密码 |
+### 3.1登录CloudBeaver
 
-配置完毕后文件内容大致如图
+### 3.2自动登录说明
 
-![img.png](pictures/img.png)
+在登陆SQLE时会检测CloudBeaver是否处于登陆状态, 如果CloudBeaver当前没有登录, SQLE将会自动使用当前SQLE用户登录CloudBeaver, 用户也可以自行使用SQLE用户从CloudBeaver中登录
+![img_9.png](pictures/img_9.png)
 
-### 注意事项
+### 3.3用户/实例同步说明
 
-1. 配置文件一般位于SQLE工作目录的etc目录下, 文件名一般为sqled.yml
-2. sql_query_config 与 sqle_config在同一级, 其余参数在 sql_query_config 的下一级, 需要注意缩进
-3. 管理员账户需要有 [添加/修改/删除] [用户/实例/权限] 的权限
-4. SQLE集成CloudBeaver后请勿在使用管理员账户直接操作CloudBeaver的 用户/实例/权限
+1. 实例与用户均在用户登录时进行同步
+2. 因CloudBeaver产品限制, 用户/实例/权限的改动不会对已登录用户生效, 期望看到最新的改动需要重新登陆CloudBeaver
+3. admin用户可以看到所有SQLE实例
+4. 不支持的实例类型将不会进行同步
+5. SQLE将会屏蔽管理用户, 即使用CloudBeaver管理员将无法从SQLE的CloudBeaver处登录
 
-## 配置完成检查
+### 4.下发SQL
 
-### 1. 确认CloudBeaver配置正确
+#### 4.1.创建一个链接
 
-#### 1.1. 确认关键配置文件正确
+![img_10.png](pictures/img_10.png)
 
-使用 http://{IP}:8978/sql_query#/ 可以进入CloudBeaver即代表配置正确
+#### 4.2. 输入需要执行的SQL
 
-#### 1.2. 使用管理员账户登录CloudBeaver原地址
+![img_11.png](pictures/img_11.png)
 
-![img_17.png](pictures/img_17.png)
+#### 4.3. 点击执行按钮
 
-#### 1.3. 进入管理界面
+![img_12.png](pictures/img_12.png)
 
-![img_18.png](pictures/img_18.png)
+#### 4.4. 审核失败的SQL将会被拦截, 并报出错误, 可以点击Details查看审核详情
 
-#### 1.4. 检查服务器配置, 确认安全选项均已打开
+![img_13.png](pictures/img_13.png)
+![img_14.png](pictures/img_14.png)
 
-![img_19.png](pictures/img_19.png)
+#### 4.5. 按要求修改SQL, 再次执行, 如果审核通过将会执行当前SQL
 
-#### 1.5. 确认角色正确
-
-[访问管理] - [角色] 处应当只有admin和user两个角色
-
-![img_20.png](pictures/img_20.png)
-
-#### 1.6. 确认没有冲突用户
-
-[访问管理] - [用户] 处不应当有名称格式为 sqle-xxx的用户存在, 这会与SQLE自动创建的用户冲突
-
-![img_21.png](pictures/img_21.png)
-
-### 1. 检查SQLE是否已成功集成CloudBeaver
-
-点击SQL工作台, 应当可以正常跳转到CloudBeaver, 且原SQLE网页应当如图所示
-
-![img.png](pictures/img_16.png)
+![img_15.png](pictures/img_15.png)

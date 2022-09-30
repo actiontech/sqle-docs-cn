@@ -12,7 +12,13 @@ SQL查询是DBA日常工作中的一部分，但有些场景可能给DBA带来�
 
 ## 概述
 
-SQLE为用户提供SQL查询功能，可通过参数配置及SQL查询审核对SQL做限制和筛查，通过权限设置管理可操作人员，有效避免不合规的查询。同时支持的历史记录功能可以追溯过往的查询
+SQLE为用户提供SQL工作台功能，通过集成CloudBeaver的方式实现在SQLE中方便的操作数据库. SQL工作台会自动同步用户信息和实例信息, 有效减少数据库密码泄露的风险,
+同时可通过参数配置及SQL查询审核对SQL做限制和筛查，通过权限设置管理可操作人员，有效避免不合规的查询和避免无权限的人进行操作。
+
+## CloudBeaver 简介
+
+[CloudBeaver Community](https://github.com/dbeaver/cloudbeaver) 是一个开源的 Web 数据库可视化管理工具，前端基于 TypeScript 和 React 编写，支持
+PostgreSQL, MySQL, MariaDB, SQL Server, Oracle, DB2, Firebird, H2, Trino 等数据库。
 
 ## 注意事项
 
