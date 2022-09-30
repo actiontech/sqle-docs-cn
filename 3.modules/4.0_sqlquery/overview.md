@@ -24,7 +24,7 @@ PostgreSQL, MySQL, MariaDB, SQL Server, Oracle, DB2, Firebird, H2, Trino 等数�
 
 ### 1. CloudBeaver支持版本
 
-当前CloudBeaver仅支持22.2.0版本
+建议使用 22.2.0 版本的CloudBeaver, 其他版本暂时未作验证
 
 ### 2. 需要禁用CloudBeaver原地址的使用
 

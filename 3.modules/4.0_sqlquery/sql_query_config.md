@@ -2,7 +2,7 @@
 
 ## 1. 安装CloudBeaver(已安装CloudBeaver的可以跳过这一步)
 
-注意事项: 当前只支持 22.2.0 版本的CloudBeaver, 使用其他版本可能会导致兼容性问题
+注意事项: 建议使用 22.2.0 版本的CloudBeaver, 其他版本暂时未作验证
 
 docker 部署：https://github.com/dbeaver/cloudbeaver/wiki/Run-Docker-Container
 
@@ -26,7 +26,11 @@ cloudbeaver.conf
 
 ### 2.2. 重启CloudBeaver
 
+略
+
 ### 2.3. 使用管理员登录CloudBeaver(此时CloudBeaver地址应当为 http://{IP}:8978/sql_query#/)
+
+略
 
 ### 2.4. 确认CloudBeaver配置
 
@@ -58,6 +62,8 @@ sql_query_config 子参数
 ![img.png](pictures/img.png)
 
 ### 3.2. 重启SQLE
+
+略
 
 ### 3.3. 注意事项
 
