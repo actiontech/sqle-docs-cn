@@ -53,7 +53,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../3.1_permission/overview.html" />
+    <link rel="next" href="sql_query_config.html" />
     
     
     <link rel="prev" href="../overview.html" />
@@ -232,6 +232,38 @@
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="sql_query_config.html">
+            
+                <a href="sql_query_config.html">
+            
+                    
+                    配置SQL工作台
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="use_sql_query.html">
+            
+                <a href="use_sql_query.html">
+            
+                    
+                    SQL工作台使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -536,38 +568,6 @@
             
 
             
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.6.9.1" data-path="../../sql_query_config.md">
-            
-                <span>
-            
-                    
-                    配置SQL工作台
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.9.2" data-path="../../use_sql_query.md">
-            
-                <span>
-            
-                    
-                    SQL工作台使用
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
         </li>
     
         <li class="chapter " data-level="1.6.10" data-path="../4.1_auxiliary_tool/overview.html">
@@ -781,8 +781,27 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="sql-&#x5DE5;&#x4F5C;&#x53F0;">SQL &#x5DE5;&#x4F5C;&#x53F0;</h1>
-<p>&#x5F85;&#x8865;&#x5145;</p>
+                                <h1 id="sql&#x5DE5;&#x4F5C;&#x53F0;">SQL&#x5DE5;&#x4F5C;&#x53F0;</h1>
+<h2 id="&#x76EE;&#x5F55;">&#x76EE;&#x5F55;</h2>
+<ul>
+<li><a href="sql_query_config.html">&#x914D;&#x7F6E;SQL&#x5DE5;&#x4F5C;&#x53F0;</a></li>
+<li><a href="use_sql_query.html">SQL&#x5DE5;&#x4F5C;&#x53F0;&#x4F7F;&#x7528;</a></li>
+</ul>
+<h2 id="&#x80CC;&#x666F;">&#x80CC;&#x666F;</h2>
+<p>SQL&#x67E5;&#x8BE2;&#x662F;DBA&#x65E5;&#x5E38;&#x5DE5;&#x4F5C;&#x4E2D;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x4F46;&#x6709;&#x4E9B;&#x573A;&#x666F;&#x53EF;&#x80FD;&#x7ED9;DBA&#x5E26;&#x6765;&#x56F0;&#x6270;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;&#x4E1A;&#x52A1;&#x4EBA;&#x5458;&#x9700;&#x8981;&#x5BF9;&#x6570;&#x636E;&#x5E93;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x68C0;&#x7D22;&#xFF0C;DBA&#x5F88;&#x96BE;&#x5BF9;&#x4E1A;&#x52A1;&#x4EBA;&#x5458;&#x7684;&#x884C;&#x4E3A;&#x8FDB;&#x884C;&#x8FFD;&#x8E2A;&#x548C;&#x7BA1;&#x63A7;&#xFF0C;&#x65E0;&#x6CD5;&#x9650;&#x5236;&#x6709;&#x95EE;&#x9898;&#x7684;SQL&#x5728;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x6267;&#x884C;&#xFF0C;&#x4E00;&#x4E9B;&#x67E5;&#x8BE2;SQL&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;&#x6570;&#x636E;&#x5E93;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x751A;&#x81F3;hang&#x6B7B;&#x3002;SQL&#x8D28;&#x91CF;&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#x5982;&#x679C;&#x63D0;&#x4F9B;SQL&#x67E5;&#x8BE2;&#x80FD;&#x529B;&#xFF0C;
+&#x5C31;&#x53EF;&#x4EE5;&#x5BF9;&#x4E1A;&#x52A1;&#x4EBA;&#x5458;&#x7684;SQL&#x8FDB;&#x884C;&#x5BA1;&#x8BA1;&#xFF0C;&#x62D2;&#x7EDD;&#x4E0D;&#x5408;&#x89C4;&#x7684;SQL&#x8FD0;&#x884C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x505A;&#x8F83;&#x4E3A;&#x7EC6;&#x5316;&#x7684;&#x6743;&#x9650;&#x63A7;&#x5236;&#x3002;</p>
+<h2 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h2>
+<p>SQLE&#x4E3A;&#x7528;&#x6237;&#x63D0;&#x4F9B;SQL&#x5DE5;&#x4F5C;&#x53F0;&#x529F;&#x80FD;&#xFF0C;&#x901A;&#x8FC7;&#x96C6;&#x6210;CloudBeaver&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x5728;SQLE&#x4E2D;&#x65B9;&#x4FBF;&#x7684;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;. SQL&#x5DE5;&#x4F5C;&#x53F0;&#x4F1A;&#x81EA;&#x52A8;&#x540C;&#x6B65;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x548C;&#x5B9E;&#x4F8B;&#x4FE1;&#x606F;, &#x6709;&#x6548;&#x51CF;&#x5C11;&#x6570;&#x636E;&#x5E93;&#x5BC6;&#x7801;&#x6CC4;&#x9732;&#x7684;&#x98CE;&#x9669;,
+&#x540C;&#x65F6;&#x53EF;&#x901A;&#x8FC7;&#x53C2;&#x6570;&#x914D;&#x7F6E;&#x53CA;SQL&#x67E5;&#x8BE2;&#x5BA1;&#x6838;&#x5BF9;SQL&#x505A;&#x9650;&#x5236;&#x548C;&#x7B5B;&#x67E5;&#xFF0C;&#x901A;&#x8FC7;&#x6743;&#x9650;&#x8BBE;&#x7F6E;&#x7BA1;&#x7406;&#x53EF;&#x64CD;&#x4F5C;&#x4EBA;&#x5458;&#xFF0C;&#x6709;&#x6548;&#x907F;&#x514D;&#x4E0D;&#x5408;&#x89C4;&#x7684;&#x67E5;&#x8BE2;&#x548C;&#x907F;&#x514D;&#x65E0;&#x6743;&#x9650;&#x7684;&#x4EBA;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;</p>
+<h2 id="cloudbeaver-&#x7B80;&#x4ECB;">CloudBeaver &#x7B80;&#x4ECB;</h2>
+<p><a href="https://github.com/dbeaver/cloudbeaver" target="_blank">CloudBeaver Community</a> &#x662F;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x7684; Web &#x6570;&#x636E;&#x5E93;&#x53EF;&#x89C6;&#x5316;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x524D;&#x7AEF;&#x57FA;&#x4E8E; TypeScript &#x548C; React &#x7F16;&#x5199;&#xFF0C;&#x652F;&#x6301;
+PostgreSQL, MySQL, MariaDB, SQL Server, Oracle, DB2, Firebird, H2, Trino &#x7B49;&#x6570;&#x636E;&#x5E93;&#x3002;</p>
+<h2 id="&#x6CE8;&#x610F;&#x4E8B;&#x9879;">&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h2>
+<h3 id="1-cloudbeaver&#x652F;&#x6301;&#x7248;&#x672C;">1. CloudBeaver&#x652F;&#x6301;&#x7248;&#x672C;</h3>
+<p>&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; 22.2.0 &#x7248;&#x672C;&#x7684;CloudBeaver, &#x5176;&#x4ED6;&#x7248;&#x672C;&#x6682;&#x65F6;&#x672A;&#x4F5C;&#x9A8C;&#x8BC1;</p>
+<h3 id="2-&#x9700;&#x8981;&#x7981;&#x7528;cloudbeaver&#x539F;&#x5730;&#x5740;&#x7684;&#x4F7F;&#x7528;">2. &#x9700;&#x8981;&#x7981;&#x7528;CloudBeaver&#x539F;&#x5730;&#x5740;&#x7684;&#x4F7F;&#x7528;</h3>
+<p>&#x5F53;CloudBeaver&#x63A5;&#x5165;SQLE&#x540E;, &#x5E94;&#x5F53;&#x4F7F;&#x7528;SQLE&#x7684;&#x5730;&#x5740;&#x8BBF;&#x95EE;CloudBeaver, &#x800C;&#x4E0D;&#x5E94;&#x8BE5;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;CloudBeaver&#x4E4B;&#x524D;&#x7684;&#x5730;&#x5740;&#x8BBF;&#x95EE;, SQLE SQL&#x5DE5;&#x4F5C;&#x53F0;&#x5730;&#x5740;: <a href="http://{SQLE" target="_blank">http://{SQLE</a> IP}:
+{SQLE&#x7AEF;&#x53E3;}/sql_query#/</p>
 
                                 
                                 </section>
@@ -815,7 +834,7 @@
                 </a>
                 
                 
-                <a href="../3.1_permission/overview.html" class="navigation navigation-next " aria-label="Next page: 权限管理">
+                <a href="sql_query_config.html" class="navigation navigation-next " aria-label="Next page: 配置SQL工作台">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -826,7 +845,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SQL工作台","level":"1.6.1","depth":2,"next":{"title":"权限管理","level":"1.6.2","depth":2,"path":"3.modules/3.1_permission/overview.md","ref":"3.modules/3.1_permission/overview.md","articles":[{"title":"角色管理","level":"1.6.2.1","depth":3,"path":"3.modules/3.1_permission/role_management.md","ref":"3.modules/3.1_permission/role_management.md","articles":[]},{"title":"用户管理","level":"1.6.2.2","depth":3,"path":"3.modules/3.1_permission/user_management.md","ref":"3.modules/3.1_permission/user_management.md","articles":[]}]},"previous":{"title":"功能模块","level":"1.6","depth":1,"path":"3.modules/overview.md","ref":"3.modules/overview.md","articles":[{"title":"SQL工作台","level":"1.6.1","depth":2,"path":"3.modules/4.2_sql_editor/overview.md","ref":"3.modules/4.2_sql_editor/overview.md","articles":[]},{"title":"权限管理","level":"1.6.2","depth":2,"path":"3.modules/3.1_permission/overview.md","ref":"3.modules/3.1_permission/overview.md","articles":[{"title":"角色管理","level":"1.6.2.1","depth":3,"path":"3.modules/3.1_permission/role_management.md","ref":"3.modules/3.1_permission/role_management.md","articles":[]},{"title":"用户管理","level":"1.6.2.2","depth":3,"path":"3.modules/3.1_permission/user_management.md","ref":"3.modules/3.1_permission/user_management.md","articles":[]}]},{"title":"数据源管理","level":"1.6.3","depth":2,"path":"3.modules/3.2_instance/instance_management.md","ref":"3.modules/3.2_instance/instance_management.md","articles":[]},{"title":"模板管理","level":"1.6.4","depth":2,"path":"3.modules/3.3_template/overview.md","ref":"3.modules/3.3_template/overview.md","articles":[{"title":"规则模板管理","level":"1.6.4.1","depth":3,"path":"3.modules/3.3_template/rule_template_management.md","ref":"3.modules/3.3_template/rule_template_management.md","articles":[]},{"title":"流程模板管理","level":"1.6.4.2","depth":3,"path":"3.modules/3.3_template/workflow_template_management.md","ref":"3.modules/3.3_template/workflow_template_management.md","articles":[]}]},{"title":"白名单管理","level":"1.6.5","depth":2,"path":"3.modules/3.4_whitelist/whitelist_management.md","ref":"3.modules/3.4_whitelist/whitelist_management.md","articles":[]},{"title":"审核工单","level":"1.6.6","depth":2,"path":"3.modules/3.5_auditworkflow/overview.md","ref":"3.modules/3.5_auditworkflow/overview.md","articles":[{"title":"审核工单管理","level":"1.6.6.1","depth":3,"path":"3.modules/3.5_auditworkflow/auditworkflow_management.md","ref":"3.modules/3.5_auditworkflow/auditworkflow_management.md","articles":[]},{"title":"Online DDL","level":"1.6.6.2","depth":3,"path":"3.modules/3.5_auditworkflow/online_ddl.md","ref":"3.modules/3.5_auditworkflow/online_ddl.md","articles":[]},{"title":"索引优化","level":"1.6.6.3","depth":3,"path":"3.modules/3.5_auditworkflow/index_optimization.md","ref":"3.modules/3.5_auditworkflow/index_optimization.md","articles":[]}]},{"title":"审核任务","level":"1.6.7","depth":2,"path":"3.modules/3.6_auditplan/overview.md","ref":"3.modules/3.6_auditplan/overview.md","articles":[{"title":"审核任务介绍","level":"1.6.7.1","depth":3,"path":"3.modules/3.6_auditplan/introduction.md","ref":"3.modules/3.6_auditplan/introduction.md","articles":[]},{"title":"审核任务管理","level":"1.6.7.2","depth":3,"path":"3.modules/3.6_auditplan/auditplan_management.md","ref":"3.modules/3.6_auditplan/auditplan_management.md","articles":[]},{"title":"审核任务通知","level":"1.6.7.3","depth":3,"path":"3.modules/3.6_auditplan/auditplan_notify.md","ref":"3.modules/3.6_auditplan/auditplan_notify.md","articles":[]},{"title":"Scanner 使用说明","level":"1.6.7.4","depth":3,"path":"3.modules/3.6_auditplan/scanner_management.md","ref":"3.modules/3.6_auditplan/scanner_management.md","articles":[]}]},{"title":"数据库审核插件","level":"1.6.8","depth":2,"path":"3.modules/3.7_auditplugin/overview.md","ref":"3.modules/3.7_auditplugin/overview.md","articles":[{"title":"数据库审核插件使用","level":"1.6.8.1","depth":3,"path":"3.modules/3.7_auditplugin/auditplugin_management.md","ref":"3.modules/3.7_auditplugin/auditplugin_management.md","articles":[]},{"title":"数据库审核插件开发","level":"1.6.8.2","depth":3,"path":"3.modules/3.7_auditplugin/auditplugin_development.md","ref":"3.modules/3.7_auditplugin/auditplugin_development.md","articles":[]}]},{"title":"SQL查询","level":"1.6.9","depth":2,"path":"3.modules/4.0_sqlquery/overview.md","ref":"3.modules/4.0_sqlquery/overview.md","articles":[{"title":"配置SQL工作台","level":"1.6.9.1","depth":3,"path":"sql_query_config.md","ref":"./sql_query_config.md","articles":[]},{"title":"SQL工作台使用","level":"1.6.9.2","depth":3,"path":"use_sql_query.md","ref":"./use_sql_query.md","articles":[]}]},{"title":"辅助工具","level":"1.6.10","depth":2,"path":"3.modules/4.1_auxiliary_tool/overview.md","ref":"3.modules/4.1_auxiliary_tool/overview.md","articles":[{"title":"Jetbrains插件","level":"1.6.10.1","depth":3,"path":"3.modules/4.1_auxiliary_tool/jetbrains_plugin.md","ref":"3.modules/4.1_auxiliary_tool/jetbrains_plugin.md","articles":[]}]},{"title":"系统设置","level":"1.6.11","depth":2,"path":"3.modules/3.8_setting/overview.md","ref":"3.modules/3.8_setting/overview.md","articles":[{"title":"LDAP配置","level":"1.6.11.1","depth":3,"path":"3.modules/3.8_setting/ldap_configuration.md","ref":"3.modules/3.8_setting/ldap_configuration.md","articles":[]},{"title":"OAUTH2配置","level":"1.6.11.2","depth":3,"path":"3.modules/3.8_setting/oauth2_configuration.md","ref":"3.modules/3.8_setting/oauth2_configuration.md","articles":[]},{"title":"邮箱配置","level":"1.6.11.3","depth":3,"path":"3.modules/3.8_setting/email_configuration.md","ref":"3.modules/3.8_setting/email_configuration.md","articles":[]},{"title":"企业微信配置","level":"1.6.11.4","depth":3,"path":"3.modules/3.8_setting/wechat_configuration.md","ref":"3.modules/3.8_setting/wechat_configuration.md","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/4.2_sql_editor/overview.md","mtime":"2022-09-30T08:48:08.110Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-30T08:48:46.381Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SQL工作台","level":"1.6.1","depth":2,"next":{"title":"配置SQL工作台","level":"1.6.1.1","depth":3,"path":"3.modules/4.2_sql_editor/sql_query_config.md","ref":"3.modules/4.2_sql_editor/sql_query_config.md","articles":[]},"previous":{"title":"功能模块","level":"1.6","depth":1,"path":"3.modules/overview.md","ref":"3.modules/overview.md","articles":[{"title":"SQL工作台","level":"1.6.1","depth":2,"path":"3.modules/4.2_sql_editor/overview.md","ref":"3.modules/4.2_sql_editor/overview.md","articles":[{"title":"配置SQL工作台","level":"1.6.1.1","depth":3,"path":"3.modules/4.2_sql_editor/sql_query_config.md","ref":"3.modules/4.2_sql_editor/sql_query_config.md","articles":[]},{"title":"SQL工作台使用","level":"1.6.1.2","depth":3,"path":"3.modules/4.2_sql_editor/use_sql_query.md","ref":"3.modules/4.2_sql_editor/use_sql_query.md","articles":[]}]},{"title":"权限管理","level":"1.6.2","depth":2,"path":"3.modules/3.1_permission/overview.md","ref":"3.modules/3.1_permission/overview.md","articles":[{"title":"角色管理","level":"1.6.2.1","depth":3,"path":"3.modules/3.1_permission/role_management.md","ref":"3.modules/3.1_permission/role_management.md","articles":[]},{"title":"用户管理","level":"1.6.2.2","depth":3,"path":"3.modules/3.1_permission/user_management.md","ref":"3.modules/3.1_permission/user_management.md","articles":[]}]},{"title":"数据源管理","level":"1.6.3","depth":2,"path":"3.modules/3.2_instance/instance_management.md","ref":"3.modules/3.2_instance/instance_management.md","articles":[]},{"title":"模板管理","level":"1.6.4","depth":2,"path":"3.modules/3.3_template/overview.md","ref":"3.modules/3.3_template/overview.md","articles":[{"title":"规则模板管理","level":"1.6.4.1","depth":3,"path":"3.modules/3.3_template/rule_template_management.md","ref":"3.modules/3.3_template/rule_template_management.md","articles":[]},{"title":"流程模板管理","level":"1.6.4.2","depth":3,"path":"3.modules/3.3_template/workflow_template_management.md","ref":"3.modules/3.3_template/workflow_template_management.md","articles":[]}]},{"title":"白名单管理","level":"1.6.5","depth":2,"path":"3.modules/3.4_whitelist/whitelist_management.md","ref":"3.modules/3.4_whitelist/whitelist_management.md","articles":[]},{"title":"审核工单","level":"1.6.6","depth":2,"path":"3.modules/3.5_auditworkflow/overview.md","ref":"3.modules/3.5_auditworkflow/overview.md","articles":[{"title":"审核工单管理","level":"1.6.6.1","depth":3,"path":"3.modules/3.5_auditworkflow/auditworkflow_management.md","ref":"3.modules/3.5_auditworkflow/auditworkflow_management.md","articles":[]},{"title":"Online DDL","level":"1.6.6.2","depth":3,"path":"3.modules/3.5_auditworkflow/online_ddl.md","ref":"3.modules/3.5_auditworkflow/online_ddl.md","articles":[]},{"title":"索引优化","level":"1.6.6.3","depth":3,"path":"3.modules/3.5_auditworkflow/index_optimization.md","ref":"3.modules/3.5_auditworkflow/index_optimization.md","articles":[]}]},{"title":"审核任务","level":"1.6.7","depth":2,"path":"3.modules/3.6_auditplan/overview.md","ref":"3.modules/3.6_auditplan/overview.md","articles":[{"title":"审核任务介绍","level":"1.6.7.1","depth":3,"path":"3.modules/3.6_auditplan/introduction.md","ref":"3.modules/3.6_auditplan/introduction.md","articles":[]},{"title":"审核任务管理","level":"1.6.7.2","depth":3,"path":"3.modules/3.6_auditplan/auditplan_management.md","ref":"3.modules/3.6_auditplan/auditplan_management.md","articles":[]},{"title":"审核任务通知","level":"1.6.7.3","depth":3,"path":"3.modules/3.6_auditplan/auditplan_notify.md","ref":"3.modules/3.6_auditplan/auditplan_notify.md","articles":[]},{"title":"Scanner 使用说明","level":"1.6.7.4","depth":3,"path":"3.modules/3.6_auditplan/scanner_management.md","ref":"3.modules/3.6_auditplan/scanner_management.md","articles":[]}]},{"title":"数据库审核插件","level":"1.6.8","depth":2,"path":"3.modules/3.7_auditplugin/overview.md","ref":"3.modules/3.7_auditplugin/overview.md","articles":[{"title":"数据库审核插件使用","level":"1.6.8.1","depth":3,"path":"3.modules/3.7_auditplugin/auditplugin_management.md","ref":"3.modules/3.7_auditplugin/auditplugin_management.md","articles":[]},{"title":"数据库审核插件开发","level":"1.6.8.2","depth":3,"path":"3.modules/3.7_auditplugin/auditplugin_development.md","ref":"3.modules/3.7_auditplugin/auditplugin_development.md","articles":[]}]},{"title":"SQL查询","level":"1.6.9","depth":2,"path":"3.modules/4.0_sqlquery/overview.md","ref":"3.modules/4.0_sqlquery/overview.md","articles":[]},{"title":"辅助工具","level":"1.6.10","depth":2,"path":"3.modules/4.1_auxiliary_tool/overview.md","ref":"3.modules/4.1_auxiliary_tool/overview.md","articles":[{"title":"Jetbrains插件","level":"1.6.10.1","depth":3,"path":"3.modules/4.1_auxiliary_tool/jetbrains_plugin.md","ref":"3.modules/4.1_auxiliary_tool/jetbrains_plugin.md","articles":[]}]},{"title":"系统设置","level":"1.6.11","depth":2,"path":"3.modules/3.8_setting/overview.md","ref":"3.modules/3.8_setting/overview.md","articles":[{"title":"LDAP配置","level":"1.6.11.1","depth":3,"path":"3.modules/3.8_setting/ldap_configuration.md","ref":"3.modules/3.8_setting/ldap_configuration.md","articles":[]},{"title":"OAUTH2配置","level":"1.6.11.2","depth":3,"path":"3.modules/3.8_setting/oauth2_configuration.md","ref":"3.modules/3.8_setting/oauth2_configuration.md","articles":[]},{"title":"邮箱配置","level":"1.6.11.3","depth":3,"path":"3.modules/3.8_setting/email_configuration.md","ref":"3.modules/3.8_setting/email_configuration.md","articles":[]},{"title":"企业微信配置","level":"1.6.11.4","depth":3,"path":"3.modules/3.8_setting/wechat_configuration.md","ref":"3.modules/3.8_setting/wechat_configuration.md","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SQLE manual","gitbook":"*"},"file":{"path":"3.modules/4.2_sql_editor/overview.md","mtime":"2022-10-10T02:41:40.607Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-10T02:42:15.452Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
