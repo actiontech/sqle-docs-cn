@@ -12,6 +12,7 @@
     * [SQL工作台](3.modules/4.2_sql_editor/overview.md)
         * [配置SQL工作台](3.modules/4.2_sql_editor/sql_query_config.md)
         * [SQL工作台使用](3.modules/4.2_sql_editor/use_sql_query.md)
+        * [使用定制包快速搭建环境](3.modules/4.2_sql_editor/sqle_cloudbeaver.md)
     * [权限管理](3.modules/3.1_permission/overview.md)
         * [角色管理](3.modules/3.1_permission/role_management.md)
         * [用户管理](3.modules/3.1_permission/user_management.md)
