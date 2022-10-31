@@ -4,6 +4,7 @@
 
 * [配置SQL工作台](./sql_query_config.md)
 * [SQL工作台使用](./use_sql_query.md)
+* [使用SQLE定制CloudBeaver包快速搭建环境](./sqle_cloudbeaver.md)
 
 ## 背景
 
