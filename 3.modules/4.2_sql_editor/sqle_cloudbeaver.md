@@ -63,4 +63,9 @@ https://github.com/actiontech/cloudbeaver/releases/tag/sqle.22.2.0
 
 方式二: 手动启动镜像, 镜像参数和 [原项目镜像参数](https://github.com/dbeaver/cloudbeaver/wiki/Run-Docker-Container) 保持一致
 
+### 已有CloudBeaver环境升级为定制环境
 
+CloudBeaver程序目录下应当有一下几个文件
+![img.png](pictures/img_23.png)
+
+将CloudBeaver程序目录下的`conf`目录和`workspace`目录移动到定制CloudBeaver程序目录下(覆盖原目录), 随后停止旧CloudBeaver, 运行新CloudBeaver即可
