@@ -42,6 +42,7 @@ Usage:
 Flags:
   -D, --dir string         xml directory
   -h, --help               help for mybatis
+  -K, --skip-audit         only upload sql to sqle, not audit
   -S, --skip-error-query   skip the statement that the scanner failed to parse from within the xml file
 
 Global Flags:
@@ -56,6 +57,7 @@ Global Flags:
 * name：审核任务名（表示 Scanner 将 SQL 上传至哪个审核任务的 **SQL 池**）
 * token：审核任务上传凭证（具体值可到审核任务列表页中**访问凭证**列中获取）
 * dir: Mybatis XML 对应的文件夹
+* skip-audit：是否跳过审核（默认是 false，即不跳过审核，true 表示跳过审核）
 * skip-error-query: 如果scanner从xml中获取的SQL无法解析将会忽略这条SQL
 
 #### 常见场景
